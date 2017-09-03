@@ -1,0 +1,23 @@
+\section{Syndromic and Spatial Surveillance}
+Surveillance systems use various methods to monitor public health. One approach is to identify syndromes--groups of health signs and symptoms that coexist frequently together \cite{doh2014manual}--given a duration and population to identify the existence of diseases. This approach, called syndromic surveillance, detects possible outbreaks through identifying trends that demonstrate such signs and symptoms that occur in a given area and time. Syndromic data is acquired from various non-automated (medical logs, emails, and others) and automated means (data files, databases, and others) and are transmitted and stored, and integrated with other syndromic data for analysis and response \cite{mandl2004implementing}.
+
+Another approach is to identify the extent of ``clusters'' of similarly attributed cases across a map. This cluster detection is central to spatial surveillance, and involves the plotting of health information that specifies its location through geocodes such as zip or postal codes, or geographical information such as exact latitudes and longitudes \cite{lawson2005spatial}. Lawson states that as outbreaks are ``localized at some spatial scale,'' spatial surveillance will be able to detect spikes in health events over a small area \cite{lawson2005spatial}.
+
+As such, syndromic and spatial surveillance techniques are used to identify what Lawson describes as ``changes in public health [that] might trigger interventions'' \cite{lawson2005spatial}. Methods have been developed to detect these changes, such as statistical process control (SPC) \cite{oakland2007statistical} and cumulative sum (CUSUM) \cite{fricker2008comparing}. These deal with factors such as changepoints (statistical nonparametric values), clusters, and overall process change. 
+
+
+%aggregated score for a health index that is a "symptom" for a particular disease
+
+\subsection{FASSSTER}
+Feasibility Analysis of Syndromic Surveillance Using Spatio-Temporal Epidemiological Modeler for Early Detection of Diseases (FASSSTER) is a system created by the Ateneo Java Wireless Competency Center in partnership with the Department of Health and the Department of Science and Technology — Philippine Council for Health Research and Development. It integrates various data sources on health and the spread of diseases to create appropriate models and visualizations \cite{fassster}.
+
+Currently, for syndromic surveillance, FASSSTER integrates data from the following sources: SHINE OS+, infodemiological (or health-related) tweets, and Philippines Integrated Disease Surveillance and Response (PIDSR) \cite{fassster}. 
+
+Infodemiological tweets are gathered through a tool that utilizes the Twitter API, and the tool captures tweets based on specific health-related keywords. The tweets are then filtered to only include those in the Filipino language and those that are not retweets, then classified if whether or not they are relevant to infodemiology \cite{espina2016towards}.
+
+FASSSTER uses IBM's Spatio-Temporal Epidemiological Modeler (STEM), a tool used to simulate the spread of disease. STEM contains the following components \cite{edlund2010spatiotemporal}:
+\begin{enumerate}
+\item \textit{Graphical user interface} to allow users to interact with the tool; 
+\item \textit{Representational framework} that uses graphs to describe locations of populations and the risk of spreading; and 
+\item \textit{Disease model computations} that model infectious diseases described by several differential equations \cite{anderson1992infectious}.
+\end{enumerate}
