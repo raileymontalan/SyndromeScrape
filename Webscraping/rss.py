@@ -13,13 +13,10 @@ feed_urls = {
 
 articles = []
 
-def getArticles(feed_url):
-    feed = feedparser.parse(feed_url)
+for key, url in feed_urls.items():
+    feed = feedparser.parse(url)
     for article in feed['items']:
         articles.append(article['title'])
-
-for key, url in feed_urls.items():
-    getArticles(url)
 
 for article in articles:
     print(article)
