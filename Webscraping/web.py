@@ -1,7 +1,7 @@
-import csv, os
+import bs4, os
 
 site_urls = {
-	'abscbn':					'http://www.news.abs-cbn.com',
+	'abscbn':					'http://www.news.abs-cbn.com/news',
 	#							'http://www.news.abs-cbn.com/news?page=2
 	'gma-news':					'http://www.gmanetwork.com/news/archives/news',
 	#							http://www.gmanetwork.com/news/archives/news/2
