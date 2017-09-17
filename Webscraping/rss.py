@@ -17,15 +17,7 @@ feed_urls = {
     'rappler':                  'http://feeds.feedburner.com/rappler/'
 }
 
-articles = []
-
 for key, url in feed_urls.items():
     feed = feedparser.parse(url)
     for article in feed['items']:
-        articles.append(article['title'])
-        print(article['title'])
         print(article['link'])
-        print(article['updated'])
-
-# for article in articles:
-#     print(article)
