@@ -38,7 +38,7 @@ def scrape(site_urls):
 
 	for key, url in site_urls.items():
 		if key == 'inquirer':
-			for i in range(13, 14):
+			for i in range(14, 18):
 				response = opener.open(url + '2017-09-' + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.find_all('a', attrs={'rel': 'bookmark'})
@@ -46,7 +46,7 @@ def scrape(site_urls):
 					file.write(article.get('href') + '\n')
 					print(article.get('href'))
 		if key == 'abscbn':
-			for i in range (1, 10):
+			for i in range (1, 5):
 				response = opener.open(url + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('article > a')
@@ -54,7 +54,7 @@ def scrape(site_urls):
 					file.write('http://news.abs-cbn.com' + article.get('href') + '\n')
 					print('http://news.abs-cbn.com' + article.get('href'))
 		if key == 'philstar-headlines' or 'philstar-nation':
-			for i in range (1, 10):
+			for i in range (1, 5):
 				response = opener.open(url + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('span.article-title > a')
@@ -62,7 +62,7 @@ def scrape(site_urls):
 					file.write('https://www.philstar.com' + article.get('href') + '\n')
 					print('https://www.philstar.com' + article.get('href'))
 		if key == 'mb-national' or 'mb-metro' or 'mb-luzon' or 'mb-visayas' or 'mb-mindanao' or 'mb-environment-nature':
-			for i in range (1, 3):
+			for i in range (1, 5):
 				response = opener.open(url + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('div > div > h3 > a')

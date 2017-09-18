@@ -17,12 +17,10 @@ feed_urls = {
     'rappler':                  'http://feeds.feedburner.com/rappler/'
 }
 
+file = open('rss_out.txt', 'w')
 for key, url in feed_urls.items():
     feed = feedparser.parse(url)
-    file = open('rss_out.txt', 'w')
-
     for article in feed['items']:
-        file.write(article['link'])
+        file.write(article['link'] + '\n')
         print(article['link'])
-
-    file.close()
+file.close()

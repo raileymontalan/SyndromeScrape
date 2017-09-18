@@ -17,6 +17,7 @@ def parse():
 	articles['mb'] = []
 
 	for url in file:
+		print(url)
 		if 'news.abs-cbn.com' in url:
 			response = opener.open(url)
 			soup = BeautifulSoup(response, 'html.parser')
