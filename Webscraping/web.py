@@ -34,6 +34,8 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def scrape(site_urls):
+	file = open('web_out.txt', 'w')
+
 	for key, url in site_urls.items():
 		if key == 'inquirer':
 			for i in range(13, 14):
@@ -41,6 +43,7 @@ def scrape(site_urls):
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.find_all('a', attrs={'rel': 'bookmark'})
 				for article in articles:
+					file.write(article.get('href') + '\n')
 					print(article.get('href'))
 		if key == 'abscbn':
 			for i in range (1, 10):
@@ -48,6 +51,7 @@ def scrape(site_urls):
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('article > a')
 				for article in articles:
+					file.write('http://news.abs-cbn.com' + article.get('href') + '\n')
 					print('http://news.abs-cbn.com' + article.get('href'))
 		if key == 'philstar-headlines' or 'philstar-nation':
 			for i in range (1, 10):
@@ -55,6 +59,7 @@ def scrape(site_urls):
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('span.article-title > a')
 				for article in articles:
+					file.write('https://www.philstar.com' + article.get('href') + '\n')
 					print('https://www.philstar.com' + article.get('href'))
 		if key == 'mb-national' or 'mb-metro' or 'mb-luzon' or 'mb-visayas' or 'mb-mindanao' or 'mb-environment-nature':
 			for i in range (1, 3):
@@ -62,6 +67,7 @@ def scrape(site_urls):
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('div > div > h3 > a')
 				for article in articles:
+					file.write(article.get('href') + '\n')
 					print(article.get('href'))
 		# if key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
 		# 	for i in range (0, 10):
@@ -70,5 +76,7 @@ def scrape(site_urls):
 		# 		articles = soup.select('h4 > a')
 		# 		for article in articles:
 		# 			print('http://www.rappler.com' + article.get('href'))
+
+	file.close()
 
 scrape(site_urls)

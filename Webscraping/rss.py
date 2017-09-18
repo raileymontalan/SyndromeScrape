@@ -19,5 +19,10 @@ feed_urls = {
 
 for key, url in feed_urls.items():
     feed = feedparser.parse(url)
+    file = open('rss_out.txt', 'w')
+
     for article in feed['items']:
+        file.write(article['link'])
         print(article['link'])
+
+    file.close()
