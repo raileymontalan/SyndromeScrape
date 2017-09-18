@@ -28,7 +28,6 @@ site_urls = {
 ##
 }
 
-
 class HTMLopener(urllib.request.FancyURLopener):
     version='Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
 opener = HTMLopener()
@@ -76,7 +75,6 @@ def scrape(site_urls):
 		# 		articles = soup.select('h4 > a')
 		# 		for article in articles:
 		# 			print('http://www.rappler.com' + article.get('href'))
-
 	file.close()
 
 scrape(site_urls)
