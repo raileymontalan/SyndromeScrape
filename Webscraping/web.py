@@ -1,4 +1,5 @@
 import urllib.request
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 site_urls = {
@@ -18,14 +19,12 @@ site_urls = {
 	'mb-visayas':				'http://news.mb.com.ph/category/visayas/page/',
 	'mb-mindanao':				'http://news.mb.com.ph/category/mindanao/page/',
 	'mb-environment-nature':	'http://news.mb.com.ph/category/environment-nature/page/',
-## Rappler is unusable as well, need permission because of HTTPS security	
-	# 'rappler-nation':			'https://www.rappler.com/nation?start=',
-	# 'rappler-move-ph':			'https://www.rappler.com/move-ph/issues?start=',
-	# 'rappler-life-health':		'https://www.rappler.com/science-nature/life-health?start=',
-	# 'rappler-matters-numbers':	'https://www.rappler.com/science-nature/matters-numbers?start=',
-	# 'rappler-specials':			'https://www.rappler.com/science-nature/specials?start=',
-	# 'rappler-environment':		'https://www.rappler.com/science-nature/environment?start='
-##
+	'rappler-nation':			'https://www.rappler.com/nation?start=',
+	'rappler-move-ph':			'https://www.rappler.com/move-ph/issues?start=',
+	'rappler-life-health':		'https://www.rappler.com/science-nature/life-health?start=',
+	'rappler-matters-numbers':	'https://www.rappler.com/science-nature/matters-numbers?start=',
+	'rappler-specials':			'https://www.rappler.com/science-nature/specials?start=',
+	'rappler-environment':		'https://www.rappler.com/science-nature/environment?start='
 }
 
 class HTMLopener(urllib.request.FancyURLopener):
@@ -37,8 +36,9 @@ def scrape(site_urls):
 
 	for key, url in site_urls.items():
 		if key == 'inquirer':
-			for i in range(14, 18):
-				response = opener.open(url + '2017-09-' + str(i))
+			for i in range(0, 4):
+				date = datetime.now() - timedelta(days=i)
+				response = opener.open(url + '%s-%s-%s' %(date.year, date.month, date.day))
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.find_all('a', attrs={'rel': 'bookmark'})
 				for article in articles:
@@ -68,13 +68,14 @@ def scrape(site_urls):
 				for article in articles:
 					file.write(article.get('href') + '\n')
 					print(article.get('href'))
-		# if key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
-		# 	for i in range (0, 10):
-		# 		response = opener.open(url + str(i*10))
-		# 		soup = BeautifulSoup(response, 'html.parser')
-		# 		articles = soup.select('h4 > a')
-		# 		for article in articles:
-		# 			print('http://www.rappler.com' + article.get('href'))
+		if key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
+			for i in range (0, 4):
+				response = opener.open(url + str(i*10))
+				soup = BeautifulSoup(response, 'html.parser')
+				articles = soup.select('h4 > a')
+				for article in articles:
+					file.write('https://www.rappler.com' + article.get('href') + '\n')
+					print('https://www.rappler.com' + article.get('href'))
 	file.close()
 
 scrape(site_urls)

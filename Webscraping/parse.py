@@ -2,18 +2,29 @@ import json
 import urllib.request
 from bs4 import BeautifulSoup
 
+articles = {}
+articles['abs-cbn'] = []
+articles['gma'] = []
+articles['inquirer'] = []
+articles['mb'] = []
+articles['philstar'] = []
+articles['rappler'] = []
+
 class HTMLopener(urllib.request.FancyURLopener):
     version ='Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
 opener = HTMLopener()
 
 def parse():
 	file = open('web_out.txt', 'r')
-	articles = {}
-	articles['abs-cbn'] = []
-	articles['inquirer'] = []
-	articles['philstar'] = []
-	articles['mb'] = []
+	parse2(file)
 
+	file = open('rss_out.txt', 'r')
+	parse2(file)
+
+	with open('articles.json', 'w', encoding='utf-8') as outfile:
+		json.dump(articles, outfile, indent=4, ensure_ascii=False)
+
+def parse2(file):
 	for url in file:
 		print(url)
 		if 'news.abs-cbn.com' in url:
@@ -37,7 +48,4 @@ def parse():
 				'content': content,
 				'url': url
 				})
-	with open('articles.json', 'w', encoding='utf-8') as outfile:
-		json.dump(articles, outfile, indent=4, ensure_ascii=False)
-
 parse()
