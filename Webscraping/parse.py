@@ -41,7 +41,9 @@ def parse2(file):
 
 				for x in table:
 					content.append(''.join(x.findAll(text= True)))
-			# note: there are a few articles that don't return content. abs-cbn doesn't use the class names for articles that are just captions of a photo kasi so im still trying to find out what tags are used for those (amongst other article types if possible)
+			# note: there are a few articles that don't return content. abs-cbn doesn't use the class names 
+			# for articles that are just captions of a photo kasi so im still trying to find out what tags
+			# are used for those (amongst other article types if possible)
 			articles['abs-cbn'].append({
 				'title': title,
 				'timestamp': timestamp,
