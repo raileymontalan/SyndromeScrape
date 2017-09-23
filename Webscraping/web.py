@@ -32,7 +32,7 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def scrape(site_urls):
-	file = open('web_out.txt', 'w')
+	file = open('static/web_out.txt', 'w')
 
 	for key, url in site_urls.items():
 		if key == 'inquirer':

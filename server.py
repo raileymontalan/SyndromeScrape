@@ -1,10 +1,15 @@
 import tornado.ioloop
 import tornado.web
 import tornado.autoreload
+import json
+from pymongo import MongoClient
 
 class MainHandler(tornado.web.RequestHandler):
+    client = MongoClient()
+    collection = client.scrape.articles
+
     def get(self):
-        self.write("Hello, world")
+        self.write("Hello, world!")
 
 def make_app():
     return tornado.web.Application([

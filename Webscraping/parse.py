@@ -15,13 +15,13 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def parse():
-	file = open('web_out.txt', 'r')
+	file = open('static/web_out.txt', 'r')
 	parse2(file)
 
-	file = open('rss_out.txt', 'r')
+	file = open('static/rss_out.txt', 'r')
 	parse2(file)
 
-	with open('articles.json', 'w', encoding='utf-8') as outfile:
+	with open('static/articles.json', 'w', encoding='utf-8') as outfile:
 		json.dump(articles, outfile, indent=4, ensure_ascii=False)
 
 def parse2(file):
