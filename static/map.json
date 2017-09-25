@@ -1,0 +1,10 @@
+{
+	"map": [
+		{	
+			"date": "2017-09-25",
+			"geocode": "some geocode",
+			"headline": "Your mom is a headline",
+			"url": "http://news.abs-cbn.com"
+		}
+	]
+}

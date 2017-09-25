@@ -1,6 +1,7 @@
 import json
 import urllib.request
 from bs4 import BeautifulSoup
+from pymongo import MongoClient
 
 articles = {}
 articles['abs-cbn'] = []
@@ -25,9 +26,13 @@ def parse():
 		json.dump(articles, outfile, indent=4, ensure_ascii=False)
 
 def parse2(file):
+	client = MongoClient()
+	collection = client.scrape.articles
 	for url in file:
-		print(url)
-		if 'news.abs-cbn.com' in url:
+		if(collection.find({"url": url}).count() > 0):
+			print("Exists in DB: " + url)
+			continue
+		elif 'news.abs-cbn.com' in url:
 			response = opener.open(url)
 			soup = BeautifulSoup(response, 'html.parser')
 			title = soup.select('h1.news-title')[0].text
@@ -38,7 +43,6 @@ def parse2(file):
 				table = soup.find('small', attrs={'class': 'media-caption'})
 			if table:
 				table = table.findAll('p')
-
 				for x in table:
 					content.append(''.join(x.findAll(text= True)))
 			# note: there are a few articles that don't return content. abs-cbn doesn't use the class names 
@@ -50,4 +54,7 @@ def parse2(file):
 				'content': content,
 				'url': url
 				})
+			print("Added to DB: " + url)
+		else:
+			continue
 parse()

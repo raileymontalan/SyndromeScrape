@@ -16,20 +16,32 @@ class DBHandler(web.RequestHandler):
         articles = collection.find()
         self.set_header("Content-Type", "application/json")
         self.write(json.dumps(list(articles),default=json_util.default))
+        self.finish()
 
 class ArticlesHandler(web.RequestHandler):
     def get(self, key):
         client = MongoClient()
         collection = client.scrape.articles
-        article = collection.find_one({"_id":ObjectId(str(article_id))})
+        article = collection.find_one({"_id":ObjectId(str(key))})
         self.set_header("Content-Type", "application/json")
         self.write(json.dumps((article),default=json_util.default))
+        self.finish()
+
+class MapHandler(web.RequestHandler):
+    def get(self):
+        client = MongoClient()
+        collection = client.scrape.map
+        articles = collection.find()
+        self.set_header("Content-Type", "application/json")
+        self.write(json.dumps(list(articles),default=json_util.default))
+        self.finish()
 
 def make_app():
     return web.Application([
         (r"/", MainHandler),
         (r'/api/db', DBHandler),
-        (r'/api/articles/(.*)', ArticlesHandler)
+        (r'/api/articles/(.*)', ArticlesHandler),
+        (r'/api/map', MapHandler)
     ])
 
 if __name__ == "__main__":

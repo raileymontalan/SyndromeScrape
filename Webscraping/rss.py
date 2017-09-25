@@ -1,4 +1,4 @@
-import feedparser, csv, os
+import feedparser, os
  
 feed_urls = {
     'gma-news':                 'http://www.gmanetwork.com/news/rss/news/',
