@@ -1,6 +1,7 @@
-import urllib.request
+import timeit, urllib.request
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+from pymongo import MongoClient
 
 site_urls = {
 	'abscbn':					'http://news.abs-cbn.com/news?page=',
@@ -32,9 +33,11 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def scrape(site_urls):
+	web_urls = 0
 	file = open('static/web_out.txt', 'w')
-
+	start = timeit.default_timer()
 	for key, url in site_urls.items():
+		web_urls += 1
 		if key == 'inquirer':
 			for i in range(0, 4):
 				date = datetime.now() - timedelta(days=i)
@@ -76,6 +79,16 @@ def scrape(site_urls):
 				for article in articles:
 					file.write('https://www.rappler.com' + article.get('href') + '\n')
 					print('https://www.rappler.com' + article.get('href'))
+	stop = timeit.default_timer()
+	web_time = stop - start
 	file.close()
+
+	client = MongoClient()
+	logs = client.scrape.web_logs
+	logs.insert({
+    	'date': datetime.now(),
+    	'web_urls': web_urls,
+    	'web_time': web_time,
+    })
 
 scrape(site_urls)
