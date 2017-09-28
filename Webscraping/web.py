@@ -32,7 +32,7 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def scrape(site_urls):
-	file = open('static/web_out.txt', 'w')
+	file = open('../static/web_out.txt', 'w')
 
 	for key, url in site_urls.items():
 		if key == 'inquirer':
@@ -58,8 +58,8 @@ def scrape(site_urls):
 				soup = BeautifulSoup(response, 'html.parser')
 				articles = soup.select('span.article-title > a')
 				for article in articles:
-					file.write('https://www.philstar.com' + article.get('href') + '\n')
-					print('https://www.philstar.com' + article.get('href'))
+					file.write('http://www.philstar.com' + article.get('href') + '\n')
+					print('http://www.philstar.com' + article.get('href'))
 		if key == 'mb-national' or 'mb-metro' or 'mb-luzon' or 'mb-visayas' or 'mb-mindanao' or 'mb-environment-nature':
 			for i in range (1, 5):
 				response = opener.open(url + str(i))
@@ -68,14 +68,14 @@ def scrape(site_urls):
 				for article in articles:
 					file.write(article.get('href') + '\n')
 					print(article.get('href'))
-		if key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
-			for i in range (0, 4):
-				response = opener.open(url + str(i*10))
-				soup = BeautifulSoup(response, 'html.parser')
-				articles = soup.select('h4 > a')
-				for article in articles:
-					file.write('https://www.rappler.com' + article.get('href') + '\n')
-					print('https://www.rappler.com' + article.get('href'))
+		# if key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
+		# 	for i in range (0, 4):
+		# 		response = opener.open(url + str(i*10))
+		# 		soup = BeautifulSoup(response, 'html.parser')
+		# 		articles = soup.select('h4 > a')
+		# 		for article in articles:
+		# 			file.write('https://www.rappler.com' + article.get('href') + '\n')
+		# 			print('https://www.rappler.com' + article.get('href'))
 	file.close()
 
 scrape(site_urls)

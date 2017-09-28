@@ -16,13 +16,13 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def parse():
-	file = open('static/web_out.txt', 'r')
+	file = open('../static/web_out.txt', 'r')
 	parse2(file)
 
-	file = open('static/rss_out.txt', 'r')
+	file = open('../static/rss_out.txt', 'r')
 	parse2(file)
 
-	with open('static/articles.json', 'w', encoding='utf-8') as outfile:
+	with open('../static/articles.json', 'w', encoding='utf-8') as outfile:
 		json.dump(articles, outfile, indent=4, ensure_ascii=False)
 
 def parse2(file):
@@ -32,7 +32,7 @@ def parse2(file):
 		if(collection.find({"url": url}).count() > 0):
 			print("Exists in DB: " + url)
 			continue
-		elif 'news.abs-cbn.com' in url:
+		if 'news.abs-cbn.com' in url:
 			response = opener.open(url)
 			soup = BeautifulSoup(response, 'html.parser')
 			title = soup.select('h1.news-title')[0].text
@@ -45,16 +45,75 @@ def parse2(file):
 				table = table.findAll('p')
 				for x in table:
 					content.append(''.join(x.findAll(text= True)))
-			# note: there are a few articles that don't return content. abs-cbn doesn't use the class names 
-			# for articles that are just captions of a photo kasi so im still trying to find out what tags
-			# are used for those (amongst other article types if possible)
+					
 			articles['abs-cbn'].append({
 				'title': title,
 				'timestamp': timestamp,
 				'content': content,
 				'url': url
 				})
+
 			print("Added to DB: " + url)
-		else:
-			continue
+		## SSL Certification errors
+		# if 'inquirer.net' in url:
+		#	response = opener.open(url)
+		#	soup = BeautifulSoup(response, 'html.parser')
+		# 	title = soup.find('title').text[:-16]
+		# 	timestamp = soup.find('div', id='art_plat').text.strip()
+
+		# 	if '/' in timestamp:
+		# 		timestamp = timestamp.split('/')[1].strip()
+
+		# 	table = soup.find('div', id='article_content').findAll('p')
+		# 	content = []
+
+		# 	for x in table:
+		# 		content.append(''.join(x.findAll(text=True)))
+
+		# 	articles['inquirer'].append({
+		# 		'title': title,
+		# 		'timestamp': timestamp,
+		# 		'content': content,
+		# 		'url': url
+		# 	})
+		# 	
+		# 	print("Added to DB: " + url)
+		if 'philstar.com' in url:
+			response = opener.open(url)
+			soup = BeautifulSoup(response, 'html.parser')
+			title = soup.find('title').text.split('|')[0].strip()
+			timestamp = soup.find('span', attrs={'class': 'article-date-info'}).text[8:]
+			content = []
+			table = soup.find('div', attrs={'class': 'field-item even', 'property': 'content:encoded'}).findAll('p')
+
+			for x in table:
+				content.append(''.join(x.findAll(text=True)))
+
+			articles['philstar'].append({
+				'title': title,
+				'timestamp': timestamp,
+				'content': content,
+				'url': url	
+			})
+
+			print("Added to DB: " + url)
+		if 'news.mb.com.ph' in url:
+			response = opener.open(url)
+			soup = BeautifulSoup(response, 'html.parser')
+			title = soup.find('title').text.split('»')[1].strip()
+			timestamp = soup.find('time').text
+			content = []
+			table = soup.find('article').findAll('p')
+
+			for x in table:
+				content.append(''.join(x.findAll(text=True)))
+
+			articles['mb'].append({
+				'title': title,
+				'timestamp': timestamp,
+				'content': content,
+				'url': url	
+			})
+
+			print("Added to DB: " + url)
 parse()
