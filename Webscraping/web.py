@@ -1,6 +1,7 @@
-import urllib.request
+import timeit, urllib.request
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+from pymongo import MongoClient
 
 site_urls = {
 	'abscbn':					'http://news.abs-cbn.com/news?page=',
@@ -32,9 +33,12 @@ class HTMLopener(urllib.request.FancyURLopener):
 opener = HTMLopener()
 
 def scrape(site_urls):
-	file = open('../static/web_out.txt', 'w')
+	web_urls = 0
+	file = open('static/web_out.txt', 'w')
+	start = timeit.default_timer()
 
 	for key, url in site_urls.items():
+		web_urls += 1
 		if key == 'inquirer':
 			for i in range(0, 4):
 				date = datetime.now() - timedelta(days=i)
@@ -44,7 +48,7 @@ def scrape(site_urls):
 				for article in articles:
 					file.write(article.get('href') + '\n')
 					print(article.get('href'))
-		if key == 'abscbn':
+		elif key == 'abscbn':
 			for i in range (1, 5):
 				response = opener.open(url + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
@@ -52,7 +56,7 @@ def scrape(site_urls):
 				for article in articles:
 					file.write('http://news.abs-cbn.com' + article.get('href') + '\n')
 					print('http://news.abs-cbn.com' + article.get('href'))
-		if key == 'philstar-headlines' or 'philstar-nation':
+		elif key == 'philstar-headlines' or 'philstar-nation':
 			for i in range (1, 5):
 				response = opener.open(url + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
@@ -60,7 +64,7 @@ def scrape(site_urls):
 				for article in articles:
 					file.write('http://www.philstar.com' + article.get('href') + '\n')
 					print('http://www.philstar.com' + article.get('href'))
-		if key == 'mb-national' or 'mb-metro' or 'mb-luzon' or 'mb-visayas' or 'mb-mindanao' or 'mb-environment-nature':
+		elif key == 'mb-national' or 'mb-metro' or 'mb-luzon' or 'mb-visayas' or 'mb-mindanao' or 'mb-environment-nature':
 			for i in range (1, 5):
 				response = opener.open(url + str(i))
 				soup = BeautifulSoup(response, 'html.parser')
@@ -68,14 +72,24 @@ def scrape(site_urls):
 				for article in articles:
 					file.write(article.get('href') + '\n')
 					print(article.get('href'))
-		# if key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
-		# 	for i in range (0, 4):
-		# 		response = opener.open(url + str(i*10))
-		# 		soup = BeautifulSoup(response, 'html.parser')
-		# 		articles = soup.select('h4 > a')
-		# 		for article in articles:
-		# 			file.write('https://www.rappler.com' + article.get('href') + '\n')
-		# 			print('https://www.rappler.com' + article.get('href'))
+		elif key == 'rappler-nation' or 'rappler-move-ph' or 'rappler-life-health' or 'rappler-matters-numbers' or 'rappler-specials' or 'rappler-environment':
+			for i in range (0, 4):
+				response = opener.open(url + str(i*10))
+				soup = BeautifulSoup(response, 'html.parser')
+				articles = soup.select('h4 > a')
+				for article in articles:
+					file.write('https://www.rappler.com' + article.get('href') + '\n')
+					print('https://www.rappler.com' + article.get('href'))
+	stop = timeit.default_timer()
+	web_time = stop - start
 	file.close()
+
+	client = MongoClient()
+	logs = client.scrape.web_logs
+	logs.insert({
+    	'date': datetime.now(),
+    	'web_urls': web_urls,
+    	'web_time': web_time,
+    })
 
 scrape(site_urls)

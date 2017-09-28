@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 http://www.gmanetwork.com/news/story/627580/news/ulatfilipino/sino-si-valeriano-abanador-na-kinikilalang-bayani-ng-balangiga
 http://www.gmanetwork.com/news/story/627579/news/nation/duterte-not-blaming-any-country-for-drug-trade-palace-clarifies
 http://www.gmanetwork.com/news/story/627577/news/nation/solons-back-sereno-s-move-to-assert-right-to-cross-examine-witnesses
@@ -14,6 +15,23 @@ http://www.gmanetwork.com/news/story/627565/news/nation/vp-leni-denies-links-to-
 http://www.gmanetwork.com/news/story/627562/news/ulatfilipino/trillanes-kikilos-vs-koko-pimentel-kapag-di-inalis-si-gordon-sa-blue-ribbon-panel
 http://www.gmanetwork.com/news/story/627559/news/pinoyabroad/ex-gma-show-contestant-becomes-inaugural-winner-of-michael-bolton-s-singing-contest
 http://www.gmanetwork.com/news/story/627574/cbb/gma-pinoy-tv-wins-three-top-awards-in-us-marketing-tilt
+=======
+http://www.gmanetwork.com/news/story/627469/news/nation/lacson-sees-signs-of-cover-up-in-atio-castillo-s-hazing-case
+http://www.gmanetwork.com/news/story/627468/news/metro/atio-s-body-half-embalmed-when-found-by-parents
+http://www.gmanetwork.com/news/story/627467/news/ulatfilipino/barangay-nabulabog-na-nagsimula-sa-away-ng-magpinsan-na-nauwi-sa-batuhan
+http://www.gmanetwork.com/news/story/627465/news/ulatfilipino/saudi-arabia-muling-pinalawig-ang-amnestiya-sa-mga-dayuhang-iligal-na-nananatili-sa-kanilang-bansa
+http://www.gmanetwork.com/news/story/627464/news/nation/lacson-on-sws-survey-we-should-take-it-seriously
+http://www.gmanetwork.com/news/story/627463/news/ulatfilipino/naglalambingan-na-mag-lolo-patay-nang-bumagsak-sa-bahay-nila-ang-isang-malaking-trak
+http://www.gmanetwork.com/news/story/627462/news/nation/some-lawmakers-say-they-too-doubt-police-version-of-events-in-drug-killings
+http://www.gmanetwork.com/news/story/627458/news/nation/senate-receives-2018-budget-proposal-from-house-to-finish-before-oct-12-break
+http://www.gmanetwork.com/news/story/627457/news/nation/raps-filed-versus-teenagers-in-cat-cruelty-video
+http://www.gmanetwork.com/news/story/627454/news/metro/atio-castillo-hazing-suspect-solano-can-t-be-released-just-yet-mpd-says
+http://www.gmanetwork.com/news/story/627441/news/nation/explosive-laced-vest-raises-concern-that-maute-might-resort-to-suicide-bombers
+http://www.gmanetwork.com/news/story/627451/news/ulatfilipino/babae-na-kabibili-lang-ng-bahay-natagpuang-patay-sa-gilid-ng-kalsada-sa-cebu
+http://www.gmanetwork.com/news/story/627449/news/nation/pnp-hits-questions-in-sws-poll-on-drug-killings
+http://www.gmanetwork.com/news/story/627447/news/metro/atio-s-uncle-to-aegis-juris-fratmen-he-would-ve-made-your-fraternity-great
+http://www.gmanetwork.com/news/story/627446/news/ulatfilipino/agawan-sa-pasahero-ng-2-tricycle-driver-nauwi-sa-suntukan
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://www.gmanetwork.com/news/story/627392/cbb/early-christmas-surprises-with-rgma-pera-sorpresa
 http://www.gmanetwork.com/news/story/627077/cbb/adamson-university-holds-4th-st-vincent-de-paul-national-awards
 http://www.gmanetwork.com/news/story/626213/cbb/dlsu-and-dost-pcieerd-host-nexcities-workshop
@@ -28,9 +46,13 @@ http://www.gmanetwork.com/news/story/623309/cbb/kapuso-foundation-magnolia-chick
 http://www.gmanetwork.com/news/story/618482/cbb/gma-launches-its-biggest-network-promo-to-date-kapuso-milyonation
 http://www.gmanetwork.com/news/story/617604/cbb/un-escap-serdef-partner-for-climate-finance-project-in-phl
 http://www.gmanetwork.com/news/story/616446/cbb/gma-kapuso-foundation-renews-partnership-with-cdo-foodsphere
+<<<<<<< HEAD
 http://www.gmanetwork.com/news/story/627520/scitech/science/fourth-gravitational-wave-is-detected-with-european-help
 http://www.gmanetwork.com/news/story/627476/scitech/weather/expect-isolated-rainshowers-over-metro-manila
 http://www.gmanetwork.com/news/story/627473/scitech/science/czech-brewery-uses-crayfish-to-check-water-quality
+=======
+http://www.gmanetwork.com/news/story/616288/cbb/gma-kapuso-foundation-returns-to-iligan-lanao-norte-for-3rd-wave-of-relief-ops
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://www.gmanetwork.com/news/story/627460/scitech/science/russia-us-shoot-for-the-moon-with-joint-lunar-station-project
 http://www.gmanetwork.com/news/story/627398/scitech/science/energy-from-water-evaporation-maybe
 http://www.gmanetwork.com/news/story/627371/scitech/science/newly-discovered-protein-could-help-diagnose-chronic-brain-disease-study
@@ -43,6 +65,12 @@ http://www.gmanetwork.com/news/story/627244/scitech/technology/first-arete-exhib
 http://www.gmanetwork.com/news/story/627186/scitech/technology/phl-joins-first-esports-competition-in-asian-games-in-turkmenistan
 http://www.gmanetwork.com/news/story/627184/scitech/science/nobel-foundation-increases-cash-award-for-prizes
 http://www.gmanetwork.com/news/story/627182/scitech/technology/obama-personally-warned-zuckerberg-over-fake-news-report
+<<<<<<< HEAD
+=======
+http://www.gmanetwork.com/news/story/627181/scitech/weather/maria-likely-to-become-tropical-storm-tuesday-night-or-wednesday-nhc
+http://www.gmanetwork.com/news/story/627173/scitech/science/botanical-gardens-a-lifeboat-for-threatened-plants
+http://www.gmanetwork.com/news/story/627143/scitech/science/our-sleep-patterns-are-inherited-from-hunter-gatherers-says-study
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://www.gmanetwork.com/news/story/626988/serbisyopubliko/walangpasok/class-cancellations-for-monday-sept-25-2017
 http://www.gmanetwork.com/news/story/626938/serbisyopubliko/transportation/vehicles-passing-nlex-sctex-to-be-stopped-during-dry-run-convoy-travel
 http://www.gmanetwork.com/news/story/626897/serbisyopubliko/missingpersons/missing-person-alexandre-cruz-gerona
@@ -58,7 +86,10 @@ http://www.gmanetwork.com/news/story/625470/serbisyopubliko/transportation/cance
 http://www.gmanetwork.com/news/story/625416/serbisyopubliko/class-cancellations-for-tuesday-sept-12-2017
 http://www.gmanetwork.com/news/story/625315/serbisyopubliko/transportation/canceled-flights-on-monday-sept-11-2017
 http://www.gmanetwork.com/news/story/625036/serbisyopubliko/transportation/mmda-issues-traffic-advisory-ahead-of-road-reblocking-repairs
+<<<<<<< HEAD
 http://www.gmanetwork.com/news/story/627544/newstv/ang-pinaka-lists-down-the-most-famous-pinoy-dishes-abroad
+=======
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://www.gmanetwork.com/news/story/627422/newstv/top-6-pinoy-almusal-ihahain-sa-pinas-sarap
 http://www.gmanetwork.com/news/story/627415/newstv/i-juander-paano-nagbago-ang-porma-ni-juan-sa-paglipas-ng-panahon
 http://www.gmanetwork.com/news/story/627122/newstv/kaso-ng-mga-pulis-na-pumatay-umano-ng-ilang-menor-de-edad-tatalakayin
@@ -73,6 +104,7 @@ http://www.gmanetwork.com/news/story/626399/newstv/taal-dishes-ihahain-sa-pinas-
 http://www.gmanetwork.com/news/story/626163/newstv/international-cuisines-tampok-sa-good-news
 http://www.gmanetwork.com/news/story/625986/newstv/p1-000-budget-ng-chr-tatalakayin-sa-bawal-ang-pasaway
 http://www.gmanetwork.com/news/story/625967/newstv/kuwento-ng-pamilya-sua-ng-masbate-tunghayan-sa-reel-time
+<<<<<<< HEAD
 http://www.gmanetwork.com/news/photo/236421/aussie-nabbed-for-a-string-of-drug-raps
 http://www.gmanetwork.com/news/photo/236415/ping-files-raps-vs-faeldon-at-ombudsman
 http://www.gmanetwork.com/news/photo/236405/book-fetes-38-888-888-chicken-barbecues-as-aristocrat-turns-80
@@ -105,6 +137,39 @@ http://www.gmanetwork.com/news/video/428256/l/pres-duterte-binigyan-daw-ng-10-ar
 http://www.gmanetwork.com/news/video/428255/l/militar-magsasagwa-ng-airstrike-sa-lake-lanao
 http://www.gmanetwork.com/news/story/627546/publicaffairs/surfer-kids-ng-siargao-magpapakitang-gilas-sa-aha
 http://www.gmanetwork.com/news/story/627541/publicaffairs/kaso-ng-pangmomolestiya-sa-isang-bata-sisiyasatin-sa-imbestigador
+=======
+http://www.gmanetwork.com/news/story/625884/newstv/day-off-goes-to-korea
+http://www.gmanetwork.com/news/photo/236345/uaap-ateneo-remains-unbeaten-keeps-ust-winless
+http://www.gmanetwork.com/news/photo/236342/uaap-tolentino-leads-feu-past-nu
+http://www.gmanetwork.com/news/photo/236335/atio-laid-to-rest
+http://www.gmanetwork.com/news/photo/236334/atio-laid-to-rest
+http://www.gmanetwork.com/news/photo/236325/sotto-calls-for-an-end-to-the-killing-of-minors
+http://www.gmanetwork.com/news/photo/236315/relatives-and-friends-of-atio-castillo-say-their-final-goodbye
+http://www.gmanetwork.com/news/photo/236314/sotto-calls-for-an-end-to-the-killing-of-minors
+http://www.gmanetwork.com/news/photo/236313/sandiganbayan-conducts-earthquake-drill
+http://www.gmanetwork.com/news/photo/236311/sandiganbayan-justices-join-quake-drill
+http://www.gmanetwork.com/news/photo/236297/various-weapons-confiscated-at-quezon-city-jail-raid
+http://www.gmanetwork.com/news/photo/236288/atio-s-loyal-retriever-howled-at-his-wake
+http://www.gmanetwork.com/news/photo/236286/solano-in-his-detention-cell
+http://www.gmanetwork.com/news/photo/236285/group-urges-us-to-return-3-balangiga-bells
+http://www.gmanetwork.com/news/photo/236281/di-o-warns-of-unchecked-corruption-at-sbma-with-his-exit
+http://www.gmanetwork.com/news/photo/236280/bjmp-conducts-oplan-galugad-in-qc-jail
+http://www.gmanetwork.com/news/video/428183/l/babaeng-driver-binatikos-dahil-nakipagsagutan-sa-isang-ambulance-driver
+http://www.gmanetwork.com/news/video/428182/l/mag-lolo-patay-nang-mabagsakan-ng-container-truck-na-nahulog-mula-sa-flyover
+http://www.gmanetwork.com/news/video/428181/l/asian-inspired-na-may-touch-ng-western-at-european-food-hatid-ng-isang-resto-sa-makati
+http://www.gmanetwork.com/news/video/428180/l/gabby-concepcion-nabanggit-ni-pang-duterte-imbes-na-gabby-lopez-nang-batikusin-ang-abs-cbn
+http://www.gmanetwork.com/news/video/428179/l/4-na-pekeng-traffic-enforcer-hinuli-ng-mga-otoridad
+http://www.gmanetwork.com/news/video/428178/l/binatilyong-lulong-umano-sa-pagsinghot-ng-solvent-bangkay-nang-nakita-sa-sapa
+http://www.gmanetwork.com/news/video/428177/l/alyas-utoy-posibleng-itinumba-at-hindi-napagkamalan-lang-ayon-sa-pulisya
+http://www.gmanetwork.com/news/video/428176/l/binatilyong-nasangkot-sa-rambol-natamaan-ng-warning-shot-ng-naka-police-uniform
+http://www.gmanetwork.com/news/video/428175/l/hustisya-panawagan-ng-pamilya-at-mga-kaibigan-nang-ilibing-si-atio-castillo
+http://www.gmanetwork.com/news/video/428174/l/may-ari-ng-botika-sa-bulacan-patay-matapos-barilin-ng-lalaki-gamit-ang-sumpak
+http://www.gmanetwork.com/news/video/428173/l/motorista-nakipagtalo-sa-driver-ng-ambulansyang-may-pasyenteng-kritikal-ang-kondisyon
+http://www.gmanetwork.com/news/video/428172/l/malaca-ang-di-raw-itinalaga-ni-pang-duterte-si-martin-di-o-bilang-dilg-undersecretary
+http://www.gmanetwork.com/news/video/428171/l/dapat-makipagtulungan-ang-amerika-sa-pilipinas-para-masugpo-ang-bamboo-triad-pang-duterte
+http://www.gmanetwork.com/news/video/428170/l/pang-duterte-muling-binira-ang-abs-cbn-dahil-di-raw-inere-ang-campaign-ad-niya
+http://www.gmanetwork.com/news/video/428169/l/mga-foreign-suicide-bomber-posibleng-ginagamit-na-rin-daw-ng-mga-maute-isis
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://www.gmanetwork.com/news/story/627124/publicaffairs/kapuso-teen-star-bianca-umali-ibabahagi-ang-kanyang-tunay-na-buhay
 http://www.gmanetwork.com/news/story/627089/publicaffairs/mga-insidente-ng-pamamaril-tinutukan-ng-alisto
 http://www.gmanetwork.com/news/story/626842/publicaffairs/menstrual-cramps-o-dysmenorrhea-tatalakayin-sa-pinoy-md
@@ -118,6 +183,7 @@ http://www.gmanetwork.com/news/story/626221/publicaffairs/kapuso-comedian-na-si-
 http://www.gmanetwork.com/news/story/626003/publicaffairs/alaala-a-martial-law-special-ngayong-sep-17-na-sa-gma-network
 http://www.gmanetwork.com/news/story/625999/publicaffairs/alaala-a-martial-law-special-airs-this-september-17-on-gma-network
 http://www.gmanetwork.com/news/story/625987/publicaffairs/mga-makabagong-pinoy-wrestler-kilalanin-sa-front-row
+<<<<<<< HEAD
 http://sports.inquirer.net/266616/malaysia-bans-travel-north-korea-football-match-postponed
 http://sports.inquirer.net/266611/st-benilde-san-beda-sweep-way-ncaa-table-tennis-crowns
 http://newsinfo.inquirer.net/934058/scs-new-ruling-prohibits-naming-of-victims-in-sensitive-cases
@@ -236,6 +302,72 @@ http://feedproxy.google.com/~r/rappler/~3/ydWtW3t3aBE/183595-legislative-franchi
 http://feedproxy.google.com/~r/rappler/~3/ltJi7qCoEDY/183594-massive-yes-vote-iraqi-kurd-independence-referendum
 http://feedproxy.google.com/~r/rappler/~3/gkyqRu-RYmI/183591-landslide-block-access-cebu-tourist-spots
 http://feedproxy.google.com/~r/rappler/~3/l1Ir5t3cTxc/183590-marawi-houses-destroyed-lilod
+=======
+http://www.gmanetwork.com/news/story/625983/publicaffairs/t-g-i-s-barkada-may-mini-reunion-sa-road-trip
+http://www.gmanetwork.com/news/story/625981/publicaffairs/pinay-na-naging-masahista-sa-kuwait-tampok-sa-tadhana
+http://entertainment.inquirer.net/243902/harrison-ford-feeling-51-75-happy-back-rick-deckard
+http://entertainment.inquirer.net/243899/birdshot-ph-oscar-bet
+http://entertainment.inquirer.net/243896/on-the-move-again
+http://usa.inquirer.net/6938/memorial-wwii-comfort-women-unveiled-san-francisco
+http://usa.inquirer.net/6931/dept-homeland-security-monitor-immigrants-social-media-history
+http://usa.inquirer.net/6935/filipinos-los-osos-calif-hold-bbq-benefit-hurricane-harvey-survivors
+http://usa.inquirer.net/6928/online-health-care-training-good-live-classroom-may-still-best
+http://usa.inquirer.net/6924/sf-asian-art-museum-embark-90m-expansion
+http://entertainment.inquirer.net/243894/injudicious-downbeat-complications-erode-concluding-drama-series-golden-gains
+http://entertainment.inquirer.net/243891/lady-gaga-postpones-world-tour-due-chronic-illness
+http://newsinfo.inquirer.net/933896/hurricane-maria-us-aid-to-puerto-rico-2
+http://sports.inquirer.net/266553/ginebra-thwarts-san-miguels-grand-slam-bid-enters-semis
+http://business.inquirer.net/237572/rodrigo-duterte-philippine-airlines-lucio-tan-navigational-fees
+http://newsinfo.inquirer.net/933894/philippine-news-updates-crime-riding-in-tandem-hitmen-masbate-dionne-lopez
+http://technology.inquirer.net/67373/valve-pulls-almost-200-fake-games-off-steam-store
+http://newsinfo.inquirer.net/933890/mexico-city-earthquake-evacuees-francisco-kino-school
+http://technology.inquirer.net/67359/watch-old-macbook-converted-into-a-laptop-by-techie-for-his-galaxy-8-smartphone
+http://entertainment.inquirer.net/243867/american-vlogger-catches-pacquiaos-ig-commenting-on-her-live-video-you-can-call-me-anytime
+http://newsinfo.inquirer.net/933879/philippine-news-updates-2018-general-appropriations-bill-senate-sen-loren-legarda
+http://entertainment.inquirer.net/243853/gp-reyes-opens-up-on-tough-childhood-raising-baby-olivia-i-want-her-to-have-what-i-never-did
+http://www.philstar.com/entertainment/2017/09/28/1743527/game-thrones-stars-kit-harington-rose-leslie-engaged
+http://www.philstar.com/headlines/2017/09/27/1743459/majority-senators-slam-their-alleged-exclusion-senate-resolution
+http://www.philstar.com/sports/2017/09/27/1743524/eagles-repel-tigers-tams-seize-solo-4th
+http://www.philstar.com/business/2017/09/27/1743428/isis-threat-cools-outsourcing-boom-philippines-industry-says
+http://www.philstar.com/sports/2017/09/27/1743403/kings-spoil-beermens-grand-slam-bid
+http://www.philstar.com/sports/2017/09/27/1743294/norwood-steps-aids-rain-or-shines-survival
+http://www.philstar.com/headlines/2017/09/27/1743255/defense-chief-unaware-source-duterte-info-chinese-triads
+http://www.philstar.com/headlines/2017/09/27/1743248/pacquiao-joining-22-year-old-celebs-livestream-no-malice-there
+http://www.philstar.com/business/2017/09/27/1743237/cusi-invites-businessmen-invest-aseans-energy-industry
+http://www.philstar.com/headlines/2017/09/27/1743239/pimentel-schools-should-tighten-regulations-frat-activities
+http://www.philstar.com/headlines/2017/09/28/1743494/rody-slams-gabby-concepcion
+http://www.philstar.com/headlines/2017/09/28/1743495/army-captures-npa-camp-near-batangas-city
+http://www.philstar.com/headlines/2017/09/28/1743479/doj-orders-release-hazing-suspect
+http://www.philstar.com/headlines/2017/09/28/1743496/farinas-defends-congress-police-bill
+http://www.philstar.com/headlines/2017/09/28/1743481/half-pinoys-doubt-cops-nanlaban-drug-deaths
+http://www.philstar.com/headlines/2017/09/28/1743497/cayetano-pays-tribute-us-senator-mccain
+http://www.philstar.com/headlines/2017/09/28/1743482/goodbye-atio-kin-lament-brutal-murder
+http://www.philstar.com/headlines/2017/09/28/1743483/palace-welcomes-probe-rodys-wealth
+http://www.philstar.com/headlines/2017/09/28/1743484/heroes-replace-govt-execs-office-photos
+http://www.philstar.com/headlines/2017/09/28/1743485/palace-welcomes-petition-asking-sc-probe-ejks
+http://www.philstar.com/nation/2017/09/28/1743355/cop-gunned-down
+http://www.philstar.com/nation/2017/09/28/1743341/afp-bracing-npa-attacks-negros
+http://www.philstar.com/nation/2017/09/28/1743343/cop-sacked-theft-slain-couples-phone
+http://www.philstar.com/nation/2017/09/28/1743346/7-hurt-basilan-maguindanao-blasts
+http://www.philstar.com/nation/2017/09/28/1743350/navy-boat-captain-relieved-over-pangasinan-sea-collision
+http://www.philstar.com/nation/2017/09/28/1743352/house-us-return-balangiga-bells
+http://www.philstar.com/nation/2017/09/28/1743353/ex-agusan-mayor-pays-fine-malversation
+http://www.philstar.com/nation/2017/09/28/1743354/4-drug-suspects-slain-luzon
+http://www.philstar.com/nation/2017/09/27/1743230/nationwide-quake-drill-held-today
+http://www.philstar.com/nation/2017/09/27/1743218/4-hurt-blast-near-army-training-center-maguindanao
+http://sports.mb.com.ph/?p=23078
+http://sports.mb.com.ph/?p=23070
+http://sports.mb.com.ph/?p=23061
+http://lifestyle.mb.com.ph/?p=20109
+http://lifestyle.mb.com.ph/?p=20102
+http://lifestyle.mb.com.ph/?p=20129
+http://entertainment.mb.com.ph/?p=22171
+http://news.mb.com.ph/?p=428954
+http://lifestyle.mb.com.ph/?p=20101
+http://entertainment.mb.com.ph/?p=22207
+http://feedproxy.google.com/~r/rappler/~3/ltJi7qCoEDY/183594-massive-yes-vote-iraqi-kurd-independence-referendum
+http://feedproxy.google.com/~r/rappler/~3/gkyqRu-RYmI/183591-landslide-block-access-cebu-tourist-spots
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://feedproxy.google.com/~r/rappler/~3/mJQ_Ws509Oc/183588-san-miguel-loses-ginebra-grand-slam
 http://feedproxy.google.com/~r/rappler/~3/1J8HOWjjw00/183586-caloocan-robbery-charges-policemen
 http://feedproxy.google.com/~r/rappler/~3/y_64tZbsRgk/183585-ancajas-defend-jamie-conlan
@@ -280,7 +412,10 @@ http://feedproxy.google.com/~r/rappler/~3/9Kq7qr3x0vo/183538-dyson-electric-cars
 http://feedproxy.google.com/~r/rappler/~3/NMT6dgWtUVE/183537-el-nido-daily-visitor-limits-tourist-sites
 http://feedproxy.google.com/~r/rappler/~3/qKtB31IAWq8/183536-malacanang-replace-officials-philippine-heroes-photos
 http://feedproxy.google.com/~r/rappler/~3/ZHb7FvbZzJc/183535-pnp-anti-drugs-operations-deaths-inquest-reports
+<<<<<<< HEAD
 http://feedproxy.google.com/~r/rappler/~3/PR1j8iGLj1w/183534-uber-driver-plays-puzzle
+=======
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
 http://feedproxy.google.com/~r/rappler/~3/hiyoWRG4DtA/183531-john-paul-solano-release-mpd-motion-for-reconsideration-horacio-castillo-iii
 http://feedproxy.google.com/~r/rappler/~3/_XXose6EKIU/183529-tolentino-leads-tamaraws-uaap-season-80
 http://feedproxy.google.com/~r/rappler/~3/Yk9g7xn0APA/183528-filipinos-police-nanlaban-drug-war-killings-sws-survey
@@ -298,3 +433,63 @@ http://feedproxy.google.com/~r/rappler/~3/SYVoc-CyOVw/183516-taiwan-duterte-clai
 http://feedproxy.google.com/~r/rappler/~3/SIpMlV5fHDw/183515-house-harry-roque-journalist-protection-act
 http://feedproxy.google.com/~r/rappler/~3/J8LGAtprELc/183513-mattis-stoltenberg-afghanistan-visit
 http://feedproxy.google.com/~r/rappler/~3/KjbQitDiWMs/183511-tokyo-governor-koike-vows-break-from-past-new-party
+<<<<<<< HEAD
+=======
+http://feedproxy.google.com/~r/rappler/~3/O0_nUrQD50g/183508-civil-service-commission-redacted-salns-duterte-cabinet
+http://feedproxy.google.com/~r/rappler/~3/VWBOWu-GioY/183507-rodgers-unity-demonstrations-continue-nfl
+http://feedproxy.google.com/~r/rappler/~3/Ng193vc8CMw/183505-psc-resolution-corruption-ph-sports
+http://feedproxy.google.com/~r/rappler/~3/X3GQZ19NJ4k/183504-k-to-12-technical-vocational-laboratories-deped-budget-cut-2018
+http://feedproxy.google.com/~r/rappler/~3/YEZM5Iqsbfg/183503-netizens-reactions-280characters-twitter
+http://feedproxy.google.com/~r/rappler/~3/J_QJ6mArTsE/183502-kit-harington-rose-leslie-engaged
+http://feedproxy.google.com/~r/rappler/~3/tfyivMPyw6U/183500-qatar-fifa-urged-protect-workers-desert-heat
+http://feedproxy.google.com/~r/rappler/~3/CHunhVXkRBs/183496-marlon-stockinger-birthday-message-pia-wurtzbach
+http://feedproxy.google.com/~r/rappler/~3/SWPx4hSwJa4/183495-us-imposes-stiff-tariffs-canada-bombardier
+http://feedproxy.google.com/~r/rappler/~3/49C6HIQAMF4/183494-doj-release-solano-manila-police-horacio-castillo-iii
+http://feedproxy.google.com/~r/rappler/~3/adKvMkjhjoE/183493-sbma-martin-dino-dilg-undersecretary-barangay-affairs
+http://feedproxy.google.com/~r/rappler/~3/dz2TXPArQc0/183490-alstom-siemens-merger-announcement
+http://feedproxy.google.com/~r/rappler/~3/lycSH0xLbJQ/183488-it-sequel-release-date
+http://feedproxy.google.com/~r/rappler/~3/m3zHoomjw1M/183487-thewrap-september-27-2017-midday-edition
+http://feedproxy.google.com/~r/rappler/~3/eFQMypJr2-k/183486-alabama-senate-republican-runoff-results-moore-strange
+http://feedproxy.google.com/~r/rappler/~3/2heWHLUE6cA/183484-khloe-kardashian-tristan-thompson-pregnant
+http://feedproxy.google.com/~r/rappler/~3/19pZ8o3euiw/183479-judge-dagala-immorality-duterte-narcolist
+http://feedproxy.google.com/~r/rappler/~3/EH4PsFGHewo/183454-dswd-new-equipment-rapid-emergency-communications
+http://feedproxy.google.com/~r/rappler/~3/26RaGbtIklo/183476-trump-defends-response-puerto-rico-hurricane-disaster
+http://feedproxy.google.com/~r/rappler/~3/yMAo_21JnmE/183450-filipinos-london-day-of-protest
+http://feedproxy.google.com/~r/rappler/~3/ZIkmviQ4PvM/183475-macron-speech-proposals-eu-reforms
+http://feedproxy.google.com/~r/rappler/~3/XTir62FU7W4/183474-us-court-decision-asylum-amos-yee-singapore-teen-blogger
+http://feedproxy.google.com/~r/rappler/~3/xqHRi6vEyeY/183473-angola-lourenco-sworn-in-president
+http://feedproxy.google.com/~r/rappler/~3/YLq6nbXrB4M/183472-senate-republicans-pull-plug-latest-obamacare-repeal-bid
+http://feedproxy.google.com/~r/rappler/~3/aRg8MhVWBK8/183465-medical-marijuana-cannabis-house-bill-rodolfo-albano
+http://feedproxy.google.com/~r/rappler/~3/iyjBZYkeecE/183471-twitter-new-280-character-tweet-limit
+http://feedproxy.google.com/~r/rappler/~3/jK_q5v7cgns/183470-saudi-arabia-allow-women-drive
+http://feedproxy.google.com/~r/rappler/~3/faQP26JWJHE/183395-philippines-global-competitiveness-index-2017-wef
+http://feedproxy.google.com/~r/rappler/~3/srtaNmrwUi8/183443-explainer-how-tropical-cyclones-typhoons-hurricanes-form
+http://feedproxy.google.com/~r/rappler/~3/OHXVUcUqBwo/183469-bird-flu-90-day-waiting-period-pampanga
+http://feedproxy.google.com/~r/rappler/~3/gxtQwB0A_lI/183499-horacio-castillo-iii-laid-to-rest
+http://feedproxy.google.com/~r/rappler/~3/R5HjrdCq-W4/183467-star-magic-ball-looks-maricar-reyes-poon
+http://feedproxy.google.com/~r/rappler/~3/2RiztrD2Nuk/183466-star-trounces-nlex-semis-pba-governors-cup
+http://feedproxy.google.com/~r/rappler/~3/IMDVA_1kc_0/183464-live-blog-philippines-vs-china-fiba-asia-champions-cup-september-2017
+http://feedproxy.google.com/~r/rappler/~3/Fxr3wHi9emA/183463-petrochimi-blow-out-chooks-2017-fiba-asia-champions-cup
+http://feedproxy.google.com/~r/rappler/~3/GyiBCQ1pX_E/183462-equifax-ceo-steps-down
+http://feedproxy.google.com/~r/rappler/~3/kNGzgrLB34Y/183461-duterte-china-taiwan-triad-illegal-drugs
+http://feedproxy.google.com/~r/rappler/~3/7AxvLRDR_A4/183460-leni-robredo-teaching-concepcion-integrated-school
+http://feedproxy.google.com/~r/rappler/~3/8ODNdvYNhrY/183459-noven-belleza-rape-case-tawag-ng-tanghalan
+http://feedproxy.google.com/~r/rappler/~3/HmeDS623MKA/183458-nestle-tackles-ocean-polluter-tag-philippines
+http://feedproxy.google.com/~r/rappler/~3/tnmL_QmCHLI/183457-gaita-fores-harvard-balut-lecture
+http://feedproxy.google.com/~r/rappler/~3/NzcSl-QP_aw/183456-intrigue-court-of-pope-francis
+http://feedproxy.google.com/~r/rappler/~3/Gzk_NpemlL4/183455-filipina-artists-migration-exhibition-berlin
+http://feedproxy.google.com/~r/rappler/~3/602gYakbe6U/183453-live-jam-shes-coming-home
+http://feedproxy.google.com/~r/rappler/~3/Yp5pMGXAVIQ/183451-merkel-seeks-partners-splintered-germany
+http://feedproxy.google.com/~r/rappler/~3/nN3x5fBtVnY/183449-monk-led-mob-attacks-rohingya-refugees-sri-lanka
+http://feedproxy.google.com/~r/rappler/~3/KIabhdz4bng/183448-house-representatives-bill-hazing-ban
+http://feedproxy.google.com/~r/rappler/~3/GdbxTHrtUyU/183447-russia-threatens-2018-facebook-ban
+http://feedproxy.google.com/~r/rappler/~3/RQnyjittsB0/183446-duterte-marawi-war-arrest-warrant-drug-lord
+http://feedproxy.google.com/~r/rappler/~3/-JFBPKU6ix0/183445-walker-poke-the-bear-pba
+http://feedproxy.google.com/~r/rappler/~3/XhCebWRccSM/183444-hundreds-stranded-transport-strike
+http://feedproxy.google.com/~r/rappler/~3/r4cBJtrd_fU/183442-firefighters-rescue-atio-castillo-visit-wake
+http://feedproxy.google.com/~r/rappler/~3/s1pw6x6_hDM/183441-kean-cipriano-chynna-ortaleza-prenup-photos
+http://feedproxy.google.com/~r/rappler/~3/zFlZZJxoV3E/183440-angola-joao-lourenco-president
+http://feedproxy.google.com/~r/rappler/~3/yYoaeaYJaUo/183436-philippines-united-states-hijacking-tempest-wind-counterterrorism-drill
+http://feedproxy.google.com/~r/rappler/~3/RLsU0nrBqf0/183435-ltfrb-require-drug-testing-puv-grab-uber-drivers
+http://feedproxy.google.com/~r/rappler/~3/Etwcr7gIwtE/183434-mlbb-lipstick-shades-filipina-maybelline
+>>>>>>> 2c413bd2caf587b7f0774402eb1c3ab7d029dbd3
