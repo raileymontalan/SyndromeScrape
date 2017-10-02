@@ -1,20 +1,31 @@
 # SyndromeScrape
 
-To run the server: 
+### Before running the server
 ```
 $ mongo
 $ use articles
 ```
+
+### To run the server
+For Mac:
 ```
 $ python3 server.py
 ```
-
-To run webscraping:
+For Windows:
 ```
-$ python3 webscraping/rss.py
-$ python3 webscraping/web.py
-$ python3 webscraping/parse.py
-$ python3 webscraping/insert.py
+$ python server.py
 ```
 
-Static files (TXT, JSON) are located in /static
+### To run webscraping
+For Mac:
+```
+$ python3 scrape.py
+```
+For Windows:
+```
+$ python scrape_win.py
+```
+
+---
+
+Note: Static files (TXT, JSON) are located in */static* directory.
