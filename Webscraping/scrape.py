@@ -23,8 +23,6 @@ sel_feed_urls = {
     'gma-scitech':              'http://www.gmanetwork.com/news/rss/scitech/',
     'gma-serbisyopubliko':      'http://www.gmanetwork.com/news/rss/serbisyopubliko/',
     'gma-newstv':               'http://www.gmanetwork.com/news/rss/newstv/',
-    # 'gma-photo':                'http://www.gmanetwork.com/news/rss/photo/',
-    # 'gma-video':                'http://www.gmanetwork.com/news/rss/video/',
     'gma-publicaffairs':        'http://www.gmanetwork.com/news/rss/publicaffairs/'
     
 }
@@ -179,9 +177,3 @@ web_parse(bs4_file, sel_file)
 # Close files
 bs4_file.close()
 sel_file.close()
-
-
-# Notes: Please parse:
-#   1) Manila Bulletin
-#   2) Rappler
-#   3) GMA (maybe?)
