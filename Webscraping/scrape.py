@@ -22,7 +22,6 @@ sel_feed_urls = {
     'gma-cbb':                  'http://www.gmanetwork.com/news/rss/cbb/',
     'gma-scitech':              'http://www.gmanetwork.com/news/rss/scitech/',
     'gma-serbisyopubliko':      'http://www.gmanetwork.com/news/rss/serbisyopubliko/',
-    'gma-newstv':               'http://www.gmanetwork.com/news/rss/newstv/',
     'gma-publicaffairs':        'http://www.gmanetwork.com/news/rss/publicaffairs/'
     
 }
