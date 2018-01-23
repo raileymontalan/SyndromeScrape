@@ -15,7 +15,7 @@ articles = []
 
 new_articles = 0
 client = MongoClient()
-collection = client.scrape.articles
+collection = client.news.articles
 
 
 class HTMLopener(urllib.request.FancyURLopener):
@@ -45,14 +45,13 @@ def log_parse():
     sel_time = stop - start
 
     # Log the times into the database
-    logs = client.scrape.parse_logs
+    logs = client.news.parse_logs
     logs.insert({
         'date': datetime.now(),
         'new_articles': new_articles,
         'urls': sum(1 for line in open('static/bs4_out.txt')) 
                 + sum(1 for line in open('static/sel_out.txt')),
-        'bs4_time': bs4_time,
-        'sel_time': sel_time
+        'time': bs4_time + sel_time,
         })
 
     # Save all information from articles into a JSON file

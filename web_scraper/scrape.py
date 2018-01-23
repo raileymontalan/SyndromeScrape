@@ -62,7 +62,7 @@ class HTMLopener(urllib.request.FancyURLopener):
               (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
 
 
-def rss_parse(file1, file2):
+def rss_scrape(file1, file2):
     """
     Retrieves article URLs from news feeds.
     Saves URLs to two files: One for articles to be processed using BeautifulSoup,
@@ -97,7 +97,7 @@ def rss_parse(file1, file2):
     rss_time = stop - start
 
     client = MongoClient()
-    logs = client.scrape.rss_logs
+    logs = client.news.rss_scrape_logs
     logs.insert({
         'date': datetime.now(),
         'rss_urls': rss_urls,
@@ -105,7 +105,7 @@ def rss_parse(file1, file2):
         })
 
 
-def web_parse(file1, file2):
+def web_scrape(file1, file2):
     """
     Retrieves article URLs from the pages of news sites.
     Saves URLs to two files: One for articles to be processed using BeautifulSoup,
@@ -154,7 +154,7 @@ def web_parse(file1, file2):
     web_time = stop - start
 
     client = MongoClient()
-    logs = client.scrape.web_logs
+    logs = client.news.web_scrape_logs
     logs.insert({
         'date': datetime.now(),
         'web_urls': web_urls,
@@ -170,8 +170,8 @@ bs4_file = open('static/bs4_out.txt', 'w')
 sel_file = open('static/sel_out.txt', 'w')
 
 # Run parsers
-rss_parse(bs4_file, sel_file)
-web_parse(bs4_file, sel_file)
+rss_scrape(bs4_file, sel_file)
+web_scrape(bs4_file, sel_file)
 
 # Close files
 bs4_file.close()

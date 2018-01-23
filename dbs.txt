@@ -1,0 +1,22 @@
+DB:
+> news
+
+web_scraper collections:
+> new_articles
+>> rss_scrape_logs
+>> web_scrape_logs
+>> parse_logs
+
+classifier collections:
+> infodem_articles
+>> trainer_logs
+>> classifier_logs
+
+text_miner collections:
+> incidents
+> status
+> trends
+>> extractor_logs
+
+server collections:
+>> server_logs

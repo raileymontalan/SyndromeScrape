@@ -5,7 +5,7 @@ from sklearn.externals import joblib
 
 # load new articles from database
 client = MongoClient()
-db = client.scrape
+db = client.news
 new_articles = db.new_articles.find()
 
 
