@@ -1,0 +1,201 @@
+<div class="main-content">
+    <div class="container-fluid" id="projectpage">
+        
+        <div class="content" data-template>
+            <div class="col-md-12 clearfix">
+                <p><a href="app/projects.html" class="ajax-link" data-title="STEM Projects"><i class="ti-angle-left"></i> Back to STEM Projects</a></p>
+            </div>
+
+            <div class="col-md-6">
+                
+                    <div class="card card-plain content-view" >
+                        <!--start of project view -->
+                        <div class="card-header">
+                            <div class="projectTitle"> {{ title }} </div>
+                        </div>
+                        <div class="card-content clearfix">
+                            <div class="btn-group pull-right">
+                                <a href="javascript:" class="btn btn-success btn-sm" onclick='openEdit()'><i class="ti-pencil"></i> | Edit Details</a>
+                                <a href="javascript:" class="btn btn-warning btn-sm" onclick='openShare()'><i class="ti-share"></i> | Add Users</a>
+                            </div>
+                            <p>Author: <b>{{ author }}</b></p>
+                            <p>Date: <b>{{ date | date MMM DD, YYYY }}</b></p>
+                            
+                            <div class="imgbox" style="background-image:url('uploads/images/{{ image }}')"></div>
+
+                            <div>{{ description }}</div>
+                        </div>
+                        <!-- end of project view -->
+                    </div>
+
+                    <div class="card card-plain content-form hidden">
+                        <!--start of hidden form -->
+                        <form method="post" ng-submit="updateProject()" data-toggle="validator" enctype="multipart/form-data" role="form" name="updateProject">
+                            <input id="projectID" name="projectID" type="hidden" value="{{ id }}" />
+                            <div class="card-header">
+                                <input name="projectTitle" class="projectTitle m-b-md form-control" value="{{ title }}" required />
+                            </div>
+                            <div class="card-content clearfix">
+                                <p>Author: <b>{{ author }}</b></p>
+                                <p>Date: <b>{{ date }}</b></p>
+                                
+                                <div class="imgbox" style="background-image:url('uploads/images/{{ image }}')"></div>
+
+                                <br clear="all" />
+                                <p>Browse to change image: <input name="pic" type="file" id="projphoto" /></p>
+                                
+                                <textarea class="form-control" name="description" style="height:300px;" id="wysiwig_simple">{{ description }}</textarea>
+
+                                <hr />
+                                
+                                <div class="pull-right">
+                                <a href="javascript:void(0);" class="btn btn-default btn-sm"  onclick='closeEdit()'><i class="ti-close"></i> | Cancel Edit</a>
+                                <button type="submit" class="btn btn-success btn-sm" id="saveEdit"><i class="ti-save"></i> | Save Project Details</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of hidden form -->
+                    </div>
+                
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="title">Scenarios:</div>
+                        </div>
+                        <div class="pull-right" style="margin-top:4px;">
+                            <button class="btn btn-success btn-sm" data-target="#stemModal"  data-toggle="modal" id="addNewScenario"><i class="ti-plus"></i> Add New Scenario</button>
+                        </div>
+                    </div>
+                    <div class="card-content clearfix">
+                        <div class="input-group pull-left input-group-wide">
+                            <input id="myScenarioFilter" type="text" class="form-control" placeholder="Search Scenarios" onkeyup="filterScenario()">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                        
+                        <div class="col-md-12 text-right hidden" style="margin-top: -3px;">
+                            <label>View as:</label>
+                            <div class="btn-group" data-toggle="buttons" role="group">
+                                <label class="btn btn-default active">
+                                    <input onchange="showas('grid');" type="radio" name="options" id="option2" autocomplete="off"> <i class="glyphicon glyphicon-th"></i> Grid 
+                                </label>
+                                <label class="btn btn-default">
+                                    <input onchange="showas('list');" type="radio" name="options" id="option3" autocomplete="off"> <i class="glyphicon glyphicon-th-list"></i> List 
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <div class="clearfix"></div>
+
+                        <div class="stemlist" style="margin-top:15px;" id="stemScenarios">
+                            <div id="acordeon">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-border panel-default"  data-template-for="scenarios">
+                                        <a data-toggle="collapse" href="#collapse{{ sid }}">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    {{ title }}
+                                                    <i class="ti-angle-down"></i>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapse{{ sid }}" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p class="small details"><i class="fa fa-calendar"></i> {{ date | date MMM DD, YYYY }} | <i class="fa fa-user"></i> {{ author }} </p>
+                                                <p>{{ description }}</p>
+                                                <hr />
+                                                <div class="btn-group pull-right" data-toggle="buttons" role="group">
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-info" data-target="#shareModal"  data-toggle="modal"><i class="ti-share"></i> | Share Scenario</a>
+                                                    <a href="#" class="btn btn-sm btn-success" data-target="#stemModal" data-toggle="modal" title="Edit Scenario" data-page="ajax/scenario.html" data-pid="{{ _parent.id }}" data-sid="{{ sid }}"><i class="ti-pencil"></i> | Edit Scenario</a>
+                                                    <a href="ajax/visualization.html" class="btn btn-sm btn-warning ajax-link" ><i class="ti-loop"></i> | Simulate</a>
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteScenario"><i class="ti-trash"></i> | Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--  end acordeon -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/project.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //render some additional partials
+        //share modal
+        $('#modals').html(""); //clear the modals div first
+        $('#modals').append($('<div>').load('app/partials/sharemodal.html'));
+        $('#modals').append($('<div>').load('app/partials/stemmodal.html'));
+
+        //let us parse the query parameter
+        var hash = location.hash;
+        var qloc = hash.indexOf("?");
+        var query = hash.substr(qloc+1, hash.length);
+        var para = query.split("=");
+        
+        var body = {}
+        cProject = [];
+        //var promise = $.post("http://fassster.ehealth.ph/web_api/emr",
+        var promise = $.post("http://www.romeljohnsantos.com/api/projects.php?id="+para[1],
+        body, function(data) {
+                if(data) {
+                    cProject = {
+                        id: data.id,
+                        date: new Date(data.date),
+                        title: data.title,
+                        author: data.author,
+                        image: data.image,
+                        description: data.description,
+                        scenarios: data.scenarios
+                    }
+                }
+            }, "json");
+    
+        promise.done(function() {
+            console.log(cProject);
+            //display data using template plugin
+            Tempo.prepare("projectpage").render(cProject);
+
+            //let us setup all UI
+            $('.shareSelect').select2({
+                placeholder: "Choose Users",
+                tags: true,
+            });
+
+            //load wysiwig editor for editable textarea
+            TinyMCEStart('#wysiwig_simple', null);
+
+            //trigger image file change
+            $('#projphoto').on('change', function(){
+                readURL(this);
+            });
+
+            //hide preloader
+            $('.preloader').hide();
+        });      
+    });
+
+    //Read URL of new photo and replace image src
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('.imgbox').css('background-image', 'url(' + e.target.result + ')');
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+</script>

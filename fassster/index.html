@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FASSSTER v1.0</title>
+		<meta name="description" content="description">
+		<meta name="author" content="AJWCC">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:100,300,400,500,700|Roboto+Condensed:400,700|Roboto:100,300,400,500" rel="stylesheet">
+		<link href="assets/plugins/select2/select2.css" rel="stylesheet">
+		<link href="assets/css/themify-icons.css" rel="stylesheet">
+		<link href="assets/css/mainui.css" rel="stylesheet">
+		<link href="assets/css/flatblue.css" rel="stylesheet">
+		<link href="assets/css/fassster.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css" />
+		<!-- Make sure you put this AFTER Leaflet's CSS -->
+		<script src="assets/plugins/leaflet/leaflet.js"></script>
+
+		<link rel="stylesheet" href="assets/plugins/leaflet/geocoder.css" />
+		<script src="assets/plugins/leaflet/geocoder.js"></script>
+
+		<link rel="stylesheet" href="assets/plugins/leaflet/markercluster.css" />
+		<script src="assets/plugins/leaflet/markercluster.js"></script>
+		<script src="assets/plugins/leaflet/leaflet-providers.js" ></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body class="perfect-scrollbar-off sidebar-mini flat-blue">
+<div id="no-portrait">
+	<h1><i class="ti-info-alt"></i></h1>
+	<h2>No Portrait View</h2>
+	<p class="lead">Landscape view only for iPads & Tablets. No accessible view for mobile phones.</p>
+</div>
+<!--Start Header-->
+<div id="screensaver">
+	<canvas id="canvas"></canvas>
+	<i class="fa fa-lock" id="screen_unlock"></i>
+</div>
+<div id="modalbox">
+	<div class="lock-modal">
+		<div class="lock-modal-header">
+			<div class="modal-header-name">
+				<span>Basic table</span>
+			</div>
+			<div class="box-icons">
+				<a class="close-link">
+					<i class="fa fa-times"></i>
+				</a>
+			</div>
+		</div>
+		<div class="lock-modal-inner">
+		</div>
+		<div class="lock-modal-bottom">
+		</div>
+	</div>
+</div>
+<!--End Header-->
+
+<!--Start Container-->
+<div id="main" class="wrapper">
+	<div id="sidebar-left" class="sidebar" data-background-color="black" data-active-color="warning">
+	</div>
+	<div class="main-panel">
+		<nav id="topbar" class="navbar navbar-default"></nav>
+		<!-- about slidedown panel -->
+		<div id="about">
+			<div class="about-inner">
+				<h4 class="page-header">FASSSTER Web App</h4>
+				<p>AJWCC</p>
+				<p>Homepage - <a href="http://fassster.ehealth.ph" target="_blank">http://fassster.ehealth.ph</a></p>
+				<p>Email - <a href="mailto:fassster@ehealth.ph">fassster@ehealth.ph</a></p>
+			</div>
+		</div>
+		<!-- preloader -->
+		<div class="preloader">
+			<img src="assets/img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
+		</div>
+		<!-- main content area -->
+		<div id="ajax-content"></div>
+
+	</div>
+</div>
+
+<!-- dynamic modals area -->
+<div id="modals"></div>
+
+<!-- fixed modal to be available in all pages -->
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header bg-success">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="uploadModalLabel">Upload A STEM Project</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+						<label>Project Title</label>
+						<input placeholder="Enter Title" class="form-control" type="text">
+				</div>
+				<div class="form-group">
+						<label>Description</label>
+						<textarea placeholder="Description" class="form-control" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+						<label>STEM Packaged File (ZIP)</label>
+						<input placeholder="Project File" class="" type="file">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button form="shareid" type="submit" class="btn btn-success">Upload</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--End Container-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="http://code.jquery.com/jquery.js"></script>-->
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="assets/plugins/tinymce/tinymce.min.js"></script>
+<script src="assets/plugins/tinymce/jquery.tinymce.min.js"></script>
+<script src="assets/plugins/select2/select2.full.min.js"></script>
+<!-- jQuery Templating plugin -->
+<script src="assets/plugins/tempo.js"></script>
+<!-- jQuery Sesssion plugin -->
+<script src="assets/plugins/jquery.session.js"></script>
+<!-- All functions + document.ready processing -->
+<script src="assets/js/app.js"></script>
+</body>
+</html>
