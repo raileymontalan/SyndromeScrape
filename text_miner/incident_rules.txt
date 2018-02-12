@@ -1,0 +1,23 @@
+{
+	"disease": "dengue/typhoid/fever",
+	"count": "number",
+	"date": "date",
+	"geocode": "geocode",
+	"title": "title",
+	"url": "url"
+}
+
+1. "The number reached 744 in Cagayan Valley"
+	/art /INCIDENT /VERB /COUNT /prep /LOC_NAME
+2. "Calabarzon had the highest with 3,778"
+	/LOC_NAME /verb /art /adj /prep /COUNT
+3. "Autonomous Region of Muslim Mindanao (ARMM) had the lowest with 312"
+	/LOC_NAME /abr /verb /art /adj /prep /COUNT
+4. "infecting more than 1,800 people and killing at least 10, a provincial official said Saturday, July 6."
+	/VERB /ADJ /COUNT /noun /prep /VERB /ADJ /COUNT /art /adj /noun /verb /DATE /DATE
+5. "the highest number of incidents this year was recorded during the month of August: 1,069 cases."
+	/art /adj /INCIDENT /prep /INCIDENT /noun /DATE_TYPE /verb /VERB /adj /art /DATE_TYPE /prep /DATE /COUNT /INCIDENT
+6. "A total of 42 dengue victims from the city have died since January."
+	/art /noun /prep /COUNT /DISEASE /INCIDENT /prep /art /LOC_TYPE /verb /VERB /adj /DATE
+7. "recorded 3 casualties"
+	/verb /COUNT /INCIDENT

@@ -9,7 +9,7 @@ web_scraper collections:
 
 classifier collections:
 > infodem_articles
->> trainer_logs
+>> classifier_trainer_logs
 >> classifier_logs
 
 text_miner collections:
@@ -17,6 +17,9 @@ text_miner collections:
 > status
 > trends
 >> extractor_logs
+>> tagger_trainer_logs
+>> chunker_trainer_logs
+>> relationer_trainer_logs
 
 server collections:
 >> server_logs
