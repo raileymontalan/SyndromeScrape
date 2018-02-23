@@ -1,9 +1,0 @@
-=====DATE=====
-
-=====GEOCODE=====
-1. "ISABELA, Philippines –"
-	Many articles start with the name of the location.
-2. "municipality of Luna in Isabela province in the northern Philippines"
-	/LOC_TYPE /PREP /NAME /PREP /NAME /LOC_TYPE /PREP /ART /ADJ /NAME
-3. "in the country"
-	/prep /art /LOC_NAME

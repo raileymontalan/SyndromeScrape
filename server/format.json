@@ -12,60 +12,7 @@
 		"disease": "typhoid",
 		"count": "504",
 		"date": "2008-03-03",
-		"geocode": {
-         	"address_components" : [
-            	{
-               		"long_name" : "Calamba",
-               		"short_name" : "Calamba",
-               		"types" : [ "locality", "political" ]
-            	},
-            	{
-               		"long_name" : "Laguna",
-               		"short_name" : "Laguna",
-               		"types" : [ "administrative_area_level_2", "political" ]
-            	},
-            	{
-               		"long_name" : "Calabarzon",
-               		"short_name" : "Calabarzon",
-               		"types" : [ "administrative_area_level_1", "political" ]
-            	},
-            	{
-               		"long_name" : "Philippines",
-               		"short_name" : "PH",
-               		"types" : [ "country", "political" ]
-            	}
-         	],
-         	"formatted_address" : "Calamba, Laguna, Philippines",
-         	"geometry" : {
-            	"bounds" : {
-               		"northeast" : {
-                  		"lat" : 14.2379289,
-                  	"lng" : 121.2020086
-               	},
-               	"southwest" : {
-                  	"lat" : 14.1384484,
-                  	"lng" : 121.0304546
-               	}
-            },
-            	"location" : {
-               		"lat" : 14.1876712,
-               		"lng" : 121.1250825
-            	},
-            	"location_type" : "APPROXIMATE",
-            	"viewport" : {
-               	"northeast" : {
-                  	"lat" : 14.2379289,
-                  	"lng" : 121.2020086
-               	},
-               	"southwest" : {
-                  	"lat" : 14.1384484,
-                  	"lng" : 121.0304546
-               	}
-            	}
-        	},
-        	"place_id" : "ChIJ03fgXGVjvTMR7aztxlkf3Tk",
-        	"types" : [ "locality", "political" ]
-      	},
+		"geocode": "102202340",
 		"title": "Typhoid fever downs over 500 in Laguna",
 		"url": "http://www.gmanetwork.com/news/news/regions/83070/typhoid-fever-downs-over-500-in-laguna/story/"
 	}
@@ -85,60 +32,7 @@
 		"disease": "dengue",
 		"state": "outbreak",
 		"date": "2015-06-30",
-		"geocode": {
-			"address_components" : [
-	            {
-	            	"long_name" : "Luna",
-	            	"short_name" : "Luna",
-	            	"types" : [ "locality", "political" ]
-	            },
-	            {
-	            	"long_name" : "Isabela",
-	            	"short_name" : "Isabela",
-	            	"types" : [ "administrative_area_level_2", "political" ]
-	            },
-	            {
-	            	"long_name" : "Cagayan Valley",
-	            	"short_name" : "Cagayan Valley",
-	            	"types" : [ "administrative_area_level_1", "political" ]
-	            },
-	            {
-	            	"long_name" : "Philippines",
-	            	"short_name" : "PH",
-	            	"types" : [ "country", "political" ]
-	            }
-	         ],
-        	"formatted_address" : "Luna, Isabela, Philippines",
-        	"geometry" : {
-            	"bounds" : {
-            		"northeast" : {
-                		"lat" : 17.0218913,
-                		"lng" : 121.764851
-            		},
-            		"southwest" : {
-                		"lat" : 16.9244548,
-                	"lng" : 121.6974316
-            		}
-            	},
-            	"location" : {
-            		"lat" : 16.9787186,
-            		"lng" : 121.7309452
-            	},
-            	"location_type" : "APPROXIMATE",
-            	"viewport" : {
-            		"northeast" : {
-            			"lat" : 17.0218913,
-            			"lng" : 121.764851
-            		},
-            		"southwest" : {
-            			"lat" : 16.9244548,
-            			"lng" : 121.6974316
-               		}
-            	}
-        	},
-        	"place_id" : "ChIJDe1Tr7RQhTMR62Nb3wirSW4",
-        	"types" : [ "locality", "political" ]
-      },
+		"geocode": "102202340",
 		"title": "Isabela town in state of calamity due to dengue",
 		"url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue"
 	},
@@ -159,45 +53,7 @@
 		"trend": "rise",
 		"date-start": "2012-01-01",
 		"date-end": "2012-07-30",
-		"geocode": {
-			"address_components" : [
-	            {
-	            	"long_name" : "Philippines",
-	            	"short_name" : "PH",
-	            	"types" : [ "country", "political" ]
-	            }
-         	],
-        	"formatted_address" : "Philippines",
-        	"geometry" : {
-	            "bounds" : {
-	            	"northeast" : {
-	            		"lat" : 21.2412572,
-	            		"lng" : 127.6444784
-	            	},
-	            	"southwest" : {
-	            		"lat" : 4.2259,
-	            		"lng" : 116.1474999
-	            	}
-	            },
-	            "location" : {
-	            	"lat" : 12.879721,
-	            	"lng" : 121.774017
-	            },
-	            "location_type" : "APPROXIMATE",
-	            "viewport" : {
-	            	"northeast" : {
-	            		"lat" : 19.7610407,
-	            		"lng" : 130.6600275
-	            	},
-	            	"southwest" : {
-	            		"lat" : 3.6346296,
-	            		"lng" : 114.583481
-	            	}
-	            }
-	        },
-        "place_id" : "ChIJY96HXyFTQDIRV9opeu-QR3g",
-        "types" : [ "country", "political" ]
-      	},
+		"geocode": "102202340",
 		"title": "DOH alarmed over rising dengue cases",
 		"url": "https://www.rappler.com/nation/8503-doh-alarmed-over-rising-dengue-cases"
 	},
