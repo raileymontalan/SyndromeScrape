@@ -23,3 +23,28 @@
 7) Take note, in the website, the start character "I" in "ISABELA, Philippines – The..." is shown to be at index 1 instead of 0.
     Given this, subtract 1 from the position of the START character (DO NOT do the same for the END character).
 8) Create the list of tuples for all the identified entities within the provided documents. Afterwards, place them in the JSON file.
+
+
+----How to Submit Work----
+
+DO NOT PUSH TO THE BRANCH. Instead, send a pull request.
+
+If you know how to do this via Source Tree (or whatever software you use), or if you can Google it yourself, ignore the terminal commands in the list.
+
+If you are using the terminal, type out the given commands per step:
+
+1) Create a new branch named after your surname (must be a copy of manual_tagging branch). Switch to this branch.
+
+    > git checkout -b [surname] manual_tagging
+
+3) Add your changes and commit them.
+
+    > git add .
+    > git commit -m "[Your message here]"
+
+4) Rebase and push your changes TO YOUR BRANCH. Not to manual_tagging, or to master.
+
+    > git rebase manual_tagging
+    > git push origin [name of branch]
+
+5) Go to github.com/raileymontalan/SyndromeScrape.
