@@ -47,4 +47,8 @@ If you are using the terminal, type out the given commands per step:
     > git rebase manual_tagging
     > git push origin [name of branch]
 
-5) Go to github.com/raileymontalan/SyndromeScrape.
+5) Go to github.com/raileymontalan/SyndromeScrape. You should see your branch highlighted in yellow with a button "Compare and Pull Request". Click on that option and make sure that under "Open a pull request" you choose "base: manual_tagging" NOT "base: master".
+
+6) Afterwards, click on "Create pull request".
+
+You're done! Yehey!
