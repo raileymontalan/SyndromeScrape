@@ -1,0 +1,25 @@
+----Instructions----
+
+1) Open your JSON file.
+2) Copy the entire string value of the "content" key.
+3) Open http://pojo.sodhanalibrary.com/lineCharPosition.html in your browser.
+4) In the page, paste the entire string (without the surrounding double quotes) to the text box.
+    e.g. PASTE(This is a paragraph), not PASTE("This is a paragraph")
+5) Start identifying relevant words and their appropriate tags.
+    'GPE'       -> geopolitical entities like "Isabela", "Quezon City", and "Calabarzon"
+    'LOC_TYPE'  -> non-pronoun locations like "province", "the country", "barangay"
+    'ORG'       -> organizations like "DOH", "provincial health office"
+    'DATE'      -> dates like "this week", "Nov. 6", "from January to July last year"
+    'CARDINAL'  -> cardinal numbers like "2,000", "three", "less than 50"
+    'PERCENT'   -> percentages like "20.5%", "two percent"
+    'DISEASE'   -> disease-words like "typhoid", "dengue", "mosquito-borne disease", "measles-like"
+    'CASE'      -> disease incidents like "incident", "case", "number" e.g. "The >>number<< of dengue cases increased"
+    'STATE'     -> status of disease over a given area like "state of calamity", "hotspots", "outbreak"
+    'CHANGE'    -> trends in disease over time like "increased", "dropped" e.g. "Dengue cases >>decreased<< compared to last year"
+6) Once you have located the words, use the website to figure out its start and end indexes of the characters of the entities
+    e.g. In "ISABELA, Philippines – The..."
+    "Isabela" starts at index 0, ends at index 7, and should be tagged as 'GPE'. Apply the same to "Philippines".
+    > [(0, 7, 'GPE'), (9, 20, 'GPE')]
+7) Take note, in the website, the start character "I" in "ISABELA, Philippines – The..." is shown to be at index 1 instead of 0.
+    Given this, subtract 1 from the position of the START character (DO NOT do the same for the END character).
+8) Create the list of tuples for all the identified entities within the provided documents. Afterwards, place them in the JSON file.
