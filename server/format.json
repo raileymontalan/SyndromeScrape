@@ -1,0 +1,60 @@
+// incident
+[
+	{
+		"disease": "dengue/typhoid/fever",
+		"count": "number",
+		"date": "date",
+		"geocode": "geocode",
+		"title": "title",
+		"url": "url"
+	},
+	{
+		"disease": "typhoid",
+		"count": "504",
+		"date": "2008-03-03",
+		"geocode": "102202340",
+		"title": "Typhoid fever downs over 500 in Laguna",
+		"url": "http://www.gmanetwork.com/news/news/regions/83070/typhoid-fever-downs-over-500-in-laguna/story/"
+	}
+
+]
+// status
+[
+	{
+		"disease": "dengue/typhoid/fever",
+		"state": "down/up/outbreak",
+		"date": "date",
+		"geocode": "geocode",
+		"title": "title",
+		"url": "url"
+	},
+	{
+		"disease": "dengue",
+		"state": "outbreak",
+		"date": "2015-06-30",
+		"geocode": "102202340",
+		"title": "Isabela town in state of calamity due to dengue",
+		"url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue"
+	},
+]
+// trend
+[
+	{
+		"disease": "dengue/typhoid/fever",
+		"trend": "rise/fall",
+		"date-start": "date-start",
+		"date-end": "date-end",
+		"geocode": "geocode",
+		"title": "title",
+		"url": "url"
+	},
+	{
+		"disease": "dengue",
+		"trend": "rise",
+		"date-start": "2012-01-01",
+		"date-end": "2012-07-30",
+		"geocode": "102202340",
+		"title": "DOH alarmed over rising dengue cases",
+		"url": "https://www.rappler.com/nation/8503-doh-alarmed-over-rising-dengue-cases"
+	},
+]
