@@ -1,0 +1,646 @@
+<link rel="stylesheet" type="text/css" href="assets/plugins/ionslider/ion.rangeSlider.css" />
+<link rel="stylesheet" type="text/css" href="assets/plugins/ionslider/ion.rangeSlider.skinModern.css" />
+
+<div id="syndromicSelector" class="panelSelector">
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default xl">Symptoms Selector</button>
+        <button type="button" class="btn btn-default openPanel xl"> <i class="glyphicon glyphicon-modal-window"></i> </button>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-6">
+                <h4 class="text-white ">Filter Selector</h4>
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default selectDisease">
+                        <input type="radio" name="disease" id="disease" autocomplete="off"> Disease
+                    </label>
+                    <label class="btn btn-default selectSyndromic">
+                        <input type="radio" name="syndromic" id="syndromic" autocomplete="off"> Symptoms
+                    </label>
+                </div>
+                
+                <div class="optionGroup">
+                    <h4 class="text-white ">Symptoms</h4>
+                    <div class="form-group selectGroup clearfix">
+                        <select class="symptomsList form-control col-md-10" id="symptomsList">
+                            <option value="">Choose symptom</option>
+                            <option data-template="data-template" data-from-map value="{{ . }}">{{ . }}</option>
+						</select>
+						<button type="button" class="btn btn-default btn-sq minusThis">-</button>
+						<button type="button" class="btn btn-default btn-sq addThis">+</button>
+                    </div>
+                    <hr class="dividerHr" />
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="options" id="optionAnd" autocomplete="off" checked> AND
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="optionOr" autocomplete="off"> OR
+                        </label>
+                    </div>
+                </div>
+
+                <div class="diseaseGroup">
+                    <h4 class="text-white ">Disease</h4>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default">
+                            <input type="radio" name="dengue" id="dengue" autocomplete="off"> Dengue
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="measles" id="measles" autocomplete="off"> Measles
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="typhoid" id="typhoid" autocomplete="off"> Typhoid
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="finButtons">
+                    <h4 class="text-white">Data Source</h4>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                            <input type="radio" name="options" id="optionEMR" autocomplete="off" checked> EMR
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="optionTweets" autocomplete="off"> Tweets
+                        </label>
+                        <label class="btn btn-default">
+                            <input type="radio" name="options" id="optionNews" autocomplete="off"> News
+                        </label>
+                    </div>
+                </div>
+
+                <div class="optionalFilters">
+                    <h4 class="text-white">Optional Filters</h4>
+                    <div class="form-group">
+                        <label for="" class="col-sm-6 col-form-label text-white text-right">Year</label>
+                        <div class="col-sm-6" id="yearList">
+                            <select class="form-control">
+                                <option data-template="data-template" data-from-map>{{ . }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-6 col-form-label text-white text-right">Age</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="Age" value="5" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-6 col-form-label text-white text-right">Blood Type</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="bloodType">
+                                <option>A-</option>
+                                <option>A+</option>
+                                <option>AB+</option>
+                                <option>B-</option>
+                                <option>B+</option>
+                                <option>O-</option>
+                                <option>O+</option>
+                            </select>
+                        </div>
+					</div>
+					
+                </div>
+            </div>
+            
+        </div>
+        <div class="panel-footer clearfix">
+            <button type="button" class="btn btn-default pull-right startSim">Visualize</button>
+        </div>
+    </div>
+    <div class="panel panel-default statusPanel">
+        <div class="panel-body">
+            <div class="col-md-12 text-white">
+            <h4 class="text-white">Status</h4>
+            <p class="text-white">Simulating
+                <ul class="text-white">
+                    <li>Item A</li>
+                    <li>Item B</li>
+                    <li>Item C</li>
+                </ul>
+                using EMR Data</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id='mapid'></div>
+
+<div id="slider" style="display: none;">
+		<button id='play'><i class="fa fa-play-circle fa-3x"></i></button>
+		<input id="myRange" type="text" data-type="single" data-step="1" data-from="1" data-slider="true" data-hasgrid="true" />
+</div>
+
+<div class="modal-loading">
+		<!-- Place at bottom of page -->
+		<i class="fa fa-refresh fa-spin fa-3x fa-fw margintop100"></i>
+</div>
+
+<script src="assets/plugins/ionslider/ion.rangeSlider.js" ></script>
+<script src="assets/plugins/moment/moment.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	$('#mapid').css('height', $(window).height()-60 );
+
+	// debug later
+	$("#optionNews").change(function () {
+		var isChecked = $('#optionNews').prop('checked');
+		if (isChecked) {
+			$("#syndromic").attr('checked', false);
+			$("#syndromic").attr('disabled', true);
+			$(".wrap").css('opacity', '.2');
+		} else {
+			$("#syndromic").attr('disabled', false);
+			$(".wrap").css('opacity', '1');
+		}
+	});
+
+	var body = {};
+	cData = [];
+	years = [
+		'2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'
+	];
+	//var promise = $.post("http://fassster.ehealth.ph/web_api/emr",
+	var promise = $.post("http://www.romeljohnsantos.com/api/projects.php?type=symptoms",
+	body, function(data) {
+		if(data) {
+			cData = data;
+		}
+	}, "json");
+
+	promise.done(function() {
+			console.log(cData);
+			//display data using template plugin
+			//Tempo.prepare("projectList").render(cData);
+			Tempo.prepare("yearList").render(years);
+			Tempo.prepare("symptomsList").render(cData);
+
+			var playStatus
+			var playButton = document.getElementById("play");
+			$('#play').on('click', function(){
+				if (playButton.innerHTML == '<i class="fa fa-play-circle fa-3x"></i>'){
+					playButton.innerHTML = '<i class="fa fa-dot-circle-o fa-3x"></i>';
+					playStatus = true;
+					playLoop();
+				} else {
+					playButton.innerHTML = '<i class="fa fa-play-circle fa-3x"></i>';
+					playStatus = false;
+				}
+			});
+
+			$('.dropdown-menu a.last-menu').on("click", function(e){
+					var aID = $(this).attr('id');
+					var aName = $(this).attr('name');
+					requestData(aID);
+					mymap.setView(new L.LatLng(11.1, 122.5),9);
+					$("#menubutton").html(aName);
+			});
+
+			$('#tweets').on('click', function(){
+					requestData('Tweets');
+					mymap.setView(new L.LatLng(14.5, 121.1),7);
+					disease = "Tweets"
+					$("#menubutton").html("Tweets");
+			});
+
+			$('.dropdown-menu a.extdata-entry').on("click", function(e){
+					var aID = $(this).attr('id');
+					requestExtData(aID);
+					$("#menubutton").html(aID);
+					//mymap.setView(new L.LatLng(14.5, 121.1),7);
+			});
+			
+			//commence simulation
+			$('.startSim').on('click', function(){
+				$('#syndromicSelector .panel-default').slideUp();
+				//$('.openPanel').show('slide',{direction:'left'});
+				$('.openPanel').addClass('clickable');
+				$('.openPanel i.glyphicon').removeClass('glyphicon-modal-window');
+				$('.openPanel i.glyphicon').addClass('glyphicon-collapse-down');
+				$('.statusPanel').slideDown();
+				//get selected filter
+				var SyndromicFilter = $('input[name=filter-options]:checked').val();
+				//get logic (and/or)
+				var logic = $('input[name=logic-options]:checked').val();
+				//get data source (tweets/EMR/news)
+				var datasource = $('input[name=data-options]:checked').val();
+				var symptoms = [];
+				if (SyndromicFilter == 'syndromic'){
+					$(".symptom-options :selected").each(function () {
+						var symptom = $(this).text();
+						symptoms.push(symptom);
+					});
+					if (datasource == 'emr'){
+						$("#using-data").html("Using EMR Data");
+						$( "#viewTweetsDiv" ).hide();
+						requestEMRData(symptoms,logic,"syndromic");
+						mymap.setView(new L.LatLng(11.1, 121.9),8);
+					} else if (datasource == 'tweets'){
+						$("#using-data").html("Using Tweets Data");
+						requestTweetData(symptoms,logic,"syndromic");
+					}
+				} else if (SyndromicFilter == 'disease'){
+					var disease = $('input[name=disease-options]:checked').val();
+					symptoms.push(disease);
+					if (datasource == 'emr'){
+						$("#using-data").html("Using EMR Data");
+						$( "#viewTweetsDiv" ).hide();
+						requestEMRData(symptoms,logic,"disease");
+						mymap.setView(new L.LatLng(11.1, 121.9),8);
+					} else if (datasource == 'tweets'){
+						$("#using-data").html("Using Tweets Data");
+						requestTweetData(symptoms,logic,"disease");
+					} else if (datasource == 'news') {
+						$("#using-data").html("Using News Data");
+						requestNewsData(symptoms,logic,"disease");
+					}
+				}
+				//display selected values
+				$('#symptoms-list').empty();
+				for (var i = 0; i < symptoms.length; i++) {
+					$('#symptoms-list').append("<li>"+symptoms[i]+"</li>");
+				}
+				$( "#slider" ).show();
+			});
+
+			$('.openPanel').on('click', function(){
+				if($(this).hasClass('clickable')) {
+					$('#syndromicSelector .panel-default').slideDown();
+					//$('.openPanel').hide('slide',{direction:'left'});
+					$('.openPanel').removeClass('clickable');
+					$('.openPanel i.glyphicon').removeClass('glyphicon-collapse-down');
+					$('.openPanel i.glyphicon').addClass('glyphicon-modal-window');
+					$('.statusPanel').slideUp();
+					$( "#slider" ).hide();
+				}
+			});
+
+			//open Disease Selector
+			$('.selectDisease').on('click', function(){
+				//reset syndromic options
+				//delete all
+				$('.optionGroup').find('.selectGroup').remove();
+				//restore stored group
+				optionstore.insertBefore('.dividerHr');
+				//activate syndromic functions
+				cloner();
+				//restore new selectGroup
+				optionstore = $('.selectGroup').clone();
+				//hide syndromic group
+				$('.diseaseGroup').slideDown();
+				$('.optionGroup').hide();
+			})
+			
+			//open Syndromic Filters
+			$('.selectSyndromic').on('click', function(){
+				//reset disease options
+				$('.diseaseGroup').find('label').removeClass('active');
+				$('.diseaseGroup').find('input[type=radio]').removeAttr('selected');
+				//hide disease group
+				$('.optionGroup').slideDown();
+				$('.diseaseGroup').hide();
+			})
+
+			$("myRange").value = "0";
+			//This activates the slider
+			//use the functions to create interactivity on the map
+			//the onChange is the best function to use for color changes
+			$("#myRange").ionRangeSlider({
+				grid: true,
+				grid_num: 30,
+				grid_snap: true,
+				prettify_enabled: true,
+				keyboard: true,
+			});
+
+			mapslider = $("#myRange").data("ionRangeSlider");
+			//let use store a copy of the selectGroup
+			//for reset purposes
+			optionstore = $('.selectGroup').clone();
+			//activate syndormic functions
+			cloner();
+					
+			$('.preloader').hide();
+	});
+
+});
+
+var dataType, counts, grades, date_length, disease;
+var dataLayer = L.layerGroup()
+var osmMapnik = new L.tileLayer.provider("OpenStreetMap.Mapnik");
+var stamenTerrain = new L.tileLayer.provider("Stamen.Terrain");
+var osmBW = new L.tileLayer.provider("OpenStreetMap.BlackAndWhite");
+var stamenToner = new L.tileLayer.provider("Stamen.Toner");
+var mapboxTile = new L.tileLayer.provider("MapBox", {
+	id: 'jenjereren.16nj7dd6',
+	accessToken: 'pk.eyJ1IjoiamVuamVyZXJlbiIsImEiOiJjaXM2ODlkNmcwZDlnMnlvMGswNmpldWUwIn0.eCh8h5prpNCamLH_zbYHoA'
+});
+var mymap = new L.Map("mapid", {
+	center: new L.LatLng(12.4, 122.4),
+	zoomControl: false,
+	zoom: 5.5,
+	minZoom: 2,
+	maxZoom: 12,
+	layers: [osmBW]
+});
+var baseLayers = {
+	"Stamen Terrain": stamenTerrain,
+	"Stamen Toner": stamenToner,
+	"Mapbox": mapboxTile,
+	"OpenStreetMap": osmMapnik,
+	"OpenStreetMap B&W": osmBW
+};
+var controlLayers = L.control.layers(baseLayers).addTo(mymap);
+var legend = L.control({position: 'topright'});
+
+// adds a scale bar to the map in metric and English units
+L.control.scale().addTo(mymap);
+
+function playLoop () {
+	setTimeout(function () {
+		if (playStatus){
+			if (dataType == "Tweets"){
+				sliderDate = $("#myRange").prop("value");
+				var i = monthList.indexOf(sliderDate);
+				if (i<29) {
+					mapslider.update({
+						from: i+1,
+					});
+					i++;
+					playLoop();
+				} else {
+					mapslider.update({
+						from: 0,
+					});
+					playButton.innerHTML = '<i class="fa fa-play-circle-o"></i>';
+				}
+			} else if (dataType == "EMR") {
+				sliderDate = $("#myRange").prop("value");
+				var i = monthList.indexOf(sliderDate);
+				if (i<11) {
+					mapslider.update({
+						from: i+1,
+					});
+					i++;
+					playLoop();
+				} else {
+					mapslider.update({
+						from: 0,
+					});
+					playButton.innerHTML = '<i class="fa fa-play-circle-o"></i>';
+				}
+			} else if (dataType == "News") {
+				sliderDate = $("#myRange").prop("value");
+				var i = monthList.indexOf(sliderDate);
+				// recheck if it should be i < 11
+				if (i<11) {
+					mapslider.update({
+						from: i+1,
+					});
+					i++;
+					playLoop();
+				} else {
+					mapslider.update({
+						from: 0,
+					});
+					playButton.innerHTML = '<i class="fa fa-play-circle-o"></i>';
+				}
+			}
+		}
+	}, 500)
+}
+
+function requestEMRData(s,l,f){
+	//remove overlayed layers and popups
+	dataLayer.clearLayers();
+	mymap.closePopup();
+	dataType = "EMR";
+	data_url = "emr"
+	jQuery.ajax ({
+		url: data_url,
+		type: "POST",
+		data: JSON.stringify({symptoms:s, logic:l, filter:f}),
+		dataType: "json",
+		contentType: "application/json; charset=utf-8",
+		success: function(data){
+			//console.log(data);
+			buildCount(data);
+			renderData()
+		},
+		error: function(){
+			alert("ERROR: Cannot retrieve data! Seems like the Backend API is down.");
+		}
+	});
+	monthList = ['Jan 2016','Feb 2016','Mar 2016','Apr 2016','May 2016','Jun 2016','Jul 2016','Aug 2016','Sept 2016','Oct 2016','Nov 2016','Dec 2016'];
+	$( "#slider" ).show();
+	function buildCount(data) {
+		provMaxCount = 0;
+		provCount = data;
+		for (var keys in provCount) {
+			for (var key in provCount[keys]) {
+				// skip loop if the property is from prototype
+				//if (!provCount[keys].hasOwnProperty(key) || (key.length < 5 && data_admin == "city")) {
+				// continue;
+				//}
+				if (provMaxCount < provCount[keys][key]) {
+					//console.log(provCount[keys][key]);
+					provMaxCount = provCount[keys][key];
+				}
+			}
+		}
+		console.log(provMaxCount);
+		//var maxLabel = Math.ceil(provMaxCount / 10) * 10;
+	}
+	function renderData(){
+		boundaries_url = "assets/geojson/Boundary_Municipalities.geojson";
+		$.getJSON(boundaries_url, function(data) {
+			var geojsonlayer = {};
+			datageojsonlayer = L.geoJson(
+			data, { onEachFeature: onEachDataFeature, style: Datastyle }
+			);
+			dataLayer.clearLayers();
+			mymap.closePopup();
+			dataLayer.addLayer(datageojsonlayer);
+			dataLayer.addTo(mymap);
+		});
+		function onEachDataFeature(feature, layer) {
+			var popup = L.popup();
+			var datacode = feature.properties.PHCode_Mun.substring(0, 6);
+			var name = feature.properties.Mun_Name;
+			//format popup text
+			sliderDate = $("#myRange").prop("value");
+			var j = (monthList.indexOf(sliderDate) + 1)
+			var msg = "<b>Municipality: </b>" + name + "<br/>";
+			msg += "<b>Count: </b>"
+			msg += (provCount[j][datacode]) ? provCount[j][datacode] : (provCount[j][datacode]==0) ? provCount[j][datacode] : "No Data";
+			layer.bindPopup(msg);
+		}
+		function Datastyle(feature) {
+			var datacode = feature.properties.PHCode_Mun.substring(0, 6);
+			sliderDate = $("#myRange").prop("value");
+			var j = (monthList.indexOf(sliderDate) + 1)
+			var count = (provCount[j][datacode]) ? provCount[j][datacode] : -999;
+			return {
+				fillColor: getEMRColor(count, 0, provMaxCount),
+				weight: 0.7,
+				opacity: 0.7,
+				color: 'gray',
+				fillOpacity: 0.75
+			};
+		}
+		// Call sliders update method with any params
+		mapslider.update({
+			values: monthList,
+			from: 0,
+			onStart: function (data) {
+			//console.log(data);
+			},
+			onChange: function (data) {
+				dataLayer.getLayers()[0].setStyle(Datastyle);
+				dataLayer.getLayers()[0].eachLayer(function (layer) {
+					var datacode = layer.feature.properties.PHCode_Mun.substring(0, 6);
+					var name = layer.feature.properties.Mun_Name;
+					sliderDate = $("#myRange").prop("value");
+					var j = (monthList.indexOf(sliderDate) + 1)
+					var msg = "<b>Municipality: </b>" + name + "<br/>";
+					msg += "<b>Count: </b>"
+					msg += (provCount[j][datacode]) ? provCount[j][datacode] : (provCount[j][datacode]==0) ? provCount[j][datacode] : "No Data";
+					layer._popup.setContent(msg);
+				});
+			},
+			onFinish: function (data) {
+			//console.log(data);
+			},
+			onUpdate: function (data) {
+				//console.log(data);
+				if (dataLayer.getLayers()[0]){
+				dataLayer.getLayers()[0].setStyle(Datastyle);
+				dataLayer.getLayers()[0].eachLayer(function (layer) {
+					var datacode = layer.feature.properties.PHCode_Mun.substring(0, 6);
+					var name = layer.feature.properties.Mun_Name;
+					sliderDate = $("#myRange").prop("value");
+					var j = (monthList.indexOf(sliderDate) + 1)
+					var msg = "<b>Municipality: </b>" + name + "<br/>";
+					msg += "<b>Count: </b>"
+					msg += (provCount[j][datacode]) ? provCount[j][datacode] : (provCount[j][datacode]==0) ? provCount[j][datacode] : "No Data";
+					layer._popup.setContent(msg);
+				});
+				}
+			}
+		});
+	}
+}
+function getEMRColor(d, min, max) {
+	//get range for legend
+	grades = [0]
+	if (provMaxCount < 50) {
+		var step = 4
+	} else {
+		var step = Math.ceil(provMaxCount / 100) * 10;
+	}
+	for (var i = 1; i < 8; i++) {
+		grades.push(step*i)
+	}
+	//add legend to map
+	legend.onAdd = function (mymap) {
+		var div = L.DomUtil.create('div', 'info newlegend')
+		var colors = ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594'];
+		// loop through our density intervals and generate a label with a colored square for each interval
+		// set first legend for No Data
+		div.innerHTML += '<i style="background:#ccc"></i> No Data <br>'
+		for (var i = 0; i < grades.length; i++) {
+			div.innerHTML +=
+			'<i style="background:' + colors[i] + '"></i> ' +
+			grades[i] + (grades[i + 1] ? '&ndash;' + (grades[i + 1] - 1) + '<br>' : '+');
+		}
+		return div;
+	};
+	legend.addTo(mymap);
+	return d < min ? "#ccc" :
+	d > max ? "#ccc" :
+	d >= grades[7] ? '#084594' :
+	d >= grades[6] ? '#2171b5' :
+	d >= grades[5] ? '#4292c6' :
+	d >= grades[4] ? '#6baed6' :
+	d >= grades[3] ? '#9ecae1' :
+	d >= grades[2] ? '#c6dbef' :
+	d >= grades[1] ? '#deebf7' :
+	d >= grades[0] ? '#f7fbff' :
+	'#ccc';
+}
+//function to manage dropdowns in Syndromic filters
+function cloner() {
+	//let us reset click events
+	$('.addThis').unbind('click');
+	$('.minusThis').unbind('click');
+	$('.symptomsList').unbind('change');
+	//activate click events for visible elements
+	//add a selectGroup
+	$('.addThis').on('click', function(){
+		//limit number of clones to 6
+		if( $('.addThis').length < 6 ) {
+			var curval = $(this).parent().find(".symptomsList").val();
+			if(curval != 'null') {
+				//clone this group and append to end
+				var clone = $(this).parent().clone();
+				//get item for removal
+				var forremove = $(clone).find(".symptomsList option:contains('"+curval+"')");
+				//count the remain options
+				var optioncount = $(clone).find(".symptomsList option").length;
+				//if item still exists and number of items is more than 1
+				//then remove the item
+				if(forremove.length == 1 && optioncount > 2) {
+					forremove.remove();
+					clone.insertBefore('.dividerHr');
+					//if there are add buttons
+					//hide this one
+					if($('.addThis').length > 1) {
+						$(this).hide();
+					//else show the last add button
+					} else {
+						$('.addThis').show();
+					}
+				}
+			}
+		}
+		//rebind all events
+		cloner();
+	})
+
+	//remove a selectGroup
+	$('.minusThis').on('click', function(){
+		//return the option item to all selects
+		//get the item
+		var curval = $(this).parent().find(".symptomsList").val();
+		$('.symptomsList').append($('<option>', {
+			text: curval
+		}));
+		//if this add button is displayed
+		//show the previous add button
+		if($(this).next().css('display')=='inline-block'){
+			$(this).parent().prev().find('.addThis').show();
+		}
+		//this is not the last group
+		//remove this group
+		if($('.addThis').length > 1) {
+			$(this).parent().remove();
+		}
+		//rebind all events
+		cloner();
+	})
+	//let us remove selected item from all dropdowns
+	$('.symptomsList').on('change', function(){
+		var val = this.value;
+		$('select').not(this).children().filter(function() {
+			return this.value === val;
+		}).remove();
+		//rebind all events
+		cloner();
+	})
+}
+</script>

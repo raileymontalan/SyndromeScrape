@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid blocked" id="users">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-table">
+                    <div class="card-header">
+                        <h4 class="card-title">FASSSTER Users</h4>
+                        <p class="category">Below are the registered users of FASSSTER.</p>
+                    </div>
+                    <div class="card-body table-responsive table-full-width">
+                        <table class="table table-striped" id="userListing">
+                            <thead>
+                              <tr><th>ID</th>
+                              <th>Name</th>
+                              <th>Role</th>
+                              <th>Department</th>
+                              <th>Office</th>
+                              <th>Location</th>
+                              <th>Actions</th>
+                            </tr></thead>
+                            <tbody>
+                                <tr data-template>
+                                  <td>{{ ID }}</td>
+                                  <td>{{ firstname }} {{ lastname }}</td>
+                                  <td>{{ role }}</td>
+                                  <td>{{ department }}</td>
+                                  <td>{{ office }}</td>
+                                  <td>{{ location }}</td>
+                                  <td></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var body = {}
+        cProject = [];
+        //var promise = $.post("http://fassster.ehealth.ph/web_api/emr",
+        var promise = $.post("http://localhost/api/users.php",
+        body, function(data) {
+                if(data) {
+                    cUsers = data
+                }
+            }, "json");
+    
+        promise.done(function() {
+            console.log(cUsers);
+            //display data using template plugin
+            Tempo.prepare("userListing").render(cUsers);
+        });
+
+        //hide preloader
+        $('.preloader').hide();
+    });
+</script>
