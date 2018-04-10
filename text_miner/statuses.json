@@ -6,25 +6,7 @@
         "title": "Isabela town in state of calamity due to dengue",
         "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
         "geocode": "[municipality, Luna, Isabela, province, northern, Philippines]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-06-30",
-        "date-end": "2015-06-30",
-        "title": "Isabela town in state of calamity due to dengue",
-        "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "geocode": "[municipality, Luna, Isabela, province, northern, Philippines]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-06-30",
-        "date-end": "2015-06-30",
-        "title": "Isabela town in state of calamity due to dengue",
-        "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "geocode": "[municipality, Luna, Isabela, province, northern, Philippines]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -33,25 +15,7 @@
         "title": "Isabela town in state of calamity due to dengue",
         "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
         "geocode": "[ISABELA, Philippines]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-06-30",
-        "date-end": "2015-06-30",
-        "title": "Isabela town in state of calamity due to dengue",
-        "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "geocode": "[ISABELA, Philippines]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-06-30",
-        "date-end": "2015-06-30",
-        "title": "Isabela town in state of calamity due to dengue",
-        "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "geocode": "[ISABELA, Philippines]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -105,25 +69,7 @@
         "title": "Dengue outbreak declared in Tuguegarao",
         "url": "https://www.rappler.com/nation/98986-dengue-outbreak-tuguegarao-cagayan",
         "geocode": "[Cagayan, Valley, municipality, Luna, Isabela, province]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-07-10",
-        "date-end": "2015-07-10",
-        "title": "Dengue outbreak declared in Tuguegarao",
-        "url": "https://www.rappler.com/nation/98986-dengue-outbreak-tuguegarao-cagayan",
-        "geocode": "[Cagayan, Valley, municipality, Luna, Isabela, province]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-07-10",
-        "date-end": "2015-07-10",
-        "title": "Dengue outbreak declared in Tuguegarao",
-        "url": "https://www.rappler.com/nation/98986-dengue-outbreak-tuguegarao-cagayan",
-        "geocode": "[Cagayan, Valley, municipality, Luna, Isabela, province]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -132,16 +78,7 @@
         "title": "DOH: 372 deaths due to dengue since January",
         "url": "https://www.rappler.com/nation/143318-doh-philippines-dengue-updates-january-august-2016",
         "geocode": "[barangays, villages, country]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH: 372 deaths due to dengue since January",
-        "url": "https://www.rappler.com/nation/143318-doh-philippines-dengue-updates-january-august-2016",
-        "geocode": "[barangays, villages, country]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -168,16 +105,7 @@
         "title": "DOH identifies 80 barangays as dengue 'hot zones'",
         "url": "https://www.rappler.com/nation/142566-philippines-doh-barangays-dengue-hot-zones",
         "geocode": "[barangays, villages, country]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH identifies 80 barangays as dengue 'hot zones'",
-        "url": "https://www.rappler.com/nation/142566-philippines-doh-barangays-dengue-hot-zones",
-        "geocode": "[barangays, villages, country]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -186,16 +114,7 @@
         "title": "DOH identifies 80 barangays as dengue 'hot zones'",
         "url": "https://www.rappler.com/nation/142566-philippines-doh-barangays-dengue-hot-zones",
         "geocode": "[MANILA, Philippines]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH identifies 80 barangays as dengue 'hot zones'",
-        "url": "https://www.rappler.com/nation/142566-philippines-doh-barangays-dengue-hot-zones",
-        "geocode": "[MANILA, Philippines]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -213,25 +132,7 @@
         "title": "24 dengue deaths reported in Negros Occidental since January 2016",
         "url": "https://www.rappler.com/nation/144919-dengue-deaths-negros-occidental",
         "geocode": "[Bacolod, City]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-09-01",
-        "date-end": "2016-09-01",
-        "title": "24 dengue deaths reported in Negros Occidental since January 2016",
-        "url": "https://www.rappler.com/nation/144919-dengue-deaths-negros-occidental",
-        "geocode": "[Bacolod, City]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-09-01",
-        "date-end": "2016-09-01",
-        "title": "24 dengue deaths reported in Negros Occidental since January 2016",
-        "url": "https://www.rappler.com/nation/144919-dengue-deaths-negros-occidental",
-        "geocode": "[Bacolod, City]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -240,25 +141,7 @@
         "title": "24 dengue deaths reported in Negros Occidental since January 2016",
         "url": "https://www.rappler.com/nation/144919-dengue-deaths-negros-occidental",
         "geocode": "[BACOLOD, CITY, Philippines]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-09-01",
-        "date-end": "2016-09-01",
-        "title": "24 dengue deaths reported in Negros Occidental since January 2016",
-        "url": "https://www.rappler.com/nation/144919-dengue-deaths-negros-occidental",
-        "geocode": "[BACOLOD, CITY, Philippines]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-09-01",
-        "date-end": "2016-09-01",
-        "title": "24 dengue deaths reported in Negros Occidental since January 2016",
-        "url": "https://www.rappler.com/nation/144919-dengue-deaths-negros-occidental",
-        "geocode": "[BACOLOD, CITY, Philippines]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -276,16 +159,7 @@
         "title": "Dengue cases approach epidemic threshold in Negros Occidental",
         "url": "https://www.rappler.com/nation/142821-dengue-epidemic-threshold-negros-occidental",
         "geocode": "[barangays, villages, country]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-12",
-        "date-end": "2016-08-12",
-        "title": "Dengue cases approach epidemic threshold in Negros Occidental",
-        "url": "https://www.rappler.com/nation/142821-dengue-epidemic-threshold-negros-occidental",
-        "geocode": "[barangays, villages, country]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -312,25 +186,7 @@
         "title": "Number of dengue cases doubles in Cordillera",
         "url": "https://www.rappler.com/nation/103711-dengue-cases-double-cordillera",
         "geocode": "[town, Luna, Isabela, province, region]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-01",
-        "date-end": "2015-09-01",
-        "title": "Number of dengue cases doubles in Cordillera",
-        "url": "https://www.rappler.com/nation/103711-dengue-cases-double-cordillera",
-        "geocode": "[town, Luna, Isabela, province, region]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-01",
-        "date-end": "2015-09-01",
-        "title": "Number of dengue cases doubles in Cordillera",
-        "url": "https://www.rappler.com/nation/103711-dengue-cases-double-cordillera",
-        "geocode": "[town, Luna, Isabela, province, region]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -348,25 +204,7 @@
         "title": "Almost 800 hospitalized for dengue in Negros Occidental in 2015",
         "url": "https://www.rappler.com/nation/103712-dengue-cases-increase-negros-occidental",
         "geocode": "[town, Luna, Isabela, province, region]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-01",
-        "date-end": "2015-09-01",
-        "title": "Almost 800 hospitalized for dengue in Negros Occidental in 2015",
-        "url": "https://www.rappler.com/nation/103712-dengue-cases-increase-negros-occidental",
-        "geocode": "[town, Luna, Isabela, province, region]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-01",
-        "date-end": "2015-09-01",
-        "title": "Almost 800 hospitalized for dengue in Negros Occidental in 2015",
-        "url": "https://www.rappler.com/nation/103712-dengue-cases-increase-negros-occidental",
-        "geocode": "[town, Luna, Isabela, province, region]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "measles",
@@ -456,16 +294,7 @@
         "title": "PH 'exported' measles to other countries",
         "url": "https://www.rappler.com/nation/67427-doh-measles-mass-immunization",
         "geocode": "[regions, regions]",
-        "state": "outbreak"
-    },
-    {
-        "disease": "measles",
-        "date-start": "2014-09-18",
-        "date-end": "2014-09-18",
-        "title": "PH 'exported' measles to other countries",
-        "url": "https://www.rappler.com/nation/67427-doh-measles-mass-immunization",
-        "geocode": "[regions, regions]",
-        "state": "outbreak"
+        "state": "outbreak outbreak"
     },
     {
         "disease": "measles",
@@ -753,25 +582,7 @@
         "title": "DOH investigates typhoid fever outbreak in Cebu town",
         "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
         "geocode": "[barangays]",
-        "state": "state"
-    },
-    {
-        "disease": "typhoid",
-        "date-start": "2014-06-28",
-        "date-end": "2014-06-28",
-        "title": "DOH investigates typhoid fever outbreak in Cebu town",
-        "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
-        "geocode": "[barangays]",
-        "state": "of"
-    },
-    {
-        "disease": "typhoid",
-        "date-start": "2014-06-28",
-        "date-end": "2014-06-28",
-        "title": "DOH investigates typhoid fever outbreak in Cebu town",
-        "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
-        "geocode": "[barangays]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "typhoid",
@@ -798,25 +609,7 @@
         "title": "4 dead, 558 downed in typhoid outbreak in Cebu",
         "url": "http://www.gmanetwork.com/news/news/regions/250311/4-dead-558-downed-in-typhoid-outbreak-in-cebu/story/",
         "geocode": "[Cebu, Tuburan]",
-        "state": "state"
-    },
-    {
-        "disease": "typhoid",
-        "date-start": "2012-03-05",
-        "date-end": "2012-03-05",
-        "title": "4 dead, 558 downed in typhoid outbreak in Cebu",
-        "url": "http://www.gmanetwork.com/news/news/regions/250311/4-dead-558-downed-in-typhoid-outbreak-in-cebu/story/",
-        "geocode": "[Cebu, Tuburan]",
-        "state": "of"
-    },
-    {
-        "disease": "typhoid",
-        "date-start": "2012-03-05",
-        "date-end": "2012-03-05",
-        "title": "4 dead, 558 downed in typhoid outbreak in Cebu",
-        "url": "http://www.gmanetwork.com/news/news/regions/250311/4-dead-558-downed-in-typhoid-outbreak-in-cebu/story/",
-        "geocode": "[Cebu, Tuburan]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "typhoid",
@@ -1068,25 +861,7 @@
         "title": "DOH: No basis for for declaring dengue outbreak in Cebu",
         "url": "http://cnnphilippines.com/regional/2016/10/13/doh-no-basis-cebu-dengue-outbreak.html",
         "geocode": "[Cebu, City, city]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-10-13",
-        "date-end": "2016-10-13",
-        "title": "DOH: No basis for for declaring dengue outbreak in Cebu",
-        "url": "http://cnnphilippines.com/regional/2016/10/13/doh-no-basis-cebu-dengue-outbreak.html",
-        "geocode": "[Cebu, City, city]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-10-13",
-        "date-end": "2016-10-13",
-        "title": "DOH: No basis for for declaring dengue outbreak in Cebu",
-        "url": "http://cnnphilippines.com/regional/2016/10/13/doh-no-basis-cebu-dengue-outbreak.html",
-        "geocode": "[Cebu, City, city]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -1140,16 +915,7 @@
         "title": "Dengue cases on the rise but under control — DOH",
         "url": "http://cnnphilippines.com/news/2016/08/11/dengue-cases-rising-under-control-DOH.html",
         "geocode": "[barangays]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-11",
-        "date-end": "2016-08-11",
-        "title": "Dengue cases on the rise but under control — DOH",
-        "url": "http://cnnphilippines.com/news/2016/08/11/dengue-cases-rising-under-control-DOH.html",
-        "geocode": "[barangays]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -1158,16 +924,7 @@
         "title": "Dengue cases on the rise but under control — DOH",
         "url": "http://cnnphilippines.com/news/2016/08/11/dengue-cases-rising-under-control-DOH.html",
         "geocode": "[Quezon, City, Malabon, Region, 4A]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-11",
-        "date-end": "2016-08-11",
-        "title": "Dengue cases on the rise but under control — DOH",
-        "url": "http://cnnphilippines.com/news/2016/08/11/dengue-cases-rising-under-control-DOH.html",
-        "geocode": "[Quezon, City, Malabon, Region, 4A]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -1176,16 +933,7 @@
         "title": "Dengue cases in Metro Manila, Cavite on the rise",
         "url": "http://cnnphilippines.com/news/2015/09/30/Dengue-cases-in-Metro-Manila-Cavite-on-the-rise.html",
         "geocode": "[Manila]",
-        "state": "Code"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-30",
-        "date-end": "2015-09-30",
-        "title": "Dengue cases in Metro Manila, Cavite on the rise",
-        "url": "http://cnnphilippines.com/news/2015/09/30/Dengue-cases-in-Metro-Manila-Cavite-on-the-rise.html",
-        "geocode": "[Manila]",
-        "state": "White"
+        "state": "Code White"
     },
     {
         "disease": "dengue",
@@ -1212,25 +960,7 @@
         "title": "Cavite starts campaign to curb dengue outbreak",
         "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
         "geocode": "[province]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-23",
-        "date-end": "2015-09-23",
-        "title": "Cavite starts campaign to curb dengue outbreak",
-        "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
-        "geocode": "[province]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-23",
-        "date-end": "2015-09-23",
-        "title": "Cavite starts campaign to curb dengue outbreak",
-        "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
-        "geocode": "[province]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -1257,16 +987,7 @@
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
         "geocode": "[towns, Tadian, Paracelis, municipalities, Mountain, Province, towns, Luba, Villaviciosa, San, Isidro, Pidigan, province, Abra]",
-        "state": "outbreaks"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-17",
-        "date-end": "2015-09-17",
-        "title": "Dengue outbreak declared in 9 towns in Cordillera",
-        "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "geocode": "[towns, Tadian, Paracelis, municipalities, Mountain, Province, towns, Luba, Villaviciosa, San, Isidro, Pidigan, province, Abra]",
-        "state": "outbreak"
+        "state": "outbreaks outbreak"
     },
     {
         "disease": "dengue",
@@ -1302,16 +1023,7 @@
         "title": "Dengue outbreak declared in 2 Negros Oriental cities",
         "url": "http://cnnphilippines.com/regional/2015/09/11/Dengue-outbreak-declared-in-2-Negros-Oriental-cities.html",
         "geocode": "[Dumaguete, City]",
-        "state": "outbreak"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-11",
-        "date-end": "2015-09-11",
-        "title": "Dengue outbreak declared in 2 Negros Oriental cities",
-        "url": "http://cnnphilippines.com/regional/2015/09/11/Dengue-outbreak-declared-in-2-Negros-Oriental-cities.html",
-        "geocode": "[Dumaguete, City]",
-        "state": "epidemic"
+        "state": "outbreak epidemic"
     },
     {
         "disease": "dengue",
@@ -1374,16 +1086,7 @@
         "title": "Dengue cases in Bacolod drop on first week of January",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2018/01/16/dengue-cases-bacolod-drop-first-week-january-584169",
         "geocode": "[Barangay, Handumanan, villages, Tangub, Singcang, -, Airport, Pahanocoy, Sum, -, ag, Taculing, Villamonte, Vista, Alegre, Mansilingan, Mandalagan]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2018-01-16",
-        "date-end": "2018-01-16",
-        "title": "Dengue cases in Bacolod drop on first week of January",
-        "url": "http://www.sunstar.com.ph/bacolod/local-news/2018/01/16/dengue-cases-bacolod-drop-first-week-january-584169",
-        "geocode": "[Barangay, Handumanan, villages, Tangub, Singcang, -, Airport, Pahanocoy, Sum, -, ag, Taculing, Villamonte, Vista, Alegre, Mansilingan, Mandalagan]",
-        "state": "spot"
+        "state": "hot spot"
     },
     {
         "disease": "dengue",
@@ -1392,16 +1095,7 @@
         "title": "9 barangays in Bacolod tag as dengue hot spots",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/08/17/9-barangays-bacolod-tag-dengue-hot-spots-558972",
         "geocode": "[barangays, Bacolod, City]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2017-08-17",
-        "date-end": "2017-08-17",
-        "title": "9 barangays in Bacolod tag as dengue hot spots",
-        "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/08/17/9-barangays-bacolod-tag-dengue-hot-spots-558972",
-        "geocode": "[barangays, Bacolod, City]",
-        "state": "spots"
+        "state": "hot spots"
     },
     {
         "disease": "dengue",
@@ -1410,34 +1104,7 @@
         "title": "Dengue cases up by 6,500 in Cebu Province",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
         "geocode": "[]",
-        "state": "outbreak"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-12-30",
-        "date-end": "2016-12-30",
-        "title": "Dengue cases up by 6,500 in Cebu Province",
-        "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
-        "geocode": "[]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-12-30",
-        "date-end": "2016-12-30",
-        "title": "Dengue cases up by 6,500 in Cebu Province",
-        "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
-        "geocode": "[]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-12-30",
-        "date-end": "2016-12-30",
-        "title": "Dengue cases up by 6,500 in Cebu Province",
-        "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
-        "geocode": "[]",
-        "state": "calamity"
+        "state": "outbreak state of calamity"
     },
     {
         "disease": "dengue",
@@ -1509,16 +1176,7 @@
         "title": "DOH notes quick rise in dengue ‘hot zones’",
         "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
         "geocode": "[barangays, country]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH notes quick rise in dengue ‘hot zones’",
-        "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
-        "geocode": "[barangays, country]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -1527,16 +1185,7 @@
         "title": "DOH notes quick rise in dengue ‘hot zones’",
         "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
         "geocode": "[barangays]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH notes quick rise in dengue ‘hot zones’",
-        "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
-        "geocode": "[barangays]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -1545,16 +1194,7 @@
         "title": "DOH notes quick rise in dengue ‘hot zones’",
         "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
         "geocode": "[National, Capital, Region, barangays, Pinagbuhatan, Pasig, City, Batasan, Hills, Fairview, Holy, Spirit, Pinyahan, Quezon, City]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH notes quick rise in dengue ‘hot zones’",
-        "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
-        "geocode": "[National, Capital, Region, barangays, Pinagbuhatan, Pasig, City, Batasan, Hills, Fairview, Holy, Spirit, Pinyahan, Quezon, City]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -1563,16 +1203,7 @@
         "title": "DOH notes quick rise in dengue ‘hot zones’",
         "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
         "geocode": "[]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH notes quick rise in dengue ‘hot zones’",
-        "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
-        "geocode": "[]",
-        "state": "zone"
+        "state": "hot zone"
     },
     {
         "disease": "dengue",
@@ -1590,16 +1221,7 @@
         "title": "DOH notes quick rise in dengue ‘hot zones’",
         "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
         "geocode": "[NCR, provinces, Apayao, Benguet, Pangasinan, Pampanga, Zambales, Batangas, Laguna, Rizal, Oriental, Mindoro, Antique, Negros, Occidental, Negros, Oriental, Cebu, Southern, Leyte, Bukidnon, Lanao, del, Norte, Misamis, Oriental, Davao, del, Norte, Davao, del, Sur, Davao, Oriental]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH notes quick rise in dengue ‘hot zones’",
-        "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
-        "geocode": "[NCR, provinces, Apayao, Benguet, Pangasinan, Pampanga, Zambales, Batangas, Laguna, Rizal, Oriental, Mindoro, Antique, Negros, Occidental, Negros, Oriental, Cebu, Southern, Leyte, Bukidnon, Lanao, del, Norte, Misamis, Oriental, Davao, del, Norte, Davao, del, Sur, Davao, Oriental]",
-        "state": "spots"
+        "state": "hot spots"
     },
     {
         "disease": "dengue",
@@ -1608,16 +1230,7 @@
         "title": "DOH notes quick rise in dengue ‘hot zones’",
         "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
         "geocode": "[]",
-        "state": "hot"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-08-17",
-        "date-end": "2016-08-17",
-        "title": "DOH notes quick rise in dengue ‘hot zones’",
-        "url": "http://newsinfo.inquirer.net/806910/doh-notes-quick-rise-in-dengue-hot-zones",
-        "geocode": "[]",
-        "state": "zones"
+        "state": "hot zones"
     },
     {
         "disease": "dengue",
@@ -1635,25 +1248,7 @@
         "title": "Dengue fever cases going up in Cavite",
         "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
         "geocode": "[Cavite]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-26",
-        "date-end": "2015-09-26",
-        "title": "Dengue fever cases going up in Cavite",
-        "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
-        "geocode": "[Cavite]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2015-09-26",
-        "date-end": "2015-09-26",
-        "title": "Dengue fever cases going up in Cavite",
-        "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
-        "geocode": "[Cavite]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -1662,25 +1257,7 @@
         "title": "Cebu declares state of calamity over 5,000 dengue cases",
         "url": "http://newsinfo.inquirer.net/826252/cebu-declares-state-of-calamity-over-5000-dengue-cases",
         "geocode": "[province, Cebu]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-10-17",
-        "date-end": "2016-10-17",
-        "title": "Cebu declares state of calamity over 5,000 dengue cases",
-        "url": "http://newsinfo.inquirer.net/826252/cebu-declares-state-of-calamity-over-5000-dengue-cases",
-        "geocode": "[province, Cebu]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-10-17",
-        "date-end": "2016-10-17",
-        "title": "Cebu declares state of calamity over 5,000 dengue cases",
-        "url": "http://newsinfo.inquirer.net/826252/cebu-declares-state-of-calamity-over-5000-dengue-cases",
-        "geocode": "[province, Cebu]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "dengue",
@@ -1689,25 +1266,7 @@
         "title": "Cebu declares state of calamity over 5,000 dengue cases",
         "url": "http://newsinfo.inquirer.net/826252/cebu-declares-state-of-calamity-over-5000-dengue-cases",
         "geocode": "[province, province]",
-        "state": "state"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-10-17",
-        "date-end": "2016-10-17",
-        "title": "Cebu declares state of calamity over 5,000 dengue cases",
-        "url": "http://newsinfo.inquirer.net/826252/cebu-declares-state-of-calamity-over-5000-dengue-cases",
-        "geocode": "[province, province]",
-        "state": "of"
-    },
-    {
-        "disease": "dengue",
-        "date-start": "2016-10-17",
-        "date-end": "2016-10-17",
-        "title": "Cebu declares state of calamity over 5,000 dengue cases",
-        "url": "http://newsinfo.inquirer.net/826252/cebu-declares-state-of-calamity-over-5000-dengue-cases",
-        "geocode": "[province, province]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "typhoid",
@@ -1842,25 +1401,7 @@
         "title": "Typhoid outbreak kills 4 in Cebu town",
         "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
         "geocode": "[]",
-        "state": "state"
-    },
-    {
-        "disease": "typhoid",
-        "date-start": "2012-03-05",
-        "date-end": "2012-03-05",
-        "title": "Typhoid outbreak kills 4 in Cebu town",
-        "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "geocode": "[]",
-        "state": "of"
-    },
-    {
-        "disease": "typhoid",
-        "date-start": "2012-03-05",
-        "date-end": "2012-03-05",
-        "title": "Typhoid outbreak kills 4 in Cebu town",
-        "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "geocode": "[]",
-        "state": "calamity"
+        "state": "state of calamity"
     },
     {
         "disease": "typhoid",
