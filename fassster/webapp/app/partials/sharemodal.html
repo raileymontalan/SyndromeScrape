@@ -1,0 +1,105 @@
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-success">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="shareModalLabel">Share Project</h4>
+				</div>
+				<div class="modal-body">
+					<div id="loading">
+							<i class="fa fa-sync fa-spin fa-2x fa-fw"></i><br><br>
+							Please wait. Fetching records...
+					</div>
+					<div class="form-group" id="listNames">
+						<select multiple id="modNames" class="form-control shareSelect" name="modnames" >
+							<option data-template value="{{ id }}">{{ name }}</option>
+						</select>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button form="shareid" type="submit" class="btn btn-success" onclick="shareThis();">Share</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+	
+	$(document).ready(function() {
+		jQuery('#shareModal #loading').show();
+  jQuery('#listNames').hide();
+		$("#shareModal").on("shown.bs.modal", function(e) {
+
+			//let us check token
+			token = checkToken( $.session.get('userToken') );
+			
+			var link = $(e.relatedTarget);
+			pid = link.attr("data-pid");
+
+			var body = {}
+			aUsers = [];
+			$.ajax({
+					url: "http://104.236.3.75/fassster-api/public/api/user/active",
+					data: body, 
+					type: "get",
+					dataType: "json",
+					headers: { 
+							"Authorization": "Bearer " + token
+					}
+			})
+			.done(function(data) {
+					if(data && data.success == true) {
+							aUsers = data.data.data;
+					}
+					console.log("shareNames", aUsers);
+					//display data using template plugin
+					//Tempo.prepare("modNames").render(aUsers);
+					Tempo.prepare('modNames').when(TempoEvent.Types.RENDER_STARTING, function (event) {
+					}).when(TempoEvent.Types.RENDER_COMPLETE, function (event) {
+						jQuery('#shareModal #loading').hide();
+						jQuery('#listNames').show();
+					}).render(aUsers);
+			});
+
+		});
+
+		$("#shareModal").on("hidden.bs.modal", function(e) {
+			Tempo.prepare("modNames").clear();
+		});
+
+		//let us setup all UI
+		$('.shareSelect').select2({
+			placeholder: "Choose Users",
+			tags: true,
+		});
+
+	});
+	
+	function shareThis() {
+		//let us check token
+		token = checkToken( $.session.get('userToken') );
+		
+		var sbody = {
+			project_id: pid,
+			user_ids: $('#modNames').val()
+		}
+		
+		$.ajax({
+					url: "http://104.236.3.75/fassster-api/public/api/projects/share",
+					data: sbody, 
+					type: "post",
+					dataType: "json",
+					headers: { 
+							"Authorization": "Bearer " + token
+					}
+			})
+			.done(function(data) {
+					if(data && data.success == true) {
+							aUsers = data.data.data;
+					}
+					console.log("shareNames", aUsers);
+					
+			});
+	}
+</script>

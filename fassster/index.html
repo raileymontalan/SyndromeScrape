@@ -1,140 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- saved from url=(0063)presentation.html -->
+<html lang="en" class="js cssanimations">
 	<head>
-		<meta charset="utf-8">
-		<title>FASSSTER v1.0</title>
-		<meta name="description" content="description">
-		<meta name="author" content="AJWCC">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
-		<link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
-		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:100,300,400,500,700|Roboto+Condensed:400,700|Roboto:100,300,400,500" rel="stylesheet">
-		<link href="assets/plugins/select2/select2.css" rel="stylesheet">
-		<link href="assets/css/themify-icons.css" rel="stylesheet">
-		<link href="assets/css/mainui.css" rel="stylesheet">
-		<link href="assets/css/flatblue.css" rel="stylesheet">
-		<link href="assets/css/fassster.css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<link rel="stylesheet" href="assets/plugins/leaflet/leaflet.css" />
-		<!-- Make sure you put this AFTER Leaflet's CSS -->
-		<script src="assets/plugins/leaflet/leaflet.js"></script>
+	<title>FASSSTER 2.0</title>
 
-		<link rel="stylesheet" href="assets/plugins/leaflet/geocoder.css" />
-		<script src="assets/plugins/leaflet/geocoder.js"></script>
+	<!-- Canonical SEO -->
+	<link rel="canonical" href="http://fassster.ehealth.ph">
 
-		<link rel="stylesheet" href="assets/plugins/leaflet/markercluster.css" />
-		<script src="assets/plugins/leaflet/markercluster.js"></script>
-		<script src="assets/plugins/leaflet/leaflet-providers.js" ></script>
+	<!--  Social tags      -->
+	<meta name="keywords" content="">
 
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
-				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
-				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
-		<![endif]-->
-	</head>
-<body class="perfect-scrollbar-off sidebar-mini flat-blue">
-<div id="no-portrait">
-	<h1><i class="ti-info-alt"></i></h1>
-	<h2>No Portrait View</h2>
-	<p class="lead">Landscape view only for iPads & Tablets. No accessible view for mobile phones.</p>
-</div>
-<!--Start Header-->
-<div id="screensaver">
-	<canvas id="canvas"></canvas>
-	<i class="fa fa-lock" id="screen_unlock"></i>
-</div>
-<div id="modalbox">
-	<div class="lock-modal">
-		<div class="lock-modal-header">
-			<div class="modal-header-name">
-				<span>Basic table</span>
+	<meta name="description" content="">
+
+	<!-- Schema.org markup for Google+ -->
+	<meta itemprop="name" content="FASSSTER 2.0">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="assets/img/screenshot.png">
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@fassster">
+	<meta name="twitter:title" content="FASSSTER 2.0">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:creator" content="@fassster">
+	<meta name="twitter:image" content="assets/img/screenshot.png">
+
+	<!-- Open Graph data -->
+	<meta property="og:title" content="FASSSTER 2.0">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="index.html">
+	<meta property="og:image" content="assets/img/screenshot.png">
+	<meta property="og:description" content="">
+	<meta property="og:site_name" content="AJWCC">
+
+
+	<!--  end meta tags-->
+
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="viewport" content="width=device-width">
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/fassster.css" rel="stylesheet">
+
+	<!--     Fonts and icons     -->
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+	<link href="assets/plugins/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+	<link href="assets/css/nucleo-icons.css" rel="stylesheet">
+
+</head>
+
+<body class="presentation-page loading">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-transparent nav-down" color-on-scroll="500">
+    <div class="container" id="scroll-nav">
+      <div class="navbar-translate">
+        <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-bar"></span>
+						<span class="navbar-toggler-bar"></span>
+						<span class="navbar-toggler-bar"></span>
+				</button>
+				<div class="navbar-header">
+        	<a class="navbar-brand toscroll" href="#home" data-scroll="true"><i>FASSSTER 2.0</i></a>
+        </div>
+    	</div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link toscroll" href="#whatis" data-scroll="true">What is FASSSTER?</a>
+          </li>
+					<li class="nav-item">
+						<a class="nav-link toscroll" href="#features" data-scroll="true">Features</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link toscroll" href="#contact" data-scroll="true">Contact Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-success" href="webapp/app/register.html">Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="btn btn-round btn-success" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
+					</li>
+        </ul>
+      </div>
+    </div>
+	</nav>
+
+	<!-- Features menu 
+	Show this menu when we get pass the Features section
+	-->
+	<nav class="navbar navbar-two navbar-expand-lg navbar-features fixed-top bg-success">
+		<div class="container">
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav ml-auto" id="scroll-nav">
+					<li class="nav-item">
+						<a class="nav-link toscroll" href="#modelling" data-scroll="true">Disease Modeling</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link toscroll" href="#webapp" data-scroll="true">Web Application</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link toscroll" href="#syndromic" data-scroll="true">Syndromic Visualization</a>
+					</li>
+				</ul>
 			</div>
-			<div class="box-icons">
-				<a class="close-link">
-					<i class="fa fa-times"></i>
-				</a>
-			</div>
 		</div>
-		<div class="lock-modal-inner">
-		</div>
-		<div class="lock-modal-bottom">
-		</div>
-	</div>
-</div>
-<!--End Header-->
+	</nav>
 
-<!--Start Container-->
-<div id="main" class="wrapper">
-	<div id="sidebar-left" class="sidebar" data-background-color="black" data-active-color="warning">
-	</div>
-	<div class="main-panel">
-		<nav id="topbar" class="navbar navbar-default"></nav>
-		<!-- about slidedown panel -->
-		<div id="about">
-			<div class="about-inner">
-				<h4 class="page-header">FASSSTER Web App</h4>
-				<p>AJWCC</p>
-				<p>Homepage - <a href="http://fassster.ehealth.ph" target="_blank">http://fassster.ehealth.ph</a></p>
-				<p>Email - <a href="mailto:fassster@ehealth.ph">fassster@ehealth.ph</a></p>
-			</div>
-		</div>
-		<!-- preloader -->
-		<div class="preloader">
-			<img src="assets/img/devoops_getdata.gif" class="devoops-getdata" alt="preloader"/>
-		</div>
-		<!-- main content area -->
-		<div id="ajax-content"></div>
 
-	</div>
-</div>
+	<div class="wrapper" id="home">
+		<div class="page-header section-dark" style="background-image: url(&#39;assets/img/sections/fassster-cover-2.jpg&#39;)">
+			<div class="content-center">
+				<div class="container">
+					<div class="title-brand">
+						<h1 class="presentation-title">
+								<img src="assets/img/fassster-logo-wt.png" alt="">
+						</h1>
+						<div class="type">2.0</div>
+						<!--<div class="fog-low">
+							<img src="assets/img/fog-low.png" alt="">
+						</div>
+						<div class="fog-low right">
+							<img src="assets/img/fog-low.png" alt="">
+						</div>-->
+					</div>
 
-<!-- dynamic modals area -->
-<div id="modals"></div>
-
-<!-- fixed modal to be available in all pages -->
-<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header bg-success">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="uploadModalLabel">Upload A STEM Project</h4>
-			</div>
-			<div class="modal-body">
-				<div class="form-group">
-						<label>Project Title</label>
-						<input placeholder="Enter Title" class="form-control" type="text">
+					<h2 class="presentation-subtitle text-center">A tool for modeling disease spreads in the Philippines</h2>
 				</div>
-				<div class="form-group">
-						<label>Description</label>
-						<textarea placeholder="Description" class="form-control" rows="3"></textarea>
+			</div>
+		</div>
+
+		<!-- What is -->
+		<div class="section section-components section-dark" id="whatis">
+			<div class="row">
+				<div class="col-md-12">
+						<h3 class="title text-center"> What is FASSSTER? </h3>
 				</div>
-				<div class="form-group">
-						<label>STEM Packaged File (ZIP)</label>
-						<input placeholder="Project File" class="" type="file">
+				<div class="col-md-12 col-lg-6">
+					<div class="image-container">
+						<img class="components-macbook" src="assets/img/laptop-basic.png" alt="">
+						<!--
+						<img class="table-img" src="assets/img/table.jpg" alt="">
+						<img class="share-btn-img" src="assets/img/share-btn.png" alt="">
+						<img class="coloured-card-btn-img" src="assets/img/coloured-card-with-btn.png" alt="">
+						<img class="coloured-card-img" src="assets/img/coloured-card.png" alt="">
+						<img class="social-img" src="assets/img/social-row.png" alt="">
+						<img class="pin-btn-img" src="assets/img/pin-btn.png" alt="">
+						-->
+					</div>
+				</div>
+				<div class="col-md-10 col-lg-4 ml-auto mr-auto">
+					<h3 class="title">&nbsp;</h3>
+					<h6 class="category">Feasibility Analysis of Syndromic Surveillance Using Spatio-Temporal Epidemiological Modeler For Early Detection of Diseases</h6>
+					<h5 class="description"><p>FASSSTER aims to create a hub for different data sources (Disease records, environmental parameters, etc.), providing a rich layout of integrated information that will facilitate in understanding the spread of diseases.</p><p>In partnership with the Department of Health, Department of Science and Technology - Philippine Council for Health Research and Development, and the Ateneo de Manila University, FASSSTER aims to provide a user-friendly tool for modeling disease spreads in the Philippines to aid in the DOH's disease surveillance efforts. FASSSTER takes a multi-dimensional approach in modeling disease spreads by using localized indices from Philippine health records and by integrating third-party data, such as those found in Electronic Medical Record (EMR) systems and online sources.</p></h5>
 				</div>
 			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<button form="shareid" type="submit" class="btn btn-success">Upload</button>
+		</div>
+
+		<!-- Features -->
+		<div class="section section-dark" id="features">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+							<h3 class="title text-center"> Features </h3>
+					</div>
+					<div class="col-md-4">
+						<a class="info box-link" href="#modelling">
+							<div class="icon icon-danger">
+								<i class="nc-icon nc-ruler-pencil"></i>
+							</div>
+							<div class="description">
+								<h4 class="info-title"> Disease Modeling </h4>
+								<p>All disease models are made using IBM's Spatio-Temporal Epidemiological Modeler (STEM).</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4">
+						<a class="info box-link" href="#webapp">
+							<div class="icon icon-danger">
+								<i class="nc-icon nc-html5"></i>
+							</div>
+							<div class="description">
+								<h4 class="info-title"> Web Application </h4>
+								<p>The web application is designed to allow epidemiologist to modify disease models in a simpler and more user-friendly interface.</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4">
+						<a class="info box-link" href="#syndromic">
+							<div class="icon icon-danger">
+								<i class="nc-icon nc-world-2"></i>
+							</div>
+							<div class="description">
+								<h4 class="info-title"> Syndromic Surveillance Visualization </h4>
+								<p>The project aims to integrate third-party sources into the disease models themselves.</p>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!--  Disease Modeling  -->
+		<div class="features-4" id="modelling">
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 ml-auto mr-auto text-center">
+							<h2 class="title">Disease Modeling</h2>
+							<h5 class="description">All disease models are made using IBM's Spatio-Temporal Epidemiological Modeler (STEM).</h5>
+						</div>
+					</div>
+					<div class="space-top"></div>
+					<div class="row">
+						<div class="col-md-5 ml-auto">
+							<div class="card stem" data-background="image" style="background-image: url('assets/img/stem.gif')">
+								
+							</div>
+							<h4>Disease Models:</h4>
+							<ol>
+								<li>Dengue Fever Disease Model</li>
+								<li>Measles Disease Model</li>
+								<li>Typhoid Fever Disease Model</li>
+							</ol>
+						</div>
+
+						<div class="col-md-5 mr-auto">
+							<div class="card card-plain">
+								<div class="card-body">
+									
+									<p class="card-description">It follows the compartmental model approach, where a person is classified under a disease state compartment (e.g. Susceptible, Infectious, Recovered, etc.) at a given point in time. A scenario in STEM is built by combining different factors such as the initializers, schedulers, population and geographic models, and more.
+									<br /><br />
+									Integrating FASSSTER, indices used in the disease models come from official records such as the Department of Health's Philippine Integrated Disease Surveillance and Response (PIDSR) System and Philippine Health Statistics.
+									<br /><br />	
+									For Project FASSSTER, Disease Modelers work on building the initial models using the standalone STEM Application. Once done, the model is uploaded and viewed via the Web Application.
+									</p>
+
+									<div class="card-footer">
+											<a href="#pablo" class="btn btn-link btn-neutral">
+													<i class="fa fa-book" aria-hidden="true"></i> Read More
+											</a>
+											<a href="#pablo" class="btn btn-just-icon btn-link btn-neutral">
+													<i class="fa fa-apple" aria-hidden="true"></i>
+											</a>
+											<a href="#pablo" class="btn btn-just-icon btn-link btn-neutral">
+													<i class="fa fa-android" aria-hidden="true"></i>
+											</a>
+											<a href="#pablo" class="btn btn-just-icon btn-link btn-neutral">
+													<i class="fa fa-windows" aria-hidden="true"></i>
+											</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--  Web Application  -->
+		<div class="features-4 section-white" id="webapp">
+			<div class="section section-nude">
+				<div class="container">
+					<div class="row">
+							<div class="col-md-8 ml-auto mr-auto text-center">
+									<h2 class="title">Web Application</h2>
+									<h5 class="description">The web application is designed to allow epidemiologist to modify disease models in a simpler and more user-friendly interface.</h5>
+							</div>
+					</div>
+					<div class="row">
+
+						<div class="col-md-6">
+							<div class="description">
+								<p>All technologies used are open source, including the Python-Tornado web framework, MongoDB NoSQL database, and LeafletJS.
+								<br /><br />
+								Based on the uploaded disease models, the Web Application triggers the standalone STEM application located in the server, and visualizes the results on a map. The Simulation Managers can then modify the different parameters directly from the Web Application to create their own "what if" scenarios.</p>
+								<h4>Features:</h4>
+								<ol>
+								<li>Open source technologies utilization (Python, MongoDB, LeafletJS)</li>
+								<li>Standalone STEM Application headless trigger</li>
+								<li>Disease spread prediction visualization</li>
+								</ol>
+							</div>
+						</div>
+
+						<div class="col-md-4 offset-1">
+
+							<div class="info info-horizontal info-first">
+								<!--<div class="icon icon-info">
+									<i class="nc-icon nc-atom" aria-hidden="true"></i>
+								</div>-->
+								<div class="description">
+									<img src="assets/img/mongo.png" alt="">
+									<!--<h4 class="info-title">Mongo DB</h4>
+									<p>The moment you use Paper Kit, you know you’ve never felt anything like it. With a single use, is's a powerfull UI Kit</p>-->
+								</div>
+							</div>
+							<div class="info info-horizontal">
+								<!--<div class="icon icon-success">
+									<i class="nc-icon nc-ruler-pencil" aria-hidden="true"></i>
+								</div>-->
+								<div class="description">
+									<img src="assets/img/leaflet.png" alt="">
+									<!--<h4 class="info-title">For Designers Only</h4>
+									<p>The moment you use Paper Kit, you know you’ve never felt anything like it. With a single use, this powerfull UI Kit lets you do more than ever before.</p>-->
+								</div>
+							</div>
+							<div class="info info-horizontal">
+								<!--<div class="icon icon-danger">
+										<i class="nc-icon nc-tie-bow" aria-hidden="true"></i>
+								</div>-->
+								<div class="description">
+									<img src="assets/img/python-tornado.png" alt="">
+									<!--<h4 class="info-title">Beautiful Examples</h4>
+									<p>Speed up your development time or get inspired with the large number of example pages.</p>-->
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Syndromic -->
+		<div class="features-4 section-nude" id="syndromic">
+			<div class="section section-content section-gray">
+				<div class="container">
+					<div class="card card-plain card-blog">
+						<div class="row">
+							<div class="col-md-7">
+								<div class="card-image">
+									<img class="img" src="assets/img/dashboard.png">
+								</div>
+							</div>
+
+							<div class="col-md-4 ">
+								<div class="section-description">
+									<h2 class="title">Syndromic Surveillance Visualization</h2>
+									<div class="description">
+										<p>For its second year, the project aims to integrate third-party sources into the disease models themselves. Through the use of Application Programming Interfaces (APIs), the Web Application becomes a hub for disease modelers to include live deidentified data from significant surveillance systems. Since APIs are used, no data is stored in FASSSTER's server.</p>
+										<h6>Integrated data sources are:</h6>
+										<ul>
+											<li>SHINE OS+</li>
+											<li>Infodemiological (Health-Related) Tweets</li>
+											<li>PIDSR Data</li>
+										</ul>
+										<p>FASSSTER aims to create a hub for different data sources (Disease records, environmental parameters, etc.), providing a rich layout of integrated information that will facilitate in understanding the spread of diseases.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Contact Us -->
+	<div class="features-4 section-gray" id="contact">
+		<div class="section section-content section-dark-blue section-image" style="background-image: url('assets/img/about.jpg');background-size: cover;padding-bottom: 70px;">
+			<div class="contactus-1" >
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 ml-auto mr-auto">
+							<div class="card card-contact no-transition">
+								<h3 class="card-title text-center" style="padding-bottom:30px;">Contact Us</h3>
+								<div class="row">
+									<div class="col-md-5 ml-auto">
+										<div class="card-body">
+											<div class="info info-horizontal info-first">
+												<div class="icon icon-info">
+													<i class="nc-icon nc-pin-3" aria-hidden="true"></i>
+												</div>
+												<div class="description">
+													<h4 class="info-title">Find us at the office</h4>
+													<p> Ateneo Java Wireless Competency Center AJWCC<br>
+															R-313 3rd Floor PLDT Convergent Technology Center,<br>
+															Ateneo de Manila University,<br>
+															Katipunan Ave., Loyola Heights<br>
+															Quezon City, Philippines
+													</p>
+												</div>
+											</div>
+											<div class="info info-horizontal">
+												<div class="icon icon-danger">
+													<i class="nc-icon nc-badge" aria-hidden="true"></i>
+												</div>
+												<div class="description">
+													<h4 class="info-title">Give us a ring</h4>
+													<p> Kennedy Espina<br>
+															Project Manager<br>
+															+02 374 0167<br>
+															Mon - Fri, 8:00-16:00
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-5 mr-auto">
+											<form role="form" id="contact-form" method="post">
+												<div class="card-body">
+													<div class="row">
+														<div class="col-md-6">
+															<div class="form-group label-floating">
+																<label class="control-label">First name</label>
+																<input type="text" name="name" class="form-control" placeholder="First Name">
+															</div>
+														</div>
+														<div class="col-md-6">
+															<div class="form-group label-floating">
+																<label class="control-label">Last name</label>
+																<input type="text" name="name" class="form-control" placeholder="Last Name">
+															</div>
+														</div>
+													</div>
+													<div class="form-group label-floating">
+														<label class="control-label">Email address</label>
+														<input type="email" name="email" class="form-control" placeholder="Email"/>
+													</div>
+													<div class="form-group label-floating">
+														<label class="control-label">Your message</label>
+														<textarea name="message" class="form-control" id="message" rows="6" placeholder="Message"></textarea>
+													</div>
+
+													<div class="row">
+														<div class="col-md-6">
+															<div class="checkbox">
+																<input id="checkbox1" type="checkbox">
+																<label for="checkbox1">
+																		I'm not a robot !
+																</label>
+															</div>
+														</div>
+														<div class="col-md-6">
+															<a type="submit" class="btn btn-primary pull-right">Send Message</a>
+														</div>
+													</div>
+												</div>
+											</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<!--End Container-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!--<script src="http://code.jquery.com/jquery.js"></script>-->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
-<script src="assets/plugins/tinymce/tinymce.min.js"></script>
-<script src="assets/plugins/tinymce/jquery.tinymce.min.js"></script>
-<script src="assets/plugins/select2/select2.full.min.js"></script>
-<!-- jQuery Templating plugin -->
-<script src="assets/plugins/tempo.js"></script>
-<!-- jQuery Sesssion plugin -->
-<script src="assets/plugins/jquery.session.js"></script>
-<!-- All functions + document.ready processing -->
-<script src="assets/js/app.js"></script>
-</body>
-</html>
+	<!-- Footer -->
+	<footer class="footer footer-black">
+		<div class="container">
+			<div class="row">
+				<nav class="footer-nav">
+					<ul>
+						<li><a href="http://ajwcc.ateneo.edu/">AJWCC</a></li>
+						<li><a href="http://fassster.ehealth.ph/license">Licenses</a></li>
+					</ul>
+				</nav>
+				<div class="credits ml-auto">
+					<span class="copyright">
+						© 2017 - <script>document.write(new Date().getFullYear())</script>, AJWCC. All rights reserved.
+					</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Login Modal -->
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="false">
+			<div class="modal-dialog modal-register">
+					<div class="modal-content">
+						<form method="post" action="" id="loginForm">
+							<div class="modal-header no-border-header text-center">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									<h6 class="text-muted">Welcome</h6>
+									<h3 class="modal-title text-center">FASSSTER 2.0</h3>
+									<p>Log in to your account</p>
+							</div>
+							<div class="modal-body">
+									<div class="form-group">
+											<label>Email</label>
+									<input type="text" value="admin@admin.com" placeholder="Email" class="form-control" id="email" />
+								</div>
+								<div class="form-group">
+											<label>Password</label>
+									<input type="password" value="test" placeholder="Password" class="form-control" id="password" />
+								</div>
+							</div>
+							<div class="modal-footer">
+									<div class="left-side">
+											<button href="#" onclick="location.href='webapp/app/register.html'" type="button" class="btn btn-default btn-link">Register</button>
+									</div>
+									<div class="divider"></div>
+									<div class="right-side">
+											<button type="submit" class="btn btn-danger btn-link">Log in</button>
+									</div>
+							</div>
+						</form>
+					</div>
+			</div>
+	</div>
+
+	<!--  Plugins -->
+	<!-- Core JS Files -->
+	<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
+	<script src="assets/js/tether.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="webapp/assets/plugins/jquery.session.js"></script>
+	<script src="assets/js/fassster.js"></script>
+
+	<script type="text/javascript">
+		$('#loginModal').on('shown.bs.modal', function () {
+			$('#email').focus();
+			//alert("Hey");
+			$('#loginForm').submit(function(e){
+				e.preventDefault();
+				//authenticate user
+				// -- perform auth api and return user date
+				var body = {
+						'email': $('#email').val(),
+						'password': $('#password').val()
+				};
+				apiData = "";
+				
+				var promise = $.post("http://104.236.3.75/fassster-api/public/api/user/login",
+				body, function(data) {
+						if(data) {
+								if(data.success == true) {
+										console.log(data);
+										//store response to variable
+										apiData = data;
+								} else {
+										//alert error message
+										alert(data.message);
+								}
+						} else {
+								//alert error message
+								alert(data.message);
+						}
+				}, "json");
+
+				promise.done(function() {
+					console.log(apiData);
+						if(apiData.success == true) {
+								//store data into session
+								$.session.set('userID', apiData.data.id);
+								$.session.set('userPW', $('#password').val());
+								localStorage.setItem('userData', JSON.stringify(apiData.data));
+								$.session.set('userToken', apiData.token);
+								//redirect to home
+								location.href='webapp';
+						} else {
+							location.href='.';
+						}
+				});
+			})
+		})
+	</script>
+
+</body></html>

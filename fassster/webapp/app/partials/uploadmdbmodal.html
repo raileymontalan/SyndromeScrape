@@ -1,0 +1,133 @@
+<div class="modal fade" id="uploadMbdModal" tabindex="-1" role="dialog" aria-labelledby="uploadMbdModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="uploadMbdModalLabel">Upload MDB File</h4>
+      </div>
+      <form id="uploadMDB">
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Disease</label>
+            <select name="sickness_id" id="sickness">
+              <option value="" disabled selected>Choose disease</option>
+              <option value="2">Dengue</option>
+              <option value="3">Measles</option>
+              <option value="1">Typhoid</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <label>MDB File</label>
+              <input placeholder="MDB File" name="mdb" id="sendfile" class="" type="file" onclick="checkSick()">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success hidden" onclick="mbdUpload();">Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  /*function mbdUpload() {
+	  $("#uploadMDB").submit();
+  }
+
+  //initialize upload form for projects
+  $('#uploadMDB').on("submit", function(e){
+
+    $("#uploadMDB div.modal-body").html("<i class='fa fa-sync fa-spin fa-fw'></i> Please wait. Uploading your STEM Project.").css('text-align', 'center');
+    $('#uploadMDB div.modal-footer button').attr('disabled','disabled');
+    e.preventDefault();
+    
+    //let us check token
+    token = checkToken( $.session.get('userToken') );
+    
+    $.ajax({
+        url: "http://104.236.3.75/fassster-api/public/api/mdb/upload",
+        data: new FormData(this),
+        type: "post",
+        dataType: "json",
+        contentType: false,
+        processData:false,
+        headers: { 
+            "Authorization": "Bearer " + token
+        }
+    })
+    .done(function(data) {
+        console.log(data);
+        if(data && data.success == true) {
+            console.log(data);
+            location.reload();
+        } else {
+            alert(data.message[0]);
+        }
+    });
+    $('.preloader').hide();
+  });*/
+  function checkSick() {
+    //let us check if there is sickness chosen
+    if( $('#sickness').val() === '' ) {
+      swal({
+        title: 'Hold on!',
+        text: 'Please select a disease first.',
+        type: 'warning'
+      });
+      return false;
+    }
+
+  }
+
+  $("#sendfile").change(function(){
+    //let us check token
+    token = checkToken( $.session.get('userToken') );
+    var file = $('form')[0]; //console.log(file);
+    var formdata = new FormData(file);
+    
+    if($(this).prop('files').length > 0)
+    {
+        file = $(this).prop('files')[0];
+    }
+
+    $("#uploadMDB div.modal-body").html("<i class='fa fa-sync fa-spin fa-fw'></i> Please wait. Uploading your MDB file.").css('text-align', 'center');
+    $('#uploadMDB div.modal-footer button').attr('disabled','disabled');
+    $.ajax({
+      url: "http://104.236.3.75/fassster-api/public/api/mdb/v2/upload",
+      data: formdata,
+      type: "post",
+      dataType: "json",
+      contentType: false,
+      processData:false,
+      headers: { 
+          "Authorization": "Bearer " + token
+      }
+    })
+    .done(function(data) {
+        //console.log(data);
+        if(data && data.success == true) {
+          swal({
+            title: 'Success!',
+            text: 'MDB file uploaded.',
+            type: 'success'
+          }).then(function() {
+            location.reload();
+          });
+        } else {
+            swal("Oops!", data.message[0], "error");
+        }
+    })
+    .fail(function(data) {
+      console.log(data.responseJSON.message[0]);
+      return swal({
+        title: "Oops!" ,
+        text: "ERROR: "+data.responseJSON.message[0]+".",
+        type: "error"
+      }).then(function(){
+        location.reload();
+      });
+    });
+  });
+
+</script>

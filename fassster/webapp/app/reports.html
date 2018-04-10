@@ -1,0 +1,47 @@
+<div class="main-content">
+  <div class="container-fluid blocked" id="datasources">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-table">
+          <div class="card-header">
+              <h4 class="card-title">Reports</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped" id="userListing">
+                <thead>
+                  <tr><th>ID</th>
+                  <th>Data Source</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr></thead>
+                <tbody>
+                    <tr data-template>
+                      <td>01</td>
+                      <td>ShineOS+</td>
+                      <td>API</td>
+                      <td>Active</td>
+                      <td></td>
+                    </tr>
+                    <tr data-template>
+                      <td>01</td>
+                      <td>PIDSR</td>
+                      <td>MDB Upload</td>
+                      <td>Dengue uploaded 02-15-2018<br>Measles uploaded 02-15-2018<br>Typhoid uploaded 02-15-2018</td>
+                      <td><button>Upload</button> | <button>View DB</button></td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+          <div class="card-footer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      //hide preloader
+      $('.preloader').hide();
+  });
+</script>

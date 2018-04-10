@@ -1,0 +1,186 @@
+<div class="main-content">
+  <div class="container-fluid blocked" id="userProfile">
+    <div class="row" data-template >
+      <div class="col-md-4">
+          <div class="card card-user">
+              <div class="card-header">
+                  <h4 class="card-title">User Account</h4>
+              </div>
+              <div class="card-content">
+                <form id="updatePassword">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control border-input" name="email" placeholder="Email" value="{{ email }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">New Password</label>
+                                <input type="password" class="form-control border-input" name="newpass" placeholder="New Password">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Confirm New Password</label>
+                                <input type="password" class="form-control border-input" name="confirmpass" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-info btn-fill btn-wd">Update Account</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+              <h4 class="card-title">User Profile</h4>
+          </div>
+          <div class="card-content">
+              <form id="updateProfile">
+                  
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>First Name</label>
+                              <input type="text" class="form-control border-input" name="fname" placeholder="First Name" value="{{ fname }}">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>Last Name</label>
+                              <input type="text" class="form-control border-input" name="lname" placeholder="Last Name" value="{{ lname }}">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Department</label>
+                            <input type="text" class="form-control border-input" name="department" placeholder="Department" value="AJWCC">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Company</label>
+                            <input type="text" class="form-control border-input" name="company" placeholder="Company" value="{{ additional_information.company }}">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Position</label>
+                            <input type="text" class="form-control border-input" name="position" placeholder="Position" value="Manager">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label>Address</label>
+                              <input type="text" class="form-control border-input" name="address" placeholder="Address" value="{{ additional_information.address }}">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Region</label>
+                                <select class="form-control input-sm" name="region" id="profileregion">
+                                        <option value="06" {% if additional_information.region == '06' %} selected {% endif %}>Region VI</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Province</label>
+                                <select class="form-control input-sm" name="province" id="profileprovince" onchange="updateCits('profile', this.value)" onload="loadCits('profile', 'province', additional_information.province)">
+                                    <option value="" disabled="disabled" selected>Choose Province</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>City</label>
+                                <select class="form-control input-sm" name="municipality" id="profilecitymun" onload="loadCits('profile', 'citymun', additional_information.province)">
+                                      <option value="" disabled="disabled" selected>Choose Municipality/City</option>
+                                  </select>
+                            </div>
+                        </div>
+                      
+                  </div>
+                  
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+                  </div>
+                  <div class="clearfix"></div>
+              </form>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    //let us load user Data
+    var userP = jQuery.parseJSON( localStorage.getItem('userData') );
+    //console.log( userP );
+    //display user profile
+    Tempo.prepare("userProfile").render(userP);
+    //setup the location dropdowns
+    loadCits('profile', 'province', userP.additional_information.province);
+    loadCits('profile', 'citymun', userP.additional_information.municipality);
+    
+    //hide preloader
+    $('.preloader').hide();
+
+    //initialize form submission
+    $('#updateProfile').submit(function(e){
+        e.preventDefault();
+        //hide preloader
+        $('.preloader').show();
+        
+        var body = {
+            'fname'         : $("input[name=fname]").val(),
+            'lname'         : $("input[name=lname]").val(),
+            'region'        : $("select[name=region]").val(),
+            'municipality'  : $("select[name=municipality]").val(),
+            'province'      : $("select[name=province]").val(),
+            'address'       : $("input[name=address]").val(),
+            'company'       : $("input[name=company]").val()
+        };
+        console.log("Parameters send to server for update", body);        
+        //let us check token
+        token = checkToken( $.session.get('userToken') );
+        
+        $.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/user/profile",
+            data: body,
+            type: "post",
+            dataType: "json",
+            contentType: false,
+    	    processData:false,
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+                closeEdit();
+                location.reload();
+            } else {
+                alert(data.message[0]);
+                closeEdit();
+            }
+        });
+        $('.preloader').hide();
+    });
+  });
+</script>

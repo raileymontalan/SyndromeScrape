@@ -1,0 +1,96 @@
+<div class="modal fade" id="viewMbdModal" tabindex="-1" role="dialog" aria-labelledby="uploadMbdModalLabel">
+  <div class="modal-dialog modal-xlg" role="document">
+    <div class="modal-content" id="mdbPage">
+      <div class="modal-header bg-success">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="uploadMbdModalLabel">MDB File</h4>
+      </div>
+      <form id="mdbTable">
+        <div class="modal-body">
+          <div id="loading">
+            <i class="fa fa-sync fa-spin fa-2x fa-fw"></i><br><br>
+            Please wait. Fetching MDB records...
+          </div>
+          <table class="table table-striped table-condensed" id="mbdTableListing" 
+          data-filter-control="true"
+          data-filter-show-clear="true">
+            <thead>
+              <tr>
+                <th data-field="Region" >Region</th>
+                <th data-field="Province" >Province</th>
+                <th data-field="Muncity" >City/Mun</th>
+                <th data-field="Barangay" >Barangay</th>
+                <th data-field="AgeYears" data-filter-control="input">AgeYears</th>
+                <th data-field="Sex" >Sex</th>
+                <th data-field="DAdmit" data-filter-control="input">DAdmit</th>
+                <th data-field="DOnset" data-filter-control="input">DOnset</th>
+                <th data-field="Outcome" >Outcome</th>
+                <th data-field="MorbidityWeek" data-filter-control="input">MorbidityWeek</th>
+              </tr>
+            </thead>
+              
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+		jQuery('#mbdTableListing').hide();
+    
+    $("#viewMbdModal").on("shown.bs.modal", function(e) {
+      jQuery('button[data-dismiss=modal]').hide();
+      jQuery('#viewMbdModal #loading').show();
+
+			var link = $(e.relatedTarget);
+			var pname = link.attr("data-name");
+
+			var body = {}
+			cMDB = [];
+
+			//let us check token
+			token = checkToken( $.session.get('userToken') );
+
+			$.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/mdb",
+            data: body, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            if(data.data) {
+              jQuery.each(data.data, function(index, itemData) {
+                jQuery.each(itemData, function(index, iitemData) {
+                  $.merge( cMDB, iitemData.data);
+                });
+              });
+              //display data using template plugin
+              console.log( cMDB );
+              /*Tempo.prepare('mdbTable').when(TempoEvent.Types.RENDER_STARTING, function (event) {
+              }).when(TempoEvent.Types.RENDER_COMPLETE, function (event) {*/
+                jQuery('#viewMbdModal #loading').hide();
+                jQuery('#mbdTableListing').show();
+                jQuery('button[data-dismiss=modal]').show();
+                
+                goTable( $('#mbdTableListing'), cMDB );
+              /*}).render(cMDB);*/
+            }
+        });
+		});
+
+		$("#stemModal").on("hidden.bs.modal", function(e) {
+			//Tempo.prepare("mdbTable").clear();
+    });
+
+  });
+  
+  
+</script>

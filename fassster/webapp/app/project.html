@@ -1,0 +1,265 @@
+<div class="main-content">
+    <div class="container-fluid" id="projectpage">
+        <div class="content" data-template>
+            <div class="col-md-12 clearfix">
+                <p><a href="app/projects.html" class="ajax-link" data-title="STEM Projects"><i class="ti-angle-left"></i> Back to STEM Projects</a></p>
+            </div>
+
+            <div class="col-md-6">
+                
+                    <div class="card card-plain content-view" >
+                        <!--start of project view -->
+                        <div class="card-header">
+                            <div class="projectTitle field"> {{ title }} </div>
+                        </div>
+                        <div class="card-content clearfix">
+                            <div class="btn-group pull-right">
+                                <a href="javascript:" class="btn btn-success btn-sm" onclick='openEdit()'><i class="ti-pencil"></i> | Edit Details</a>
+                                <a href="javascript:" class="btn btn-warning btn-sm" onclick='openShare()'><i class="ti-share"></i> | Share Project</a>
+                            </div>
+                            <p>Author: <b>{{ author }}</b></p>
+                            <p>Date: <b>{{ date | date MMM DD, YYYY }}</b></p>
+                            
+                            <div class="imgbox" style="background-image:url('{{ image }}')"></div>
+
+                            <div class="field">{{ description }}</div>
+                        </div>
+                        <!-- end of project view -->
+                    </div>
+
+                    <div class="card card-plain content-form hidden">
+                        <!--start of hidden form -->
+                        <form id="updateProject">
+                            <input id="projectID" class=" field" name="project_id" type="hidden" value="{{ id }}" />
+                            <div class="card-header">
+                                <input name="title" id="projectTitle" class="projectTitle m-b-md form-control field" value="{{ title }}" required />
+                            </div>
+                            <div class="card-content clearfix">
+                                <p>Author: <b>{{ author }}</b></p>
+                                <p>Date: <b>{{ date }}</b></p>
+                                
+                                <div class="imgbox" style="background-image:url('{{ image }}')"></div>
+
+                                <br clear="all" />
+                                <p>Browse to change image: <input name="image" type="file" id="projectImage" /></p>
+                                
+                                <textarea class="form-control field" name="description" id="projectDescription" style="height:300px;" id="wysiwig_simple">{{ description }}</textarea>
+
+                                <hr />
+                                
+                                <div class="pull-right">
+                                    <a href="javascript:void(0);" class="btn btn-default btn-sm"  onclick='closeEdit()'><i class="ti-close"></i> | Cancel Edit</a>
+                                    <button type="submit" class="btn btn-success btn-sm" id="saveEdit"><i class="ti-save"></i> | Save Project Details</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of hidden form -->
+                    </div>
+                
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="title">Scenarios:</div>
+                        </div>
+                    </div>
+                    <div class="card-content clearfix">
+                        <div class="input-group pull-left input-group-wide">
+                            <input id="myScenarioFilter" type="text" class="form-control" placeholder="Search Scenarios" onkeyup="filterScenario()">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                        
+                        <div class="col-md-12 text-right hidden" style="margin-top: -3px;">
+                            <label>View as:</label>
+                            <div class="btn-group" data-toggle="buttons" role="group">
+                                <label class="btn btn-default active">
+                                    <input onchange="showas('grid');" type="radio" name="options" id="option2" autocomplete="off"> <i class="glyphicon glyphicon-th"></i> Grid 
+                                </label>
+                                <label class="btn btn-default">
+                                    <input onchange="showas('list');" type="radio" name="options" id="option3" autocomplete="off"> <i class="glyphicon glyphicon-th-list"></i> List 
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <div class="clearfix"></div>
+
+                        <div class="stemlist" style="margin-top:15px;" id="stemScenarios">
+                            <div id="acordeon">
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-border panel-default"  data-template-for="scenarios">
+                                    
+                                        <a data-toggle="collapse" href="#collapse{{ sid }}">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    {{ title }}
+                                                    <i class="ti-angle-down"></i>
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapse{{ sid }}" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p class="small details"><i class="fa fa-calendar"></i> {{ date | date MMM DD, YYYY }} | <i class="fa fa-user"></i> {{ author }} </p>
+                                                <p>{{ description }}</p>
+                                                <hr />
+                                                <div class="btn-group pull-right" data-toggle="buttons" role="group">
+                                                    <a href="#" class="btn btn-sm btn-end">&nbsp;</a>
+                                        
+                                                    <a href="javascript:" class="btn btn-warning btn-sm" onclick='openShare()'><i class="ti-share"></i> | Share Scenario</a>
+                                                    <a href="#" class="btn btn-sm btn-success" data-target="#stemModal" data-toggle="modal" title="Edit Scenario" data-page="ajax/scenario.html" data-pid="{{ _parent.id }}" data-sid="{{ sid }}"><i class="ti-pencil"></i> | Edit Scenario</a>
+                                                    <a href="app/visualization.html?name={{ title }} - Infectious&sid={{ sid }}&type=I" class="btn btn-sm btn-info ajax-link" ><i class="ti-loop"></i> | Simulate</a>
+                                                    
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger hide{{ _tempo.index }}" data-toggle="modal" data-target="#deleteScenario"><i class="ti-trash"></i> | Delete</a>
+                                                    
+                                                    <a href="#" class="btn btn-sm btn-end">&nbsp;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--  end acordeon -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/project.js"></script>
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+        
+        //render some additional partials
+        //share modal
+        $('#modals').html(""); //clear the modals div first
+        $('#modals').append($('<div>').load('app/partials/sharemodal.html'));
+        $('#modals').append($('<div>').load('app/partials/stemmodal.html'));
+        $('#modals').append($('<div>').load('app/partials/deleteprojectmodal.html'));
+                $('#modalloading').hide();
+        //let us parse the query parameter
+        var hash = location.hash;
+        var qloc = hash.indexOf("?");
+        var query = hash.substr(qloc+1, hash.length);
+        para = query.split("=");
+
+        var body = {
+            'project_id' : para[1]
+        }
+        cProject = [];
+        
+        //let us check token
+        token = checkToken( $.session.get('userToken') );
+
+        //get project details
+        $.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/projects/details",
+            data: body, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+                d = data.data;
+                cProject = {
+                    id: d.id,
+                    date: new Date(d.created_at),
+                    title: d.title,
+                    author: d.owner,
+                    image: d.image,
+                    description: d.description
+                }
+            }
+        });
+
+        //get scenarios
+        pageno = 1;
+        scenarioData = [];
+        var scenariobody = {
+            project_id: para[1], 
+            page: pageno
+        }
+        $.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/scenarios",
+            data: scenariobody, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+                $.each(data.data.data, function(i, item) {
+                    scenarioData.push({
+                        sid: item.id,
+                        project_id: item.project_id,
+                        date: new Date(item.created_at),
+                        title: item.title,
+                        author: item.owner,
+                        image: item.image,
+                        description: item.description,
+                        members: item.members
+                    });
+                });
+            }
+            cProject['scenarios'] = scenarioData;
+            console.log(cProject);
+            populatePage(cProject);
+        });
+
+    });
+
+    
+
+    //Read URL of new photo and replace image src
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('.imgbox').css('background-image', 'url(' + e.target.result + ')');
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function populatePage(cProject) {
+        //resetFields();
+        //display data using template plugin
+        Tempo.prepare("projectpage").render(cProject);
+
+        //let us setup all UI
+        $('.shareSelect').select2({
+            placeholder: "Choose Users",
+            tags: true,
+        });
+
+        //load wysiwig editor for editable textarea
+        TinyMCEStart('#wysiwig_simple', null);
+
+        //trigger image file change
+        $('#projectImage').on('change', function(){
+            readURL(this);
+        });
+
+        //hide preloader
+        $('.preloader').hide();
+    }
+
+    function resetFields() {
+        $(".field").val("");
+        $(".field").text("");
+    }
+    
+</script>

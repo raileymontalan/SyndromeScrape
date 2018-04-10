@@ -1,0 +1,168 @@
+<div class="main-content">
+  <div class="container-fluid blocked" id="datasources">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-table">
+          <div class="card-header">
+              <h4 class="card-title">EMR Sources</h4>
+          </div>
+          <div class="card-body">
+            <table class="table table-striped" id="userListing">
+                <thead>
+                  <tr><th>ID</th>
+                  <th>Data Source</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr></thead>
+                <tbody>
+                    <tr data-template>
+                      <td>01</td>
+                      <td>ShineOS+</td>
+                      <td>API</td>
+                      <td>Active</td>
+                      <td>
+                        <div class="btn-group" data-toggle="buttons" role="group">
+                          <label>
+                              <input type="checkbox" data-toggle="switch" checked="" data-on-text="ON" data-off-text="OFF" data-on-color="success" data-off-color="success"><span class="toggle"></span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-template>
+                        <td>02</td>
+                        <td>iClinicsys</td>
+                        <td>API</td>
+                        <td>Active</td>
+                        <td>
+                          <div class="btn-group" data-toggle="buttons" role="group">
+                            <label>
+                                <input type="checkbox" data-toggle="switch" checked="" data-on-text="ON" data-off-text="OFF" data-on-color="success" data-off-color="success"><span class="toggle"></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                </tbody>
+            </table>
+          </div>
+          <div class="card-footer"></div>
+        </div>
+
+        <hr />
+
+        <div class="card card-table">
+            <div class="card-header">
+                <h4 class="card-title col-md-6">PIDSR Source</h4>
+                <div class="col-md-6 pull-right text-right">
+                    <a href="#" class="btn btn-sm btn-info" data-target="#uploadMbdModal" data-toggle="modal" data-backdrop="static">Upload</a>
+                </div>
+            </div>
+            <div class="card-body">
+              <div id="loading">
+                  <i class="fa fa-sync fa-spin fa-2x fa-fw"></i><br><br>
+                  Please wait. Fetching records...
+              </div>
+              <table class="table table-striped" id="mbdListing">
+                  <thead>
+                    <tr><th>ID</th>
+                    <th>Data Source</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr></thead>
+                  <tbody>
+                      <tr data-template>
+                        <td>{{ id }}</td>
+                        <td>{{ name }}</td>
+                        <td>MDB Upload</td>
+                        <td>
+                          <p data-template-for="sickness_info">{{ name }} uploaded: {{ created_at | date 'MM-DD-YYYY HH:mm' }}</p>
+                        </td>
+                        <td>
+                          <div class="btn-group" data-toggle="buttons" role="group">
+                            <a href="#" class="btn btn-sm btn-success" data-target="#viewMbdModal" data-toggle="modal" data-backdrop="static" data-name="{{ name }}">View DB</a>
+                            <a href="#" class="btn btn-sm btn-danger deletedb" data-id="{{ id }}">Delete DB</a>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+            <div class="card-footer"></div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/plugins/bootstrap-switch.min.js"></script>
+<script type="text/javascript">
+  jQuery('#datasources #loading').show();
+  jQuery('#mbdListing').hide();
+  $(document).ready(function() {
+    //render some additional partials
+    //share modal
+    $('#modals').html(""); //clear the modals div first
+    $('#modals').append($('<div>').load('app/partials/uploadmdbmodal.html'));
+    $('#modals').append($('<div>').load('app/partials/viewmdbmodal.html'));
+
+    //let us check token
+    token = checkToken( $.session.get('userToken') );
+
+    var body = {}
+    aMdbs = [];
+    $.ajax({
+        url: "http://104.236.3.75/fassster-api/public/api/mdb/uploaded/list",
+        data: body, 
+        type: "get",
+        dataType: "json",
+        headers: { 
+            "Authorization": "Bearer " + token
+        }
+    })
+    .done(function(data) {
+        console.log(data);
+        if(data && data.success == true) {
+          aMdbs = data.data.data;
+        }
+        console.log(aMdbs);
+        //display data using template plugin
+        //Tempo.prepare("mbdListing").render(aMdbs);
+        Tempo.prepare('mbdListing').when(TempoEvent.Types.RENDER_STARTING, function (event) {
+        }).when(TempoEvent.Types.RENDER_COMPLETE, function (event) {
+          jQuery('#datasources #loading').hide();
+          jQuery('#mbdListing').show();
+          
+          $("a.deletedb").on('click', function() {
+            deleteMDB( $(this).attr("data-id") );
+          });
+        }).render(aMdbs);
+    });
+
+    $("[data-toggle='switch']").bootstrapSwitch();
+
+    //hide preloader
+    $('.preloader').hide();
+  });
+
+  function deleteMDB(id) {
+    $.ajax({
+        url: "http://104.236.3.75/fassster-api/public/api/mdb/uploaded/list/delete",
+        data: { 'mdb_file_id': id }, 
+        type: "delete",
+        dataType: "json",
+        headers: { 
+            "Authorization": "Bearer " + token
+        }
+    })
+    .done(function(data) {
+      swal({
+        title: 'Success!',
+        text: 'MDB file deleted.',
+        type: 'success'
+      }).then(function() {
+        location.reload();
+      });
+    });
+  }
+</script>

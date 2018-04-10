@@ -1,0 +1,342 @@
+<div class="main-content"  id="dashboardpage">
+    <div class="content" style="text-align: center;">
+        <div class="row charting">
+            <div class="col-sm-12 col-xs-12">
+                <div class="card dark">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="title">Forecast Predictions</div>
+                        </div>
+                        <div class="card-info">
+                            <small id="analyticsLabel">ZARRAGA, ILOILO &bull; STEM Project &bull; Scenario</small>
+                        </div>
+                        <div class="dropdown pull-right">
+                            <button type="button" class="btn btn-success sourcer" data-toggle="popover-forecast" data-placement="bottom">Source Options</button>
+                        </div>
+                    </div>
+                    <div class="card-body no-padding">
+                        <div id="analyticsforecastdiv"><i class="fa fa-sync fa-spin fa-3x fa-fw margintop100"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row annot">
+            <div class="col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="title">Annotations</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="annotations" class="text-left">
+                            Some to say here.
+                        </div>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-forecast hidden">
+    <div class="row">
+        <div class="form-group">
+            <label class="col-md-12">Location</label>
+            <div class="col-md-12">
+                <select class="form-control input-sm" id="forecastregion">
+                    <option value="06">Region VI</option>
+                </select>
+                <select class="form-control input-sm" id="forecastprovince" onchange="storeValue('analytics','province',this); updateCits('forecast',this.value)">
+                    <option value="" disabled="disabled" selected>Choose Province</option>
+                </select>
+                <select class="form-control input-sm" id="forecastcitymun" onchange="storeValue('analytics','city',this)">
+                    <option value="" disabled="disabled" selected>Choose Municipality/City</option>
+                </select>
+            </div>
+        </div>
+
+        <label class="col-md-12 text-center">FORECAST</label>
+        <div class="form-group">
+            <label class="col-md-12">Project</label>
+            <div class="col-md-12">
+                <select class="form-control input-sm" name="disease" id="JtProjectLists" onchange="storeValue('analytics','project',this); $('p.modelName').text(this.value);">
+                    <option disabled="disabled" selected>Choose project</option>
+                </select>
+            </div>
+        </div>
+
+        <!--<div class="form-group">
+            <label class="col-md-12">Disease</label>
+            <div class="col-md-12">
+            <select class="form-control input-sm" name="disease" id="disease" onchange="storeValue('analytics','disease',this)">
+                <option disabled="disabled" selected>Choose disease</option>
+                <option>Dengue</option>
+                <option>Typhoid</option>
+                <option>Measles</option>
+            </select>
+            </div>
+        </div>-->
+
+        <div class="form-group">
+            <label class="col-md-12">Model</label>
+            <div class="col-md-12">
+                <p class="modelName text-info"></p>
+            </div>
+        </div>
+        
+        <div class="form-group pull-right no-margin-bottom">
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-default" onclick="updateForecast()">Submit</button>
+                <button class="btn btn-warning" onclick="$('[data-toggle=popover-forecast]').popover('hide');">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="assets/plugins/amcharts3/plugins/export/export.css" type="text/css" media="all" />
+<script src="assets/plugins/amcharts3/amcharts.js"></script>
+<script src="assets/plugins/amcharts3/serial.js"></script>
+<script src="assets/plugins/amcharts3/plugins/export/export.min.js"></script>
+<script src="assets/plugins/amcharts3/themes/light.js"></script>
+<script src="assets/plugins/bootstrap-switch.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    var token; //declare analytics token
+
+    //check and get a token
+    getToken().done(function (result) {
+        token = result;
+    });
+
+    $('[data-toggle="popover-forecast"]').popover({
+        html: true,
+        title : 'Source Options<button type="button" class="close" onclick="$(&quot;[data-toggle=popover-forecast]&quot;).popover(&quot;hide&quot;);">&times;</button>',
+        trigger: 'manual',
+        content: function () {
+            $('select#forecastprovince').empty();
+            $('select#forecastprovince').append("<option value='' disabled selected>Choose Province</option>");
+            $('select#forecastcitymun').empty();
+            $('select#forecastcitymun').append("<option value='' disabled selected>Choose Municipality/City</option>");
+            //customized popup contents
+            $.getJSON( "assets/geojson/lov_citymun.json", function( data ) {
+                var provs = [];
+                var cits = [];
+                $.each( data.provinces, function( key, val ) {
+                    provs.push( "<option value='" + val.province_code + "'>" + val.province_name + "</option>" );
+                });
+                $('select#forecastprovince').append(provs.join(""));
+            });
+            //populate Projects dropdown
+            //get all projects for dropdown
+            getProjects(token);
+
+            $("[data-toggle='switch']").bootstrapSwitch();
+            return $('.popup-forecast').html();
+        }
+    }).click(function(e) {
+        $(this).popover('toggle');
+        $('.popup-window').not(this).popover('hide');
+
+        e.stopPropagation();
+    });
+    if(token){
+      //get default graph data
+      getForecast("SVR", "svr_univ_mon", "155320" , token);
+
+      $('.preloader').hide();
+    }
+});
+
+function getForecast(method,proj,muni, token) {
+    var response;
+    
+    var apibody = {}
+    cData = [];
+    $.ajax({
+            url: "https://codism.herokuapp.com/api/method/"+method+"/proj/"+proj+"/muni/"+muni,
+            data: apibody, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "JWT " + token
+            }
+    })
+    .done(function(data) {
+        forecastChart(data);
+        $("#annotations").html(data.annot);
+    });
+    
+}
+
+
+function forecastChart(dataResponse) {
+    console.log(dataResponse);
+    var schart = AmCharts.makeChart("analyticsforecastdiv", {
+      "type": "serial",
+      "theme": "none",
+      "marginRight": 65,
+      "autoMarginOffset": 20,
+      "marginTop": 7,
+      "dataProvider": dataResponse.plot,
+      "mouseWheelZoomEnabled": false,
+      "legend": {
+          "useGraphSettings": true,
+          "color": "#FFFFFF"
+      },
+      "valueAxes": [{
+        "id":"v1",
+        "axisColor": "#DDDDDD",
+        "color": "#BBBBBB",
+        "axisThickness": 2,
+        "axisAlpha": 1,
+        "position": "left",
+        "gridColor": "#BBBBBB",
+      }],
+      "graphs": [{
+          "valueAxis": "v1",
+          "lineColor": "#FF6600",
+          "bullet": "round",
+          "bulletBorderThickness": 1,
+          "hideBulletsCount": 30,
+          "title": "Count",
+          "valueField": "count",
+          "fillAlphas": 0,
+          "lineThickness": 2,
+          //"type": "smoothedLine",
+      },{
+          "valueAxis": "v2",
+          "lineColor": "#ffefb0",
+          "bullet": "round",
+          "bulletBorderAlpha": 1,
+          "bulletBorderThickness": 2,
+          "useLineColorForBulletBorder": true,
+          "hideBulletsCount": 30,
+          "title": "Forecast",
+          "valueField": "count_fcast",
+          "fillAlphas": 0,
+          "lineThickness": 2,
+          //"type": "smoothedLine",
+      },{
+          "valueAxis": "v2",
+          "lineColor": "#23FF00",
+          "bullet": "round",
+          "bulletBorderAlpha": 1,
+          "bulletBorderThickness": 2,
+          "useLineColorForBulletBorder": true,
+          "hideBulletsCount": 30,
+          "title": "Prediction",
+          "valueField": "count_pred",
+          "fillAlphas": 0,
+          "lineThickness": 1,
+          "hidden": true
+          //"type": "smoothedLine",
+      }],
+      "chartScrollbar": {
+          "autoGridCount": true,
+          "graph": "g1",
+          "color": "#000000",
+          "backgroundAlpha": 1,
+          "backgroundColor": "#999999",
+          "gridColor": "#999999",
+          "selectedBackgroundColor": "#CCCCCC",
+          "scrollbarHeight": 30
+      },
+      "chartCursor": {
+        "limitToGraph":"g1"
+      },
+      "categoryField": "date",
+      "categoryAxis": {
+          "parseDates": true,
+          "axisColor": "#888888",
+          "color": "#BBBBBB",
+          "dashLength": 1,
+          "minorGridEnabled": true,
+          "gridColor": "#BBBBBB",
+      },
+      "export": {
+          "enabled": true
+      }
+    });
+}
+
+function updateForecast() {
+    var token; //declare analytics token
+    
+    chart = "analytics";
+    console.log("Submitting this:", chart);
+    
+    $("#analyticsforecastdiv").css('text-align','center').html('<i class="fa fa-sync fa-spin fa-3x fa-fw margintop100"></i>');
+
+    var thisProvLabel = $( "body" ).data( chart+"provinceLabel" );
+    var thisCityLabel = $( "body" ).data( chart+"cityLabel" );
+    var thisProjectLabel = $( "body" ).data( chart+"projectLabel" );
+    //var thisDiseaseLabel = $( "body" ).data( chart+"diseaseLabel" );
+    var thisModelLabel = $( "body" ).data( chart+"project" );
+
+    thisLabel = thisCityLabel + ", " + thisProvLabel + " &bull; " + thisProjectLabel + " &bull; " + thisModelLabel; // + " &bull; " + thisDiseaseLabel;
+
+    $("#"+chart+"Label").html(thisLabel);
+
+    //check for token
+    getToken().done(function (result) {
+        token = result;
+        $.session.set('analyticsToken', token);
+    });
+
+    var thisCity = $( "body" ).data( chart+"city" );
+    //var thisDisease = $( "body" ).data( chart+"disease" ); //disease is not used for the api
+    var thisModel = $( "body" ).data( chart+"project" );
+
+    getForecast(thisModel, thisProjectLabel, thisCity.substr(1), token);
+
+    //close popup
+    $('[data-toggle=popover-'+chart+']').popover('hide');
+}
+
+function getProjects(token) {
+    $('select#JtProjectLists').html('<option disabled="disabled" selected>Choose project</option>');
+    var response;
+    //let us login
+    $.ajax({
+        url: "http://codism.herokuapp.com/api/projects",
+        data: '', 
+        type: "get",
+        dataType: "json",
+        headers: { 
+            "Authorization": "JWT " + token
+        }
+    })
+    .done(function(response) {
+        var projs = [];
+        console.log("Je PRojects", response);
+        $.each( response.projects, function( key, item ) {
+            projs.push( "<option value='" + item.model + "'>" + item.name + "</option>" );
+        });
+        $('select#JtProjectLists').append(projs.join(""));
+    });
+}
+
+function getToken() {
+    var deferred = new $.Deferred();
+    $.ajax({
+        url: "http://codism.herokuapp.com/auth",
+        data: '{"username": "fassster", "password": "c0d1sm"}', 
+        type: "post",
+        dataType: "json",
+        async: false,
+        headers: { 
+            "Content-Type": "application/json"
+        }
+    })
+    .done(function(response) {
+        console.log("JT", response);
+        deferred.resolve(response.access_token);
+    });
+    return deferred.promise();
+}
+</script>

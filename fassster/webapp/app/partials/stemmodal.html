@@ -1,0 +1,196 @@
+<div id="modalloading" style="position:absolute;z-index:2051;top:45vh;left:45vw;display:none;">
+		<i class="fa fa-sync fa-spin fa-2x fa-fw"></i><br><br>
+		Please wait. Fetching records...
+</div>
+<div class="modal fade" id="stemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<form id="updateScenario" class="form">
+	<div class="modal-dialog modal-lg" role="document" id="scenarioPage">
+		<div class="modal-content" data-template="data-template">
+			<div class="modal-header bg-success">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Edit Scenario</h4>
+			</div>
+			<div class="modal-body">
+				<div id="scenarioBody">
+					<div class="col-md-6">
+						<div class="input-group input-group-wide">
+							<span class="input-group-addon wide">Scenario Title</span>
+							<input type="text" name="title" class="form-control" value="{{ title | titlecase }}" required />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="input-group input-group-wide">
+							<span class="input-group-addon wide">Scenario Author</span>
+							<input type="text" name="owner" class="form-control" value="{{ owner | titlecase }}" readonly />
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="input-group input-group-wide">
+							<span class="input-group-addon wide">Description</span>
+							<textarea name="description" class="form-control" rows="5">{{ description }}</textarea>
+						</div>
+					</div>
+				</div>
+				
+				<div id="parameterBody" class="row" >
+					<div class="col-md-4">
+						<h4>Parameters</h4>
+					</div>
+					<div class="col-md-8">
+						<h4>Decorators</h4>
+					</div>
+
+					<div class="scenario">
+						<!-- EDIT SCENARIO FORM -->
+						
+							<div id="inputHidden">
+								<input type="hidden" name="project_id" value="{{ project_id }}">
+								<input type="hidden" name="scenario_id" value="{{ id }}">
+							</div>
+							<div class="body">
+								<div class="content">
+									<div class="col-md-4" >
+										<div class=" col-md-12" id="parameters">
+											<div class="input-group">
+													<span class="input-group-addon wider">Start Date</span>
+													<input type="text" name="created" class="form-control" value="{{ created }}">
+											</div>
+											<div class="input-group" data-template-for="parameters_data">
+												<span class="input-group-addon wide">{{ stat_key | titlecase }}</span>
+												<input type="text" name="parameters[{{ stat_key }}]" class="form-control" value="{{ stat_value }}">
+											</div>
+										</div>
+									</div>
+
+									<div role="" class="col-md-8">
+										<div class="col-md-12">
+											<div class="input-group pull-left input-group-wide">
+												<input id="myDecoFilter" type="text" class="form-control" placeholder="Enter fullname of Decorator to find." onkeyup="gotoDecorators()">
+												<span class="input-group-addon" id="sizing-addon1"><i class="fa fa-search"></i></span>
+
+											</div>
+										</div>
+										<div class="clearfix"></div>
+										<div id="scenarioDecorators" style="">
+						
+											<div class="scendeco col-md-6" id="{{ stat_key }}"  data-template-for="decorators_data">
+												<div class="input-group">
+													<span class="input-group-addon wide">{{ stat_key | titlecase }}</span>
+													<input type="text" name="decorators[{{ stat_key }}]" class="form-control" value="{{ stat_value }}">
+												</div>
+											</div>
+										
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						<!-- END OF FORM -->
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-info hide{{ type }}" value="updateThisScenario" name="saveButton">Update</button>
+				<button type="submit" class="btn btn-success" value="duplicateThisScenario" name="saveButton">Save As</button>
+			</div>
+		</div>
+	</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		$('#modalloading').hide();
+		var sp = Tempo.prepare("scenarioPage");
+		
+		$("#stemModal").on("shown.bs.modal", function(e) {
+			
+			var link = $(e.relatedTarget);
+			var pid = link.attr("data-pid");
+			var sid = link.attr("data-sid");
+
+			var body = {
+				"scenario_id" : sid
+			}
+			cScenario = [];
+			cDecorators = [];
+			cParameters = [];
+
+			//let us check token
+			token = checkToken( $.session.get('userToken') );
+
+			$.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/scenarios/details",
+            data: body, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+							cScenario = data.data;
+							//display data using template plugin
+							sp.into('scenarioPage').render(cScenario);
+							$('#modalloading').hide();
+            }
+        });
+		});
+
+		$("#stemModal").on("hidden.bs.modal", function(e) {
+			Tempo.prepare("scenarioPage").clear();
+		});
+		$("#stemModal").on("show.bs.modal", function(e) {
+        $('#modalloading').show();
+    });
+
+	});
+	
+	//initialize form submission
+	$('#updateScenario').on("submit", function(e) {
+		e.preventDefault();
+		
+		var method = document.activeElement.getAttribute('value');
+		//let us check token
+		token = checkToken( $.session.get('userToken') );
+		//process form data
+		var formdata = new FormData(this);
+		
+		if(method == "updateThisScenario") {
+			suburl = "http://104.236.3.75/fassster-api/public/api/scenarios/edit";
+		} else {
+			suburl = "http://104.236.3.75/fassster-api/public/api/scenarios/create";
+			$("input[name=scenario_id]").val("");
+		}
+		console.log(formdata);
+		$.ajax({
+			url: suburl,
+			data: formdata,
+			type: "post",
+			dataType: "json",
+			contentType: false,
+			processData:false,
+			headers: { 
+				"Authorization": "Bearer " + token
+			}
+		})
+		.done(function(data) {
+			console.log(data);
+			if(data && data.success == true) {
+					cScenario = data.data;
+					//display data using template plugin
+					//sp.into('scenarioPage').render(cScenario);
+					$("#stemModal").modal('hide');
+			}
+			if(data && data.success == false) {
+					alert(data.message);
+			}
+		});
+		$("#stemModal").modal('hide');
+	});
+</script>

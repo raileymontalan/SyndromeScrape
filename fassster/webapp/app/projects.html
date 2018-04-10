@@ -1,0 +1,146 @@
+<div class="main-content">
+    <div class="container-fluid blocked" id="stemprojects">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header">
+                        <div class="col-md-12" style="font-size: 50px; color: #636b6f; font-family: 'Raleway', sans-serif;font-weight: 100;">STEM PROJECTS
+                        </div>
+                        <div class="col-md-12" id="stemprojectsheader">
+                            <div class="col-md-6 row">
+                                <div class="input-group">
+                                    <input style="width:450px;" type="text" id="myFilter" class="form-control" placeholder="Search in Project Title, Date, Name and Description..." onkeyup="filterStemProjects()">
+                                    <span class="input-group-addon" id="sizing-addon1">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <label>View as: &nbsp;</label>
+                                <div class="btn-group" data-toggle="buttons" role="group">
+                                    <label class="btn btn-default active">
+                                        <input onchange="showas('grid');" type="radio" name="options" id="option2" autocomplete="off"> <i class="ti-layout-grid2"></i> Grid 
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input onchange="showas('list');" type="radio" name="options" id="option3" autocomplete="off"> <i class="ti-list"></i> List 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="stemlist" id="stemlisting">
+                            
+                            <div class="stemitem" data-template="data-template">
+                                <div class="card">
+                                    <div class="card-header no-border">
+                                        <div class="card-title">
+                                            <div class="title"><a href="app/project.html?pid={{ id }}" class="nowrap ajax-link" data-title="Project Details">{{ title }}</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body clearfix">
+                                        <p class="small projectDetail"><i class="fa fa-calendar"></i> {{ date | date 'MMM DD, YYYY' }} | <i class="fa fa-user"></i> {{ author }} </p>
+                                        
+                                        <div class="imgbox" style="background-image:url('{{ image }}')"></div>
+
+                                        <div class="descbox">{{ description | truncate 350 }}</div>
+                                    </div>
+                                    <div class="card-footer text-center clearfix">
+                                        <div class="btn-group">
+                                            <a href="app/project.html?pid={{ id }}" class="btn btn-success btn-sm ajax-link" data-title="Project Details"><i class="ti-search"></i> View</a>
+                                            <a href="#" class="btn btn-info btn-sm"  data-toggle="modal" data-target="#shareModal" data-pid="{{ id }}"><i class="ti-share"></i> Share</a>
+                                            <a href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#deleteProject" data-pid="{{ id }}"><i class="ti-trash"></i> Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+function filterStemProjects() {    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myFilter');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("stemlisting");
+    li = ul.getElementsByClassName('stemitem');
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByClassName("title")[0];
+        pd = li[i].getElementsByClassName("projectDetail")[0];
+        db = li[i].getElementsByClassName("descbox")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1 || pd.innerHTML.toUpperCase().indexOf(filter) > -1 || db.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+$(document).ready(function() {
+    //render some additional partials
+    //share modal
+    $('#modals').html(""); //clear the modals div first
+    $('#modals').append($('<div>').load('app/partials/sharemodal.html'));
+    $('#modals').append($('<div>').load('app/partials/deleteprojectmodal.html'));
+
+    var body = {};
+    var page = 1;
+    pData = [];
+    
+    //let us check token
+    token = checkToken( $.session.get('userToken') );
+
+    //let us get all projects by page
+    $.ajax({
+        url: "http://104.236.3.75/fassster-api/public/api/projects?page="+page,
+        data: body, 
+        type: "get",
+        dataType: "json",
+        headers: { 
+                "Authorization": "Bearer " + token
+            },
+        beforeSend: function(xhr){
+                xhr.setRequestHeader("Authorization", "Bearer " + token);
+            },
+        success: function(data, textStatus, jqXHR){
+                console.log('OK!');
+            },
+        error: function(jqXHR, textStatus, errorThrown){
+                console.log(textStatus);
+                swal("Oops!", "Error connecting to Service.", "error");
+                location.href="../";
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+                $.each(data.data.data, function(i, item) {
+                    pData.push({
+                        id: item.id,
+                        date: new Date(item.created_at),
+                        title: item.title,
+                        author: item.owner,
+                        image: item.image,
+                        description: item.description
+                    });
+                });
+                console.log(pData);
+                //store data into localstorage
+                localStorage.setItem('projects', JSON.stringify(pData));
+                //display data using template plugin
+                Tempo.prepare("stemlisting").render(pData);
+                
+                $('.preloader').hide();
+            }
+    });
+
+});
+</script>

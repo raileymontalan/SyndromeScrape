@@ -1,0 +1,66 @@
+<div class="modal fade" id="deleteProject" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+          <div class="modal-header bg-success">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="shareModalLabel">Delete Project</h4>
+          </div>
+          <div class="modal-body text-center">
+              Are you sure you want to delete this project?
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button id="deleteThis" type="button" class="btn btn-success">Delete</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#deleteProject").on("shown.bs.modal", function(e) {
+			var link = $(e.relatedTarget);
+			var pid = link.attr("data-pid");
+      
+      $(this).find('#deleteThis').on('click', function(){
+        //let us check token
+        token = checkToken( $.session.get('userToken') );
+
+        //let us get all projects by page
+        $.ajax({
+          url: "http://104.236.3.75/fassster-api/public/api/projects/delete",
+          data: { project_id : pid }, 
+          type: "delete",
+          dataType: "json",
+          headers: { 
+            "Authorization": "Bearer " + token,
+            "Content-Type" : "application/x-www-form-urlencoded"
+          },
+          success: function(data, textStatus, jqXHR){
+            console.log('OK! Deleted.');
+          },
+          error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus);
+          }
+        })
+        .done(function(data) {
+          //close modal
+          $("#deleteProject").modal('hide');
+          swal({
+            title: 'Success!',
+            text: 'STEM Project file deleted.',
+            type: 'success'
+          }).then(function() {
+            //refresh page
+            location.reload();
+          });
+          
+        });
+        
+      })
+
+    });
+  });
+
+</script>

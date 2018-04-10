@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FASSSTER v1.0</title>
+		<meta name="description" content="description">
+		<meta name="author" content="Evgeniya">
+		<meta name="keyword" content="keywords">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../assets/plugins/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="../assets/plugins/fontawesome/css/font-awesome.css" rel="stylesheet">
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:100,300,400,500,700|Roboto+Condensed:400,700|Roboto:100,300,400,500" rel="stylesheet">
+		<link href="../assets/css/themify-icons.css" rel="stylesheet">
+		<link href="../assets/css/mainui.css" rel="stylesheet">
+		<link href="../assets/css/flatblue.css" rel="stylesheet">
+		<link href="../assets/css/fassster.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body>
+<div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" style='background:url("../assets/img/backgrounds/backer.png") no-repeat; background-size: cover; height: 100vh;'>
+    <div class="content">
+	<div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                <form method="post" action="" id="loginForm">
+                    <img src="../assets/img/logosmall.png" alt="" style="width:105%">
+                    <div class="card" data-background="color" data-color="blue">
+                        <div class="card-header">
+                            <h3 class="card-title">Login</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label>Email address</label>
+                                <input type="email" placeholder="Enter email" id="email" name="email" class="form-control input-no-border" value="admin@admin.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" id="password" name="password" class="form-control input-no-border" value="test">
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-fill btn-wd ">Login</button>
+                            <hr />
+                            <div class="forgot">
+                                <a href="forgot_password.html">Forgot your password?</a> | 
+                                <a href="register.html">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<script src="../assets/plugins/jquery.session.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#loginForm').submit(function(e){
+            e.preventDefault();
+            //authenticate user
+            // -- perform auth api and return user date
+            var body = {
+                'email': $('#email').val(),
+                'password': $('#password').val()
+            };
+            apiData = "";
+            
+            var promise = $.post("http://104.236.3.75/fassster-api/public/api/user/login",
+            body, function(data) {
+                if(data) {
+                    if(data.success == true) {
+                        console.log(data);
+                        //store response to variable
+                        apiData = data;
+                    } else {
+                        //alert error message
+                        alert(data.message);
+                    }
+                } else {
+                    //alert error message
+                    alert(data.message);
+                }
+            }, "json");
+
+            promise.done(function() {
+                if(apiData.success == true) {
+                    //store data into session
+                    $.session.set('userID', apiData.data.id);
+                    $.session.set('userPW', $('#password').val());
+                    localStorage.setItem('userData', JSON.stringify(apiData.data));
+                    $.session.set('userToken', apiData.token);
+                    //redirect to home
+                    location.href='../';
+                }
+                location.href='../';
+            });
+        })
+    });
+</script>
+</body>
+</html>

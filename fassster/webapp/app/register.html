@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FASSSTER v1.0</title>
+		<meta name="description" content="description">
+		<meta name="author" content="Evgeniya">
+		<meta name="keyword" content="keywords">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../assets/plugins/bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="../../assets/plugins/fontawesome/css/font-awesome.css" rel="stylesheet">
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:100,300,400,500,700|Roboto+Condensed:400,700|Roboto:100,300,400,500" rel="stylesheet">
+		<link href="../assets/css/themify-icons.css" rel="stylesheet">
+		<link href="../assets/css/mainui.css" rel="stylesheet">
+		<link href="../assets/css/flatblue.css" rel="stylesheet">
+		<link href="../assets/css/fassster.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+				<script src="http://getbootstrap.com/docs-assets/js/html5shiv.js"></script>
+				<script src="http://getbootstrap.com/docs-assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+<body>
+<div class="container-fluid">
+	<div class="register-page">
+        	<div class="content">
+            	<div class="container">
+								<form id="registerForm">
+                	<div class="row">
+										<div class="col-md-8 col-md-offset-2">
+												<div class="header-text">
+														<img src="../assets/img/logosmall.png" alt="" style="width:50%">
+														<h4>Register for an account.</h4>
+														<hr>
+												</div>
+										</div>
+										
+										<div class="col-md-4 col-md-offset-2">
+												<div class="media">
+														<div class="media-left">
+																<div class="icon icon-danger">
+																		<i class="ti ti-unlock"></i>
+																</div>
+														</div>
+														<div class="media-body">
+																<h5>Account Details</h5>
+																<p>Please provide your role, your email and password here. Make sure your email is an active one so that you will receive the confirmation of your account.</p>
+																
+																<div class="form-group">
+																		<select id="roles" class="form-control" name="roles">
+																				<option value="" disabled="disabled" selected>Role Registering For</option>
+																		</select>
+																	</div>
+																<div class="form-group">
+																	<input type="email" name="email" placeholder="Enter email" class="form-control">
+																</div>
+																<div class="form-group">
+																		<input type="password" name="password" placeholder="Password" class="form-control">
+																</div>
+																<div class="form-group">
+																		<input type="password" name="password_confirmation" placeholder="Password Confirmation" class="form-control">
+																</div>
+														</div>
+												</div>
+										</div>
+										<div class="col-md-4 clearfix">
+											<div class="media">
+												<div class="media-left">
+													<div class="icon icon-success">
+															<i class="ti ti-user"></i>
+													</div>
+												</div>
+												<div class="media-body">
+													<h5>Personal Info</h5>
+													<p>Please provide some required personal information here. All fields are required especially your location from where you are working.<br /><br /></p>
+													<div class="form-inline">
+														<div class="form-group">
+															<input type="text" name="fname" placeholder="Your First Name" class="form-control">
+														</div>
+														<div class="form-group">
+															<input type="text" name="lname" placeholder="Your Last Name" class="form-control">
+														</div>
+													</div>
+													
+													<div class="form-group">
+															<input type="text" name="company" placeholder="Office" class="form-control">
+													</div>
+													<input type="hidden" name="address" value="This is optional for now. This is a fix." />
+													<div class="form-group">
+														<select id="region" name="region" class="form-control" onchange="updateProvs(this.value)">
+															<option value="" disabled="disabled" selected>Choose Region</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<select id="province" name="province" class="form-control" onchange="updateCits($('#region').val(), this.value)">
+															<option value="" disabled="disabled" selected>Choose Province</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<select id="citymun" name="municipality" class="form-control">
+															<option value="" disabled="disabled" selected>Choose Municipality/City</option>
+														</select>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+											
+										<div class="col-md-8 col-md-offset-2 text-center">
+											<input type="submit" class="btn btn-fill btn-danger btn-wd" value="Create Free Account" />
+											<br />
+											<a href="../../">Login here</a>
+										</div>
+									</div>
+								</form>
+            	</div>
+        	</div>
+
+    		<footer class="footer footer-transparent">
+            	<div class="container">
+                	<div class="copyright text-center">
+                    	&copy; 2018 <a href="#">AJWCC</a>
+                	</div>
+            	</div>
+        	</footer>
+		</div>
+</div>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
+<script src="../assets/plugins/sweetalert2.js"></script>
+<script>
+	$(document).ready(function() {
+		$('select#region').empty();
+		$('select#region').append("<option value='' disabled selected>Choose Region</option>");
+		$('select#province').empty();
+		$('select#province').append("<option value='' disabled selected>Choose Province</option>");
+		$('select#citymun').empty();
+		$('select#citymun').append("<option value='' disabled selected>Choose Municipality/City</option>");
+		//customized popup contents
+		$.getJSON( "../assets/geojson/geocodes.json", function( data ) {
+				var regs = [];
+				var provs = [];
+				var cits = [];
+				$.each( data.regions, function( key, val ) {
+						regs.push( "<option value='" + val.region_name + "'>" + val.region_name + "</option>" );
+				});
+				$('select#region').append(regs.join(""));
+				geocodes = data;
+		});
+		$.ajax({
+        url: "http://104.236.3.75/fassster-api/public/api/roles",
+        data: null, 
+        type: "get",
+        dataType: "json"
+    })
+    .done(function(roles) {
+			console.log("roles",roles);
+			var rols = [];
+			$.each( roles.data, function( key, val ) {
+					rols.push( "<option value='" + val.id + "'>" + val.name + "</option>" );
+			});
+			$('select#roles').append(rols.join(""));
+		});
+
+		$("#registerForm").on("submit", function(e){
+			e.preventDefault();
+
+			$.ajax({
+        url: "http://104.236.3.75/fassster-api/public/api/user/register",
+        data: $("#registerForm").serialize(),
+        type: "post"
+			})
+			.done(function(data) {
+				console.log(data);
+				if(data && data.success == true) {
+						console.log(data);
+						location.href="../../"; //go back to homepage for login
+				} else {
+						alert(data.message[0]);
+				}
+			})
+			.fail(function(data) {
+				swal("Oops!", "Error submitting registration form. Please check you form and try again.", "error");
+				//location.reload();
+			});
+		})
+	});
+	function updateProvs(region) {
+		$('select#province').empty();
+		$('select#province').append("<option value='' disabled selected>Choose Province</option>");
+		$('select#citymun').empty();
+		$('select#citymun').append("<option value='' disabled selected>Choose Municipality/City</option>");
+		//$.getJSON( "../assets/geojson/geocodes.json", function( data ) {
+				var provs = [];
+				$.each( geocodes.regions, function( rkey, rval ) {
+					if(rval.region_name == region) {
+						$.each( rval.provinces, function( pkey, pval ) {
+							provs.push( "<option value='" + pval.province_name + "'>" + pval.province_name + "</option>" );
+						});
+						$('select#province').append(provs.join(""));
+					}
+				});
+		//});
+	}
+	function updateCits(region, prov) {
+		$('select#citymun').empty();
+		$('select#citymun').append("<option value='' disabled selected>Choose Municipality/City</option>");
+		//$.getJSON( "../assets/geojson/geocodes.json", function( data ) {
+				var cits = [];
+				$.each( geocodes.regions, function( rkey, rval ) {
+					if(rval.region_name == region) {
+						$.each( rval.provinces, function( pkey, pval ) {
+							if(pval.province_name == prov) {
+								$.each( pval.cities, function( ckey, cval ) {
+									cits.push( "<option value='" + cval.city_name + "'>" + cval.city_name + "</option>" );
+								});
+							}
+						});
+						$('select#citymun').append(cits.join(""));
+					}
+				});
+		//});
+	}
+</script>
+</body>
+</html>

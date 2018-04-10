@@ -1,0 +1,222 @@
+<div class="main-content" id="users">
+    <div class="container-fluid blocked" id="users">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-table">
+                    
+                    <div class="card-body table-responsive table-full-width">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul id="tabs" class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" data-toggle="tab" href="#active" role="tab" aria-expanded="true">Active</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#pending" role="tab">Pending</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="my-tab-content" class="tab-content clearfix">
+                            <div class="tab-pane active clearfix" id="active" role="tabpanel">
+                                <div id="loading">
+                                    <i class="fa fa-sync fa-spin fa-2x fa-fw"></i><br><br>
+                                    Please wait. Fetching records...
+                                </div>
+                                <table class="table table-striped" id="userListing">
+                                    <thead>
+                                        <tr><th>ID</th>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Office</th>
+                                        <th>Location</th>
+                                        <th>Actions</th>
+                                    </tr></thead>
+                                    <tbody>
+                                        <tr data-template>
+                                            <td>{{ id }}</td>
+                                            <td>{{ name }}</td>
+                                            <td>{{ user_role }}</td>
+                                            <td>{{ additional_information.company }}</td>
+                                            <td>{{ additional_information.municipality }}, {{ additional_information.province }}, {{ additional_information.region }}</td>
+                                            <td>
+                                                <div class="btn-group" data-toggle="buttons" role="group">
+                                                <a href="app/profile.html?id={{ id }}" class="btn btn-success btn-round btn-sm ajax-link">View</a>
+                                                <a href="#" id="{{ id }}" class="btn btn-warning btn-round btn-sm deactivate" >Deactivate</a>
+                                                
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane clearfix" id="pending" role="tabpanel">
+                                <div id="loading">
+                                    <i class="fa fa-sync fa-spin fa-2x fa-fw"></i><br><br>
+                                    Please wait. Fetching records...
+                                </div>
+                                <table class="table table-striped" id="userPendingListing">
+                                    <thead>
+                                        <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Office</th>
+                                        <th>Location</th>
+                                        <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-template>
+                                            <td>{{ id }}</td>
+                                            <td>{{ name }}</td>
+                                            <td>{{ user_role }}</td>
+                                            <td>{{ additional_information.company }}</td>
+                                            <td>{{ additional_information.municipality }}, {{ additional_information.province }}, {{ additional_information.region }}</td>
+                                            <td>
+                                                <div class="btn-group" data-toggle="buttons" role="group">
+                                                <a href="app/profile.html?id={{ id }}" class="btn btn-success btn-round btn-sm ajax-link">View</a>
+                                                <a href="#" id="{{ id }}" class="btn btn-warning btn-round btn-sm activate" >Activate</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $('#active #loading').show();
+    $('#pending #loading').show();
+    $('#userListing').hide();
+    $('#userPendingListing').hide();
+    $(document).ready(function() {
+        //let us check token
+        token = checkToken( $.session.get('userToken') );
+
+        var body = {}
+        aUsers = [];
+        $.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/user/active",
+            data: body, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+                aUsers = data.data.data;
+            }
+            console.log(aUsers);
+            //display data using template plugin
+            Tempo.prepare('userListing').when(TempoEvent.Types.RENDER_STARTING, function (event) {
+                //nothing here
+            }).when(TempoEvent.Types.RENDER_COMPLETE, function (event) {
+                $('#active #loading').hide();
+                $('#userListing').bootstrapTable({
+                    height: 450,
+                    toolbar: ".toolbar",
+                    search: true,
+                    pagination: true,
+                    pageSize: 7,
+                    pageList: [7,10,25,50,100]
+                });
+                $('.deactivate').on("click", function(){
+                    goUser("deactivate", $(this).attr('id') );
+                })
+                $('.deleteme').on("click", function(){
+                    goUser("deleteme", $(this).attr('id') );
+                })
+                $('#userListing').show();
+            }).render(aUsers);
+        });
+
+        pUsers = [];
+        $.ajax({
+            url: "http://104.236.3.75/fassster-api/public/api/user/pending",
+            data: body, 
+            type: "get",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            if(data && data.success == true) {
+                pUsers = data.data.data;
+            }
+            console.log(pUsers);
+            //display data using template plugin
+            if(pUsers.length > 0) {
+                Tempo.prepare('userPendingListing').when(TempoEvent.Types.RENDER_STARTING, function (event) {
+                    //nothing here
+                }).when(TempoEvent.Types.RENDER_COMPLETE, function (event) {
+                    $('#pending #loading').hide();
+                    $('#userPendingListing').bootstrapTable({
+                        height: 450,
+                        toolbar: ".toolbar",
+                        search: true,
+                        pagination: true,
+                        pageSize: 7,
+                        pageList: [7,10,25,50,100]
+                    });
+                    $('.activate').on("click", function(){
+                        goUser("activate", $(this).attr('id') );
+                    })
+                    $('.deleteme').on("click", function(){
+                        goUser("deleteme", $(this).attr('id') );
+                    })
+                    $('#userPendingListing').show();
+                }).render(pUsers);
+            } else {
+                $("#userPendingListing").html("<thead><tr><th><p class='text-center'>No users found</p></th></tr></thead>");
+            }
+        });
+
+        //hide preloader
+        $('.preloader').hide();
+    });
+
+    function goUser(type, id) {
+        var userurl;
+        if(type == 'activate') {
+            userurl = 'http://104.236.3.75/fassster-api/public/api/user/activate';
+        }
+        if(type == 'deactivate') {
+            userurl = 'http://104.236.3.75/fassster-api/public/api/user/deactivate';
+        }
+        
+        body = {
+            'user_id' : id
+        }
+        $.ajax({
+            url: userurl,
+            data: body, 
+            type: "post",
+            dataType: "json",
+            headers: { 
+                "Authorization": "Bearer " + token
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            location.reload();
+        });
+    }
+</script>
