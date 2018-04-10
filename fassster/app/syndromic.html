@@ -66,9 +66,6 @@
                         <label class="btn btn-default">
                             <input type="radio" name="options" id="optionTweets" autocomplete="off"> Tweets
                         </label>
-                        <label class="btn btn-default">
-                            <input type="radio" name="options" id="optionNews" autocomplete="off"> News
-                        </label>
                     </div>
                 </div>
 
@@ -142,23 +139,9 @@
 <script src="assets/plugins/ionslider/ion.rangeSlider.js" ></script>
 <script src="assets/plugins/moment/moment.min.js"></script>
 <script type="text/javascript">
-
 $(document).ready(function() {
 
 	$('#mapid').css('height', $(window).height()-60 );
-
-	// debug later
-	$("#optionNews").change(function () {
-		var isChecked = $('#optionNews').prop('checked');
-		if (isChecked) {
-			$("#syndromic").attr('checked', false);
-			$("#syndromic").attr('disabled', true);
-			$(".wrap").css('opacity', '.2');
-		} else {
-			$("#syndromic").attr('disabled', false);
-			$(".wrap").css('opacity', '1');
-		}
-	});
 
 	var body = {};
 	cData = [];
@@ -169,7 +152,7 @@ $(document).ready(function() {
 	var promise = $.post("http://www.romeljohnsantos.com/api/projects.php?type=symptoms",
 	body, function(data) {
 		if(data) {
-			cData = data;
+			cData= data;
 		}
 	}, "json");
 
@@ -187,7 +170,7 @@ $(document).ready(function() {
 					playButton.innerHTML = '<i class="fa fa-dot-circle-o fa-3x"></i>';
 					playStatus = true;
 					playLoop();
-				} else {
+				}else{
 					playButton.innerHTML = '<i class="fa fa-play-circle fa-3x"></i>';
 					playStatus = false;
 				}
@@ -227,7 +210,7 @@ $(document).ready(function() {
 				var SyndromicFilter = $('input[name=filter-options]:checked').val();
 				//get logic (and/or)
 				var logic = $('input[name=logic-options]:checked').val();
-				//get data source (tweets/EMR/news)
+				//get data source (tweets/EMR)
 				var datasource = $('input[name=data-options]:checked').val();
 				var symptoms = [];
 				if (SyndromicFilter == 'syndromic'){
@@ -236,28 +219,25 @@ $(document).ready(function() {
 						symptoms.push(symptom);
 					});
 					if (datasource == 'emr'){
-						$("#using-data").html("Using EMR Data");
+						$("#using-data").html("using EMR Data");
 						$( "#viewTweetsDiv" ).hide();
 						requestEMRData(symptoms,logic,"syndromic");
 						mymap.setView(new L.LatLng(11.1, 121.9),8);
 					} else if (datasource == 'tweets'){
-						$("#using-data").html("Using Tweets Data");
+						$("#using-data").html("using Tweets Data");
 						requestTweetData(symptoms,logic,"syndromic");
 					}
 				} else if (SyndromicFilter == 'disease'){
 					var disease = $('input[name=disease-options]:checked').val();
 					symptoms.push(disease);
 					if (datasource == 'emr'){
-						$("#using-data").html("Using EMR Data");
+						$("#using-data").html("using EMR Data");
 						$( "#viewTweetsDiv" ).hide();
 						requestEMRData(symptoms,logic,"disease");
 						mymap.setView(new L.LatLng(11.1, 121.9),8);
 					} else if (datasource == 'tweets'){
-						$("#using-data").html("Using Tweets Data");
+						$("#using-data").html("using Tweets Data");
 						requestTweetData(symptoms,logic,"disease");
-					} else if (datasource == 'news') {
-						$("#using-data").html("Using News Data");
-						requestNewsData(symptoms,logic,"disease");
 					}
 				}
 				//display selected values
@@ -382,22 +362,6 @@ function playLoop () {
 			} else if (dataType == "EMR") {
 				sliderDate = $("#myRange").prop("value");
 				var i = monthList.indexOf(sliderDate);
-				if (i<11) {
-					mapslider.update({
-						from: i+1,
-					});
-					i++;
-					playLoop();
-				} else {
-					mapslider.update({
-						from: 0,
-					});
-					playButton.innerHTML = '<i class="fa fa-play-circle-o"></i>';
-				}
-			} else if (dataType == "News") {
-				sliderDate = $("#myRange").prop("value");
-				var i = monthList.indexOf(sliderDate);
-				// recheck if it should be i < 11
 				if (i<11) {
 					mapslider.update({
 						from: i+1,

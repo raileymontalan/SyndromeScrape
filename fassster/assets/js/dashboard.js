@@ -11,9 +11,6 @@ function updateChart(chart) {
     if(chart == "forecast") {
         $("#forecastdiv").css('text-align','center').html('<i class="fa fa-refresh fa-spin fa-3x fa-fw margintop100"></i>');
     }
-    if(chart == "newsTrends") {
-        $("#newsTrendsdiv").css('text-align','center').html('<i class="fa fa-refresh fa-spin fa-3x fa-fw margintop100"></i>');
-    }
     var thisprov = $( "body" ).data( chart+"province" );
     var thiscity = $( "body" ).data( chart+"city" );
     var thisyear = $( "body" ).data( chart+"year" );
@@ -35,9 +32,6 @@ function updateChart(chart) {
     if(chart == "forecast") {
         getData("forecast", [ thisdiseaseLabel ], thisyearLabel, thiscity);
     }
-    if(chart == "newsTrends") {
-        getData("newsTrends", [ thisdiseaseLabel ], thisyearLabel, thiscity);
-    }
 
     //close popup
     $('[data-toggle=popover-'+chart+']').popover('hide');
@@ -49,7 +43,7 @@ function getData(myfilter,mysymptoms,myyear,mygeocode) {
       symptoms: mysymptoms,
       year: myyear,
       geocode: mygeocode
-  };
+  }
   cData = [];
   //var promise = $.post("http://fassster.ehealth.ph/web_api/emr",
   //var promise = $.post("http://www.romeljohnsantos.com/api/getjson.php?type="+myfilter,
@@ -62,7 +56,7 @@ function getData(myfilter,mysymptoms,myyear,mygeocode) {
             const emrb = new Array();
             const total = new Array();
             
-            if(myfilter != 'newsTrends' && myfilter != 'forecast') {
+            if(myfilter != 'forecast') {
                 $.each(dcounts, function(i, item) {
                     cData.success = "success";
                     cData.location = data.municity_verbose;
@@ -105,11 +99,7 @@ function getData(myfilter,mysymptoms,myyear,mygeocode) {
             $('#forecastdiv').html('<h3 class="paddingtop100">No data found</h3>');
             cData = [];
         }
-        if (myfilter == 'newsTrends') {
-            $('#newsTrendsdiv').html('<h3 class="paddingtop100">No data found</h3>');
-            cData = [];
-        }
-    });
+    })
 
     promise.done(function() {
         if(myfilter == 'disease') {
@@ -124,10 +114,7 @@ function getData(myfilter,mysymptoms,myyear,mygeocode) {
             forecastChart(cData);
             cData = [];
         }
-        if(myfilter == 'newsTrends') {
-            newsTrendsChart(cData);
-            cData = [];
-        }
+    
     });
 }
 
@@ -352,69 +339,6 @@ function forecastChart(dataResponse) {
     });
 }
 
-function newsTrendsChart(dataResponse) {
-    $('#newsTrendsLabel').text(dataResponse.location + " • " + dataResponse.year + " • Sample Scenario");
-    var schart = AmCharts.makeChart("newsTrendsdiv", {
-      "type": "serial",
-      "theme": "none",
-      "marginRight": 65,
-      "autoMarginOffset": 20,
-      "marginTop": 7,
-      "dataProvider": dataResponse,
-      "mouseWheelZoomEnabled": false,
-      "legend": {
-          "useGraphSettings": true,
-          "color": "#FFFFFF"
-      },
-      "valueAxes": [{
-        "id":"v1",
-        "axisColor": "#888888",
-        "color": "#BBBBBB",
-        "axisThickness": 2,
-        "axisAlpha": 1,
-        "position": "left",
-        "gridColor": "#BBBBBB",
-      }],
-      "graphs": [{
-          "valueAxis": "v1",
-          "lineColor": "#FF6600",
-          "bullet": "round",
-          "bulletBorderThickness": 1,
-          "hideBulletsCount": 30,
-          "title": "Count",
-          "valueField": "count",
-          "fillAlphas": 0,
-          "lineThickness": 2,
-          //"type": "smoothedLine",
-      }],
-      "chartScrollbar": {
-          "autoGridCount": true,
-          "graph": "g1",
-          "color": "#000000",
-          "backgroundAlpha": 1,
-          "backgroundColor": "#999999",
-          "gridColor": "#999999",
-          "selectedBackgroundColor": "#CCCCCC",
-          "scrollbarHeight": 30
-      },
-      "chartCursor": {
-        "limitToGraph":"g1"
-      },
-      "categoryField": "date",
-      "categoryAxis": {
-          "parseDates": true,
-          "axisColor": "#888888",
-          "color": "#BBBBBB",
-          "dashLength": 1,
-          "minorGridEnabled": true,
-          "gridColor": "#BBBBBB",
-      },
-      "export": {
-          "enabled": true
-      }
-    });
-}
-
 function updateSPD(c, d) {
     label = [];
     dat = [];
@@ -519,7 +443,7 @@ function storeValue(type, name, sel) {
           }
         }
         //console.log(result);
-        $( 'body' ).data( type+name+"Label", result );  
+        $( 'body' ).data( type+name+"Label", result );
     } else {
         //console.log( sel.options[sel.selectedIndex].text );
         $( 'body' ).data( type+name+"Label", sel.options[sel.selectedIndex].text );

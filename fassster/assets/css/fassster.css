@@ -794,15 +794,9 @@ hr.hrlow {
 .btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
     margin-left: 0px;
 }
-.panel-body label.btn,
-.startSim {
-    font-family: "Roboto Condensed";
-    font-size: 16px;
-    padding: 6px 13px;
-}
-.panel-body .optionGroup label.btn,
 .panel-body .diseaseGroup label.btn {
-    font-size: 14px;
+    font-family: "Roboto Condensed";
+    padding: 6px 13px;
 }
 .panel-body .btn-sq {
     border-radius: 5px;
