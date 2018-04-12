@@ -200,9 +200,11 @@ function Newsstyle(feature) {
 }
 
 function getNewsColor(value) {
-    if(value == 'hotspot'){
-        return "#ff8833"
+    if(value == 'hot'){
+        return "#ffcc33"
     } else if(value == 'calamity'){
+        return "#ff8833"
+    } else if(value == 'outbreak'){
         return "#ff3333"
     } else if(value == 'rise'){
         return "#33dd55"
