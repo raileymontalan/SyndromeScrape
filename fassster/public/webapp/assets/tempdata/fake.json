@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+                                                                                
+"features": [
+{ "type": "Feature",
+	"properties": { 
+		"incident": "12",
+		"date_start": "2016-01-01",
+		"title": "Many die from boredom",
+		"url": "facebook.com"
+	},
+	"geometry": {
+		"type": "Point",
+		"coordinates": [ 120.568897, 15.14962 ]
+	}
+}
+]
+}
