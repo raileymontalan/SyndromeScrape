@@ -4,15 +4,81 @@
 "features": [
 { "type": "Feature",
 	"properties": { 
-		"incident": "12",
-		"date_start": "2016-01-01",
-		"title": "Many die from boredom",
-		"url": "facebook.com"
+		"incident": "54",
+		"date_start": "2015-06-30",
+		"title": "Isabela town in state of calamity due to dengue",
+		"url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue"
 	},
 	"geometry": {
 		"type": "Point",
-		"coordinates": [ 120.568897, 15.14962 ]
+		"coordinates": [121.961237, 16.987346]
+	}
+},
+{ "type": "Feature",
+	"properties": { 
+		"incident": "3",
+		"date_start": "2015-07-10",
+		"title": "Dengue outbreak declared in Tuguegarao",
+		"url": "https://www.rappler.com/nation/98986-dengue-outbreak-tuguegarao-cagayan"
+	},
+	"geometry": {
+		"type": "Point",
+		"coordinates": [121.760607, 18.094154]
+	}
+},
+{ "type": "Feature",
+	"properties": { 
+		"incident": "3",
+		"date_start": "2015-08-17",
+		"title": "DOH identifies 80 barangays as dengue 'hot zones'",
+		"url": "https://www.rappler.com/nation/142566-philippines-doh-barangays-dengue-hot-zones"
+	},
+	"geometry": {
+		"type": "Point",
+		"coordinates": [121.032235, 14.606306]
+	}
+},
+{ "type": "Feature",
+	"properties": { 
+		"incident": "398",
+		"date_start": "2015-09-23",
+		"title": "Cavite starts campaign to curb dengue outbreak",
+		"url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html"
+	},
+	"geometry": {
+		"type": "Point",
+		"coordinates": [120.86848, 14.255164]
 	}
 }
 ]
+}
+
+
+{
+	"disease": "dengue",
+	"date": "2015-06-30",
+	"title": "Isabela town in state of calamity due to dengue",
+	"url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
+	"area_code": "023100000",
+	"incident": "54"
+}
+
+
+{
+    "disease": "measles",
+    "date": "2014-04-30",
+    "title": "Measles outbreak declared in Maguindanao – report",
+    "url": "http://www.gmanetwork.com/news/news/regions/358926/measles-outbreak-declared-in-maguindanao-report/story/",
+    "area_code": "153800000",
+    "state": "outbreak"
+}
+
+
+{
+    "disease": "dengue",
+    "date": "2015-07-01",
+    "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
+    "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
+    "area_code": "[Baguio, City]",
+    "change": "rise"
 }

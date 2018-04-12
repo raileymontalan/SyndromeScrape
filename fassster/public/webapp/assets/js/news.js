@@ -92,7 +92,7 @@ function renderIncidents(data){
 
 function renderComparison(data){
     requestEMRData(["iclinicsys","shine"],"01-12",year,geogroup,keywords,keyword_logic,age_group,gender,bmi,bloodtype,bloodpressure);
-    renderIncidents(data);
+    requestNewsData(keywords, year, viz)
 }
 
 function renderStatuses(data){
