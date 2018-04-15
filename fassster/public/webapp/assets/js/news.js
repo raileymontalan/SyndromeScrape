@@ -8,31 +8,30 @@ function requestNewsData(d, y, viz){
     };
 
     if(viz == 'incident'){
-        // $.ajax({
-        //     url: "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/incidents/",
-        //     data: postdata,
-        //     type: "get",
-        //     dataType: "json"
-        // })
-        // .done(function(data){
+        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/incidents/" + d + "&" + y;
+        $.getJSON(getUrl)
+        .done(function(data){
+            // clean up data format
+            formatData(data);
+            console.log(data);
+            renderIncidents(data);
+            $('.modal-loading').hide();
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+            alert("ERROR: Cannot retrieve news data! News API may be down.");
+        });
+        // var data_url = "assets/tempdata/fake.json";
+        // $.getJSON(data_url, function(data) {
         //     console.log(data);
         //     renderIncidents(data);
+        // })
+        // .done(function(data){
         //     $('.modal-loading').hide();
         // })
         // .fail(function(jqXHR, textStatus, errorThrown) {
         //     alert("ERROR: Cannot retrieve news data! News API may be down.");
         // });
-        var data_url = "assets/tempdata/fake.json";
-        $.getJSON(data_url, function(data) {
-            console.log(data);
-            renderIncidents(data);
-        })
-        .done(function(data){
-            $('.modal-loading').hide();
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            alert("ERROR: Cannot retrieve news data! News API may be down.");
-        });
     } else if(viz == 'status'){
         $.ajax({
             url: "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/statuses/",
@@ -67,6 +66,31 @@ function requestNewsData(d, y, viz){
     $("#slider").show();
 }
 
+function formatData(data) {
+    delete data["name"];
+    delete data["createTime"];
+    delete data["updateTime"];
+
+    data["type"] = data["fields"]["type"]["stringValue"];
+    data["features"] = data["fields"]["features"]["arrayValue"]["values"];
+    delete data["fields"]
+
+    for (var i = 0; i < data["features"].length; i++) {
+        data["features"][i] = data["features"][i]["mapValue"]["fields"];
+        data["features"][i]["type"] = data["features"][i]["type"]["stringValue"];
+
+        data["features"][i]["properties"] = data["features"][i]["properties"]["mapValue"]["fields"];
+        data["features"][i]["properties"]["date-start"] = data["features"][i]["properties"]["date-start"]["stringValue"];
+        data["features"][i]["properties"]["title"] = data["features"][i]["properties"]["title"]["stringValue"];
+        data["features"][i]["properties"]["url"] = data["features"][i]["properties"]["url"]["stringValue"];
+        data["features"][i]["properties"]["incident"] = parseInt(data["features"][i]["properties"]["incident"]["integerValue"], 10);
+
+        data["features"][i]["geometry"] = data["features"][i]["geometry"]["mapValue"]["fields"];
+        data["features"][i]["geometry"]["coordinates"] = JSON.parse(data["features"][i]["geometry"]["coordinates"]["stringValue"]);
+        data["features"][i]["geometry"]["type"] = data["features"][i]["geometry"]["type"]["stringValue"];
+    }
+}
+
 function renderIncidents(data){
     var circleRenderer = L.canvas({ padding: 0.5 });
     properties = {
@@ -83,9 +107,9 @@ function renderIncidents(data){
             data.features[i].geometry.coordinates[0]],
             properties
         ).bindPopup("Count: " +
-            data.features[i].properties.incident + "<br/>Title: " +
-            data.features[i].properties.title + "<br/>URL: " +
-            data.features[i].properties.url));
+            data.features[i].properties.incident + "<br/>Title: <a href='" +
+            data.features[i].properties.url + "'>" + 
+            data.features[i].properties.title + "</a>"));
     }
     dataLayer.addTo(mymap);
 }

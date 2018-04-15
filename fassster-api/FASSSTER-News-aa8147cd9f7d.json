@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fassster-news",
+  "private_key_id": "aa8147cd9f7d33677c4561c45a5c9b08f5ef9d25",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDP3dSH0MMs/1NC\nrx91c4JFSncmp3yMKrkzJ4mrbYpysh4jAUfvZYZXmqWjLfNcwnbpl/Tr0aLbDcIB\nhfCXXvx551y006cORYuQEtLwvgzjxBmExCBRMdVbYVreGQG5A6tc2CQTzYpNwdxi\nYAcrWnY7Tkj/N0LrM7Thz8IWiIDIUo/6LteLU/IR4q6Oz86TprlMOaRs8z1ETx30\n/IBiYL+kV9whH7x8cALUe9zeaSufTZUB8b9Ndm14cJTZfozM+XZCCLqnEvZ0vGzD\nNrHFih2E5HJUAYW4Ur5/E9+5yjhDUDXrNtbb0NJY3iwd1v8Ks95Si8gsRQxj26QM\nHbIJUmvbAgMBAAECggEAYTZb0kaiOLWSAUI4QqwKFRC9x5CVsVG7uj435rm8gWZm\nrLVJKJ8A5JB4/WcchNmXViiQTQcGFE8LV74Fpi0wg2xd0V2Yp5aDrhX3m8ot6glI\na+xzNrXJE8rkfbEROq8KIcodmTtLfpD22fUR9UcBuzuh7OWxwKC2a9LHcNVW8Re/\nx8VaBh3o0ii6kyh6xXfLN9OfhGl/ClYfROEAmpToNl2WDoNrefpKUU3EpiTBlZdA\n7dYow3Dez0sDjmeOdgEXjzdskyEmysp5nRr28BbHtN/Xl+hAfDhCWHsnTYGAIS43\n3azERyuElFHQ0zYrWXMud6lEDESWE7A1bP3iX2yWfQKBgQDuO7yBAPwWMU/9yzKW\nBlR3nulptBR9VnZygODUIEBIjNylGhRCT0kgZEVLS+bahv4rsVBI7ggS+dwQEHyo\nK7rpqSctE6/vrefYgvW6sVulnTSdRravDqWR9Ze+zIMwtf/c+J/iYbczWeOE+3Qv\n+T4K8f8f0UDRax/aGw4YgfX0twKBgQDfXld2Hxj+izF9j1961F8PM6s8QSl1hbB2\nzsbC8Wh8gp3JXvFM895C4CLOmK6t3ySSPL8xOcsn8qs6+7B+sgc65QXJtYi9GYjd\nTjOoxP5p+dcxlC/AlDq4FrE5HUfq/CT8LFANDgIE3U6PlqC2gbWSmtTM9ch4MXLm\nV7gMyEgF/QKBgQCWUYr3uy9UsXjPos8gao4RjGurDr1++Hd0eG1ka5UkMf1nD7WI\nwY5aqeovQI1BhbwKxa7q1YaysoVwfXaqhi1CEkFt5+YzTX/k1X1Hd3FkZnU0Z9IN\nUyiVmGlPMqv0qGHxg88egJmgBS/SUPdW7eV/8oIQCXDksrs+W6PhQt92sQKBgAvu\nsUNpI9+tNeacOyCHqdBZFUOxw3I4wxWFtE6DsO492AoC3Wcb+/qcmJ9qvqIhMoXx\nYtFRYg3vQ8Bx45rRDdvSkj2VSgm4DHyuCcpxQ5oLs7g9T1O9V2mwJKWFb+sYry0d\nfOVFo0v5OpInHMzDHx0G0mlkk+H/2kB93SIprNdNAoGBAIWImThwn7DDROceD73h\n7XoTd4CDiG1r440dZfVVGXalWRSLYtNg0yNHRH/3PGBn+JI+9aTAun7gL2nQipJs\nIr7lQY5SkCJfQoPy+zIpxomVXWKM5BHDawqobQn0kSTqCyipx9o5jUjclv7CmOLe\nnQ00K7Iw1eV358xfAp2d7gvF\n-----END PRIVATE KEY-----\n",
+  "client_email": "fassster-news@appspot.gserviceaccount.com",
+  "client_id": "110947948689507901308",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fassster-news%40appspot.gserviceaccount.com"
+}
