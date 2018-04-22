@@ -1,72 +1,165 @@
-function requestNewsData(d, y, viz){
+function requestNewsData(d, y, viz, geogroup, keywords, keyword_logic, age_group, gender, bmi, bloodtype, bloodpressure, compare=false){
     console.log(d, y, viz);
-    dataLayer.clearLayers();
+    if (!compare) {
+        dataLayer.clearLayers();
+    }
     mymap.closePopup();
     postdata = {
         disease:d,
         year:y
     };
 
-    if(viz == 'incident'){
+    if (viz == 'all') {
+        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/incidents/" + d + "&" + y;
+        $.getJSON(getUrl)
+        .done(function (data) {
+            // clean up data format
+            var newsData = data;
+            formatIncidentData(data);
+            console.log(data);
+            renderIncidents(data);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.log("Error: " + errorThrown);
+            // alert("ERROR: Cannot retrieve news data! News API may be down.");
+        });
+        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/statuses/" + d + "&" + y;
+        $.getJSON(getUrl)
+        .done(function (data) {
+            // clean up data format
+            var newsData = data;
+            formatStatusData(data);
+            console.log(data);
+            renderStatuses(data);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+            // alert("ERROR: Cannot retrieve news data! News API may be down.");
+        });
+        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/changes/" + d + "&" + y;
+        $.getJSON(getUrl)
+        .done(function (data) {
+            // clean up data format
+            var newsData = data;
+            formatChangeData(data);
+            console.log(data);
+            renderChanges(data);
+        })
+        .fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+            // alert("ERROR: Cannot retrieve news data! News API may be down.");
+        });
+    }
+    else if(viz == 'incident'){
         var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/incidents/" + d + "&" + y;
         $.getJSON(getUrl)
         .done(function(data){
             // clean up data format
-            formatData(data);
+            var newsData = data;
+            formatIncidentData(data);
             console.log(data);
             renderIncidents(data);
-            $('.modal-loading').hide();
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);
-            alert("ERROR: Cannot retrieve news data! News API may be down.");
-        });
-        // var data_url = "assets/tempdata/fake.json";
-        // $.getJSON(data_url, function(data) {
-        //     console.log(data);
-        //     renderIncidents(data);
-        // })
-        // .done(function(data){
-        //     $('.modal-loading').hide();
-        // })
-        // .fail(function(jqXHR, textStatus, errorThrown) {
-        //     alert("ERROR: Cannot retrieve news data! News API may be down.");
-        // });
-    } else if(viz == 'status'){
-        $.ajax({
-            url: "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/statuses/",
-            data: postdata,
-            type: "get",
-            dataType: "json"
-        })
-        .done(function(data){
-            console.log(data);
-            renderStatuses(data);
+            // alert("ERROR: Cannot retrieve news data! News API may be down.");
+            updateSlider();
             $('.modal-loading').hide();
+        });
+    } else if(viz == 'status'){
+         var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/statuses/" + d + "&" + y;
+        $.getJSON(getUrl)
+        .done(function(data){
+            var newsData = data;
+            formatStatusData(data);
+            renderStatuses(data);
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
-            alert("ERROR: Cannot retrieve news data! News API may be down.");
+            // alert("ERROR: Cannot retrieve news data! News API may be down.");
+            updateSlider();
+            $('.modal-loading').hide();
         });
     } else if(viz == 'change'){
-        $.ajax({
-            url: "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/changes/",
-            data: postdata,
-            type: "get",
-            dataType: "json"
-        })
+         var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/changes/" + d + "&" + y;
+        $.getJSON(getUrl)
         .done(function(data){
-            console.log(data);
+            // console.log(data);
+            var newsData = data;
+            formatChangeData(data);
             renderChanges(data);
-            $('.modal-loading').hide();
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
-            alert("ERROR: Cannot retrieve news data! News API may be down.");
+            // alert("ERROR: Cannot retrieve news data! News API may be down.");
+            updateSlider();
+            $('.modal-loading').hide();
         });
     }
+    monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     $("#slider").show();
+
+    $('#viewComparisonShow').click(function () {
+        $("#viewComparisonHide").show();
+        $("#viewComparisonShow").hide();
+        if (this.checked) $('#play').hide();
+        if (!this.checked) $('#play').show();
+        // dataLayer.clearLayers();
+        renderComparison(d, y, viz, geogroup, keywords, keyword_logic, age_group, gender, bmi, bloodtype, bloodpressure);
+    });
+    $('#viewComparisonHide').click(function () {
+        $("#viewComparisonShow").show();
+        $("#viewComparisonHide").hide();
+        if (this.checked) $('#play').hide();
+        if (!this.checked) $('#play').show();
+        dataLayer.clearLayers();
+        renderIncidents(newsData);
+    }); 
 }
 
-function formatData(data) {
+function updateSlider() {
+    mapslider.update({
+        values: monthList,
+        from: 0,
+        onStart: function (data) {
+        },
+        onChange: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onFinish: function (data) {
+            //console.log(data);
+        },
+        onUpdate: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        }
+    });
+}
+
+function formatIncidentData(data) {
     delete data["name"];
     delete data["createTime"];
     delete data["updateTime"];
@@ -84,6 +177,56 @@ function formatData(data) {
         data["features"][i]["properties"]["title"] = data["features"][i]["properties"]["title"]["stringValue"];
         data["features"][i]["properties"]["url"] = data["features"][i]["properties"]["url"]["stringValue"];
         data["features"][i]["properties"]["incident"] = parseInt(data["features"][i]["properties"]["incident"]["integerValue"], 10);
+
+        data["features"][i]["geometry"] = data["features"][i]["geometry"]["mapValue"]["fields"];
+        data["features"][i]["geometry"]["coordinates"] = JSON.parse(data["features"][i]["geometry"]["coordinates"]["stringValue"]);
+        data["features"][i]["geometry"]["type"] = data["features"][i]["geometry"]["type"]["stringValue"];
+    }
+}
+
+function formatStatusData(data) {
+    delete data["name"];
+    delete data["createTime"];
+    delete data["updateTime"];
+
+    data["type"] = data["fields"]["type"]["stringValue"];
+    data["features"] = data["fields"]["features"]["arrayValue"]["values"];
+    delete data["fields"]
+
+    for (var i = 0; i < data["features"].length; i++) {
+        data["features"][i] = data["features"][i]["mapValue"]["fields"];
+        data["features"][i]["type"] = data["features"][i]["type"]["stringValue"];
+
+        data["features"][i]["properties"] = data["features"][i]["properties"]["mapValue"]["fields"];
+        data["features"][i]["properties"]["date-start"] = data["features"][i]["properties"]["date-start"]["stringValue"];
+        data["features"][i]["properties"]["title"] = data["features"][i]["properties"]["title"]["stringValue"];
+        data["features"][i]["properties"]["url"] = data["features"][i]["properties"]["url"]["stringValue"];
+        data["features"][i]["properties"]["state"] = data["features"][i]["properties"]["state"]["stringValue"];
+
+        data["features"][i]["geometry"] = data["features"][i]["geometry"]["mapValue"]["fields"];
+        data["features"][i]["geometry"]["coordinates"] = JSON.parse(data["features"][i]["geometry"]["coordinates"]["stringValue"]);
+        data["features"][i]["geometry"]["type"] = data["features"][i]["geometry"]["type"]["stringValue"];
+    }
+}
+
+function formatChangeData(data) {
+    delete data["name"];
+    delete data["createTime"];
+    delete data["updateTime"];
+
+    data["type"] = data["fields"]["type"]["stringValue"];
+    data["features"] = data["fields"]["features"]["arrayValue"]["values"];
+    delete data["fields"]
+
+    for (var i = 0; i < data["features"].length; i++) {
+        data["features"][i] = data["features"][i]["mapValue"]["fields"];
+        data["features"][i]["type"] = data["features"][i]["type"]["stringValue"];
+
+        data["features"][i]["properties"] = data["features"][i]["properties"]["mapValue"]["fields"];
+        data["features"][i]["properties"]["date-start"] = data["features"][i]["properties"]["date-start"]["stringValue"];
+        data["features"][i]["properties"]["title"] = data["features"][i]["properties"]["title"]["stringValue"];
+        data["features"][i]["properties"]["url"] = data["features"][i]["properties"]["url"]["stringValue"];
+        data["features"][i]["properties"]["change"] = data["features"][i]["properties"]["change"]["stringValue"];
 
         data["features"][i]["geometry"] = data["features"][i]["geometry"]["mapValue"]["fields"];
         data["features"][i]["geometry"]["coordinates"] = JSON.parse(data["features"][i]["geometry"]["coordinates"]["stringValue"]);
@@ -112,21 +255,414 @@ function renderIncidents(data){
             data.features[i].properties.title + "</a>"));
     }
     dataLayer.addTo(mymap);
+    $('.modal-loading').hide();
+    
+    var newsData = data;
+
+    mapslider.update({
+        values: monthList,
+        from: 0,
+        onStart: function (data) {
+            console.log(newsData);
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData.features.length; i++) {
+                var date = new Date(newsData["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData.features[i].geometry.coordinates[1],
+                    newsData.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("Count: " +
+                    newsData.features[i].properties.incident + "<br/>Title: <a href='" +
+                    newsData.features[i].properties.url + "'>" +
+                    newsData.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onChange: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData.features.length; i++) {
+                var date = new Date(newsData["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+                console.log(month);
+                console.log(sliderDate);
+                
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData.features[i].geometry.coordinates[1],
+                    newsData.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("Count: " +
+                    newsData.features[i].properties.incident + "<br/>Title: <a href='" +
+                    newsData.features[i].properties.url + "'>" +
+                    newsData.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onFinish: function (data) {
+            //console.log(data);
+        },
+        onUpdate: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData.features.length; i++) {
+                var date = new Date(newsData["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData.features[i].geometry.coordinates[1],
+                    newsData.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("Count: " +
+                    newsData.features[i].properties.incident + "<br/>Title: <a href='" +
+                    newsData.features[i].properties.url + "'>" +
+                    newsData.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        }
+    });
 }
 
-function renderComparison(data){
-    requestEMRData(["iclinicsys","shine"],"01-12",year,geogroup,keywords,keyword_logic,age_group,gender,bmi,bloodtype,bloodpressure);
-    requestNewsData(keywords, year, viz)
+function renderComparison(d, y, viz, geogroup, keywords, keyword_logic, age_group, gender, bmi, bloodtype, bloodpressure){
+    var compare = true;
+    requestEMRData(["iclinicsys","shine"],"01-12",y,geogroup,keywords,keyword_logic,age_group,gender,bmi,bloodtype,bloodpressure);
+    requestNewsData(d, y, viz, geogroup, keywords, keyword_logic, age_group, gender, bmi, bloodtype, bloodpressure, compare);
 }
 
 function renderStatuses(data){
-    loadBoundaries(data);
-    updateSlider();
+    var circleRenderer = L.canvas({ padding: 0.5 });
+    properties = {
+        radius: 10,
+        stroke: false,
+        fill: true,
+        fillColor: "#FA2A00",
+        fillOpacity: 0.5,
+        renderer: circleRenderer
+    }
+    for (i = 0; i < data.features.length; i++) {
+        dataLayer.addLayer(L.circleMarker([
+            data.features[i].geometry.coordinates[1],
+            data.features[i].geometry.coordinates[0]],
+            properties
+        ).bindPopup("Count: " +
+            data.features[i].properties.incident + "<br/>Title: <a href='" +
+            data.features[i].properties.url + "'>" +
+            data.features[i].properties.title + "</a>"));
+    }
+    dataLayer.addTo(mymap);
+    $('.modal-loading').hide();
+
+    var newsData2 = data;
+
+    mapslider.update({
+        values: monthList,
+        from: 0,
+        onStart: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData2.features.length; i++) {
+                var date = new Date(newsData2["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+                console.log(month);
+                console.log(sliderDate);
+
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData2.features[i].geometry.coordinates[1],
+                    newsData2.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("State: " +
+                    newsData2.features[i].properties.state + "<br/>Title: <a href='" +
+                    newsData2.features[i].properties.url + "'>" +
+                    newsData2.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData2.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onChange: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData2.features.length; i++) {
+                var date = new Date(newsData2["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+                console.log(month);
+                console.log(sliderDate);
+
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData2.features[i].geometry.coordinates[1],
+                    newsData2.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("State: " +
+                    newsData2.features[i].properties.state + "<br/>Title: <a href='" +
+                    newsData2.features[i].properties.url + "'>" +
+                    newsData2.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData2.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onFinish: function (data) {
+            //console.log(data);
+        },
+        onUpdate: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData2.features.length; i++) {
+                var date = new Date(newsData2["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData2.features[i].geometry.coordinates[1],
+                    newsData2.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("State: " +
+                    newsData2.features[i].properties.state + "<br/>Title: <a href='" +
+                    newsData2.features[i].properties.url + "'>" +
+                    newsData2.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData2.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        }
+    });
 }
 
 function renderChanges(data){
-    loadBoundaries(data);
-    updateSlider();
+    var circleRenderer = L.canvas({ padding: 0.5 });
+    properties = {
+        radius: 10,
+        stroke: false,
+        fill: true,
+        fillColor: "#22A7F0",
+        fillOpacity: 0.5,
+        renderer: circleRenderer
+    }
+    for (i = 0; i < data.features.length; i++) {
+        dataLayer.addLayer(L.circleMarker([
+            data.features[i].geometry.coordinates[1],
+            data.features[i].geometry.coordinates[0]],
+            properties
+        ).bindPopup("Count: " +
+            data.features[i].properties.incident + "<br/>Title: <a href='" +
+            data.features[i].properties.url + "'>" + 
+            data.features[i].properties.title + "</a>"));
+    }
+    dataLayer.addTo(mymap);
+    $('.modal-loading').hide();
+    
+    var newsData3 = data;
+
+    mapslider.update({
+        values: monthList,
+        from: 0,
+        onStart: function (data) {
+            console.log(newsData3);
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData3.features.length; i++) {
+                var date = new Date(newsData3["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+                console.log(month);
+                console.log(sliderDate);
+
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData3.features[i].geometry.coordinates[1],
+                    newsData3.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("Change: " +
+                    newsData3.features[i].properties.change + "<br/>Title: <a href='" +
+                    newsData3.features[i].properties.url + "'>" +
+                    newsData3.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData3.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onChange: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData3.features.length; i++) {
+                var date = new Date(newsData3["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+                console.log(month);
+                console.log(sliderDate);
+                
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData3.features[i].geometry.coordinates[1],
+                    newsData3.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("Change: " +
+                    newsData3.features[i].properties.change + "<br/>Title: <a href='" +
+                    newsData3.features[i].properties.url + "'>" +
+                    newsData3.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData3.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        },
+        onFinish: function (data) {
+            //console.log(data);
+        },
+        onUpdate: function (data) {
+            // console.log(data);
+            $('.modal-loading').show();
+            dataLayer.clearLayers();
+            var circleRenderer = L.canvas({ padding: 0.5 });
+            properties = {
+                radius: 10,
+                stroke: false,
+                fill: true,
+                fillColor: "#69B867",
+                fillOpacity: 0.5,
+                renderer: circleRenderer
+            }
+            for (i = 0; i < newsData3.features.length; i++) {
+                var date = new Date(newsData3["features"][i]["properties"]["date-start"]);
+                var month = date.getMonth();
+                var sliderDate = monthList.indexOf($("#myRange").prop("value"));
+
+                if (month != sliderDate) {
+                    continue;
+                }
+
+                dataLayer.addLayer(L.circleMarker([
+                    newsData3.features[i].geometry.coordinates[1],
+                    newsData3.features[i].geometry.coordinates[0]],
+                    properties
+                ).bindPopup("Change: " +
+                    newsData3.features[i].properties.change + "<br/>Title: <a href='" +
+                    newsData3.features[i].properties.url + "'>" +
+                    newsData3.features[i].properties.title + "</a>" + "<br/>Date: " +
+                    newsData3.features[i].properties["date-start"]));
+            }
+            dataLayer.addTo(mymap);
+            $('.modal-loading').hide();
+        }
+    });
 }
 
 function loadBoundaries(data){
@@ -236,20 +772,3 @@ function getNewsColor(value) {
         return "#3333ff"
     }
 }
-
-$('#viewComparisonShow').click(function() {
-    $( "#viewComparisonHide" ).show();
-    $( "#viewComparisonShow" ).hide();
-    if (this.checked) $('#play').hide();
-    if (!this.checked) $('#play').show();
-    dataLayer.clearLayers();
-    renderComparison();
-});
-$('#viewComparisonHide').click(function() {
-    $( "#viewComparisonShow" ).show();
-    $( "#viewComparisonHide" ).hide();
-    if (this.checked) $('#play').hide();
-    if (!this.checked) $('#play').show();
-    dataLayer.clearLayers();
-    renderIncidents();
-});

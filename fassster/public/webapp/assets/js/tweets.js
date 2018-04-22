@@ -141,7 +141,6 @@ function requestTweetData(s,l,f){
             },
             onFinish: function (data) {
                 //console.log(data);
-                
             },
             onUpdate: function (data) {
                 //console.log(data);
