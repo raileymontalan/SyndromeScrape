@@ -142,6 +142,7 @@
 						<label for="" class="col-sm-6 col-form-label text-white text-right">Visualization</label>
 						<div class="col-sm-6">
 							<select class="form-control" id="viz">
+								<!-- <option value="all">All</option> -->
 								<option value="incident">Incident</option>
 								<option value="status">Status</option>
 								<option value="change">Change</option>
@@ -670,7 +671,7 @@ $(document).ready(function() {
 						mymap.setView(new L.LatLng(11.1, 121.9),8);
 					} else if (dataSource == 'news'){
 						$("#using-data").html("using News Data");
-						requestNewsData(keywords, year, viz);
+						requestNewsData(keywords, year, viz, geogroup,keywords,keyword_logic,age_group,gender,bmi,bloodtype,bloodpressure);
 						$( "#viewTweetsHide" ).hide();
 						$( "#viewTweetsShow" ).hide();
 						$( "#viewComparisonShow" ).show();
