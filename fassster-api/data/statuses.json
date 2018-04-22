@@ -5,7 +5,7 @@
         "date-end": "2015-06-30",
         "title": "Isabela town in state of calamity due to dengue",
         "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "code": "[121.3336526, 14.1696476]",
+        "code": "[122.0, 17.0]",
         "state": "calamity"
     },
     {
@@ -14,7 +14,7 @@
         "date-end": "2015-06-30",
         "title": "Isabela town in state of calamity due to dengue",
         "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "code": "[121.3336526, 14.1696476]",
+        "code": "[122.0, 17.0]",
         "state": "calamity"
     },
     {
@@ -176,7 +176,7 @@
         "date-end": "2015-09-01",
         "title": "Number of dengue cases doubles in Cordillera",
         "url": "https://www.rappler.com/nation/103711-dengue-cases-double-cordillera",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "state": "outbreak"
     },
     {
@@ -185,7 +185,7 @@
         "date-end": "2015-09-01",
         "title": "Number of dengue cases doubles in Cordillera",
         "url": "https://www.rappler.com/nation/103711-dengue-cases-double-cordillera",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "state": "calamity"
     },
     {
@@ -212,7 +212,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -221,7 +221,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -230,7 +230,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -239,7 +239,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -248,7 +248,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -257,7 +257,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -266,7 +266,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "state": "outbreak"
     },
     {
@@ -365,7 +365,7 @@
         "date-end": "2014-01-03",
         "title": "21 dead as DOH declares measles outbreak",
         "url": "http://newsinfo.inquirer.net/557253/21-dead-as-doh-declares-measles-outbreak",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "state": "outbreak"
     },
     {
@@ -374,7 +374,7 @@
         "date-end": "2014-01-03",
         "title": "21 dead as DOH declares measles outbreak",
         "url": "http://newsinfo.inquirer.net/557253/21-dead-as-doh-declares-measles-outbreak",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "state": "outbreak"
     },
     {
@@ -464,7 +464,7 @@
         "date-end": "2014-04-30",
         "title": "Measles outbreak declared in Maguindanao – report",
         "url": "http://www.gmanetwork.com/news/news/regions/358926/measles-outbreak-declared-in-maguindanao-report/story/",
-        "code": "[]",
+        "code": "[124.26, 7.02]",
         "state": "outbreak"
     },
     {
@@ -473,7 +473,7 @@
         "date-end": "2014-04-30",
         "title": "Measles outbreak declared in Maguindanao – report",
         "url": "http://www.gmanetwork.com/news/news/regions/358926/measles-outbreak-declared-in-maguindanao-report/story/",
-        "code": "[]",
+        "code": "[124.26, 7.02]",
         "state": "outbreak"
     },
     {
@@ -482,7 +482,7 @@
         "date-end": "2014-05-17",
         "title": "160 measles cases prompt vaccination drive in Surigao City",
         "url": "http://www.gmanetwork.com/news/news/regions/361447/160-measles-cases-prompt-vaccination-drive-in-surigao-city/story/",
-        "code": "[]",
+        "code": "[125.4929273, 9.7916433]",
         "state": "outbreak"
     },
     {
@@ -563,7 +563,7 @@
         "date-end": "2014-06-28",
         "title": "DOH investigates typhoid fever outbreak in Cebu town",
         "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -572,7 +572,7 @@
         "date-end": "2014-06-28",
         "title": "DOH investigates typhoid fever outbreak in Cebu town",
         "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -581,7 +581,7 @@
         "date-end": "2014-06-28",
         "title": "DOH investigates typhoid fever outbreak in Cebu town",
         "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "calamity"
     },
     {
@@ -590,7 +590,7 @@
         "date-end": "2008-11-24",
         "title": "DOH: 226 new cases of suspected typhoid fever reported in Quezon",
         "url": "http://www.gmanetwork.com/news/news/regions/135332/doh-226-new-cases-of-suspected-typhoid-fever-reported-in-quezon/story/",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "state": "outbreak"
     },
     {
@@ -599,7 +599,7 @@
         "date-end": "2012-03-05",
         "title": "4 dead, 558 downed in typhoid outbreak in Cebu",
         "url": "http://www.gmanetwork.com/news/news/regions/250311/4-dead-558-downed-in-typhoid-outbreak-in-cebu/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -608,7 +608,7 @@
         "date-end": "2012-03-05",
         "title": "4 dead, 558 downed in typhoid outbreak in Cebu",
         "url": "http://www.gmanetwork.com/news/news/regions/250311/4-dead-558-downed-in-typhoid-outbreak-in-cebu/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "calamity"
     },
     {
@@ -617,7 +617,7 @@
         "date-end": "2012-03-05",
         "title": "4 dead, 558 downed in typhoid outbreak in Cebu",
         "url": "http://www.gmanetwork.com/news/news/regions/250311/4-dead-558-downed-in-typhoid-outbreak-in-cebu/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -644,7 +644,7 @@
         "date-end": "2008-07-02",
         "title": "Dengue, typhoid cases rising in Samar towns",
         "url": "http://www.gmanetwork.com/news/news/regions/104453/dengue-typhoid-cases-rising-in-samar-towns/story/",
-        "code": "[125.0081402, 11.2430274]",
+        "code": "[121.0469718, 14.6614269]",
         "state": "outbreak"
     },
     {
@@ -653,7 +653,7 @@
         "date-end": "2008-03-03",
         "title": "DOH dispatches team to Calamba vs typhoid fever",
         "url": "http://www.gmanetwork.com/news/news/regions/83083/doh-dispatches-team-to-calamba-vs-typhoid-fever/story/",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "state": "outbreak"
     },
     {
@@ -662,7 +662,7 @@
         "date-end": "2008-03-03",
         "title": "DOH dispatches team to Calamba vs typhoid fever",
         "url": "http://www.gmanetwork.com/news/news/regions/83083/doh-dispatches-team-to-calamba-vs-typhoid-fever/story/",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "state": "outbreak"
     },
     {
@@ -680,7 +680,7 @@
         "date-end": "2010-12-08",
         "title": "Report: 'Typhoid fever' downs 160 in Cebu town",
         "url": "http://www.gmanetwork.com/news/news/regions/207798/report-typhoid-fever-downs-160-in-cebu-town/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -689,7 +689,7 @@
         "date-end": "2006-11-10",
         "title": "Typhoid outbreak in Agusan town biggest ever recorded",
         "url": "http://www.gmanetwork.com/news/news/nation/20526/typhoid-outbreak-in-agusan-town-biggest-ever-recorded/story/",
-        "code": "[]",
+        "code": "[125.6487634, 7.1906345]",
         "state": "outbreak"
     },
     {
@@ -959,7 +959,7 @@
         "date-end": "2015-09-23",
         "title": "Cavite starts campaign to curb dengue outbreak",
         "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
-        "code": "[]",
+        "code": "[121.0329706, 14.5736108]",
         "state": "calamity"
     },
     {
@@ -968,7 +968,7 @@
         "date-end": "2015-09-17",
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "state": "outbreak"
     },
     {
@@ -977,7 +977,7 @@
         "date-end": "2015-09-17",
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "state": "outbreak"
     },
     {
@@ -986,7 +986,7 @@
         "date-end": "2015-09-17",
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "state": "outbreak"
     },
     {
@@ -995,7 +995,7 @@
         "date-end": "2015-09-17",
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "state": "outbreak"
     },
     {
@@ -1040,7 +1040,7 @@
         "date-end": "2015-08-21",
         "title": "Dengue outbreak declared in Sagbayan",
         "url": "http://cnnphilippines.com/regional/2015/08/21/dengue-outbreak-sagbayan.html",
-        "code": "[]",
+        "code": "[121.0478608, 14.6616744]",
         "state": "outbreak"
     },
     {
@@ -1049,7 +1049,7 @@
         "date-end": "2015-08-21",
         "title": "Dengue outbreak declared in Sagbayan",
         "url": "http://cnnphilippines.com/regional/2015/08/21/dengue-outbreak-sagbayan.html",
-        "code": "[]",
+        "code": "[121.0478608, 14.6616744]",
         "state": "outbreak"
     },
     {
@@ -1058,7 +1058,7 @@
         "date-end": "2015-08-10",
         "title": "Dengue cases in Pampanga rise by 80%",
         "url": "http://cnnphilippines.com/regional/2015/08/08/Dengue-cases-in-Pampanga-rise-by-80-percent.html",
-        "code": "[-97.981637638476, 24.87257315]",
+        "code": "[-93.2203812018791, 16.9134645]",
         "state": "outbreak"
     },
     {
@@ -1067,7 +1067,7 @@
         "date-end": "2017-06-22",
         "title": "Dengue cases in Zamboanga rise",
         "url": "http://www.sunstar.com.ph/zamboanga/local-news/2017/06/22/dengue-cases-zamboanga-rise-548914",
-        "code": "[]",
+        "code": "[122.0763695, 6.9046004]",
         "state": "outbreak"
     },
     {
@@ -1076,7 +1076,7 @@
         "date-end": "2017-06-22",
         "title": "Dengue cases in Zamboanga rise",
         "url": "http://www.sunstar.com.ph/zamboanga/local-news/2017/06/22/dengue-cases-zamboanga-rise-548914",
-        "code": "[]",
+        "code": "[122.0763695, 6.9046004]",
         "state": "outbreak"
     },
     {
@@ -1085,7 +1085,7 @@
         "date-end": "2018-01-16",
         "title": "Dengue cases in Bacolod drop on first week of January",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2018/01/16/dengue-cases-bacolod-drop-first-week-january-584169",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "state": "hot"
     },
     {
@@ -1094,7 +1094,7 @@
         "date-end": "2017-08-17",
         "title": "9 barangays in Bacolod tag as dengue hot spots",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/08/17/9-barangays-bacolod-tag-dengue-hot-spots-558972",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "state": "hot"
     },
     {
@@ -1103,7 +1103,7 @@
         "date-end": "2016-12-30",
         "title": "Dengue cases up by 6,500 in Cebu Province",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
-        "code": "[]",
+        "code": "[123.890817982755, 10.3185647]",
         "state": "calamity"
     },
     {
@@ -1112,7 +1112,7 @@
         "date-end": "2016-12-30",
         "title": "Dengue cases up by 6,500 in Cebu Province",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
-        "code": "[]",
+        "code": "[123.890817982755, 10.3185647]",
         "state": "outbreak"
     },
     {
@@ -1121,7 +1121,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "state": "outbreak"
     },
     {
@@ -1130,7 +1130,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "state": "outbreak"
     },
     {
@@ -1139,7 +1139,7 @@
         "date-end": "2018-01-17",
         "title": "Measles cases in Davao City increase",
         "url": "http://www.sunstar.com.ph/davao/local-news/2018/01/17/measles-cases-davao-city-increase-584428",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "state": "outbreak"
     },
     {
@@ -1238,7 +1238,7 @@
         "date-end": "2015-09-26",
         "title": "Dengue fever cases going up in Cavite",
         "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
-        "code": "[]",
+        "code": "[120.833333, 14.25]",
         "state": "outbreak"
     },
     {
@@ -1247,7 +1247,7 @@
         "date-end": "2015-09-26",
         "title": "Dengue fever cases going up in Cavite",
         "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
-        "code": "[]",
+        "code": "[120.833333, 14.25]",
         "state": "calamity"
     },
     {
@@ -1301,7 +1301,7 @@
         "date-end": "2012-03-14",
         "title": "Three suspected typhoid cases in Malabuyoc town",
         "url": "http://newsinfo.inquirer.net/161243/%E2%80%98three-suspected-typhoid-cases-in-malabuyoc-town%E2%80%99",
-        "code": "[]",
+        "code": "[123.3276659, 9.6516166]",
         "state": "outbreak"
     },
     {
@@ -1310,7 +1310,7 @@
         "date-end": "2012-03-14",
         "title": "Three suspected typhoid cases in Malabuyoc town",
         "url": "http://newsinfo.inquirer.net/161243/%E2%80%98three-suspected-typhoid-cases-in-malabuyoc-town%E2%80%99",
-        "code": "[]",
+        "code": "[123.3276659, 9.6516166]",
         "state": "outbreak"
     },
     {
@@ -1319,7 +1319,7 @@
         "date-end": "2012-03-08",
         "title": "Manila team arrives to investigate biggest typhoid wave in C. Visayas",
         "url": "http://newsinfo.inquirer.net/157957/manila-team-arrives-to-investigate-biggest-typhoid-wave-in-c-visayas",
-        "code": "[]",
+        "code": "[121.0522116, 14.5081684]",
         "state": "outbreak"
     },
     {
@@ -1328,7 +1328,7 @@
         "date-end": "2012-03-08",
         "title": "Manila team arrives to investigate biggest typhoid wave in C. Visayas",
         "url": "http://newsinfo.inquirer.net/157957/manila-team-arrives-to-investigate-biggest-typhoid-wave-in-c-visayas",
-        "code": "[]",
+        "code": "[121.0522116, 14.5081684]",
         "state": "outbreak"
     },
     {
@@ -1337,7 +1337,7 @@
         "date-end": "2012-03-08",
         "title": "Manila team arrives to investigate biggest typhoid wave in C. Visayas",
         "url": "http://newsinfo.inquirer.net/157957/manila-team-arrives-to-investigate-biggest-typhoid-wave-in-c-visayas",
-        "code": "[]",
+        "code": "[121.0522116, 14.5081684]",
         "state": "outbreak"
     },
     {
@@ -1355,7 +1355,7 @@
         "date-end": "2012-03-04",
         "title": "Typhoid kills 3, downs 24 in Tuburan",
         "url": "http://newsinfo.inquirer.net/155915/typhoid-kills-3-downs-24-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "state": "outbreak"
     },
     {
@@ -1364,7 +1364,7 @@
         "date-end": "2012-03-11",
         "title": "Typhoid cases slow down in Tuburan",
         "url": "http://newsinfo.inquirer.net/159515/typhoid-cases-slow-down-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "state": "outbreak"
     },
     {
@@ -1373,7 +1373,7 @@
         "date-end": "2012-03-11",
         "title": "Typhoid cases slow down in Tuburan",
         "url": "http://newsinfo.inquirer.net/159515/typhoid-cases-slow-down-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "state": "outbreak"
     },
     {
@@ -1382,7 +1382,7 @@
         "date-end": "2012-03-11",
         "title": "Typhoid cases slow down in Tuburan",
         "url": "http://newsinfo.inquirer.net/159515/typhoid-cases-slow-down-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "state": "outbreak"
     },
     {
@@ -1391,7 +1391,7 @@
         "date-end": "2012-03-05",
         "title": "Typhoid outbreak kills 4 in Cebu town",
         "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -1400,7 +1400,7 @@
         "date-end": "2012-03-05",
         "title": "Typhoid outbreak kills 4 in Cebu town",
         "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "calamity"
     },
     {
@@ -1409,7 +1409,7 @@
         "date-end": "2012-03-05",
         "title": "Typhoid outbreak kills 4 in Cebu town",
         "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "state": "outbreak"
     },
     {
@@ -1427,7 +1427,7 @@
         "date-end": "2011-11-12",
         "title": "Typhoid outbreak declared in 4 Leyte towns",
         "url": "http://newsinfo.inquirer.net/92537/typhoid-outbreak-declared-in-4-leyte-towns",
-        "code": "[125.0081402, 11.2430274]",
+        "code": "[121.0469718, 14.6614269]",
         "state": "outbreak"
     },
     {
@@ -1472,7 +1472,7 @@
         "date-end": "2014-01-07",
         "title": "DOH-7 probes ‘measles’ cases in Bohol, Cebu",
         "url": "https://newsinfo.inquirer.net/559341/doh-7-probes-measles-cases-in-bohol-cebu",
-        "code": "[]",
+        "code": "[123.904798396893, 10.3181276]",
         "state": "outbreak"
     },
     {

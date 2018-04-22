@@ -13,9 +13,9 @@ db = firestore.Client()
 # changes = client.news.changes
 # statuses = client.news.statuses
 
-incidents = json.load(open('data/incidents5.json'))
-statuses = json.load(open('data/statuses5.json'))
-changes = json.load(open('data/changes5.json'))
+incidents = json.load(open('data/incidents.json'))
+statuses = json.load(open('data/statuses.json'))
+changes = json.load(open('data/changes.json'))
 
 # start with incidents
 # segregate each incident by disease

@@ -5,7 +5,7 @@
         "date-end": "2015-06-30",
         "title": "Isabela town in state of calamity due to dengue",
         "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "code": "[121.3336526, 14.1696476]",
+        "code": "[122.0, 17.0]",
         "incident": 54
     },
     {
@@ -14,7 +14,7 @@
         "date-end": "2015-06-30",
         "title": "Isabela town in state of calamity due to dengue",
         "url": "https://www.rappler.com/nation/97920-luna-isabela-state-of-calamity-dengue",
-        "code": "[121.3336526, 14.1696476]",
+        "code": "[122.0, 17.0]",
         "incident": 19946
     },
     {
@@ -185,7 +185,7 @@
         "date-end": "2017-09-17",
         "title": "14-year-old girl dies of dengue in Albay",
         "url": "http://www.gmanetwork.com/news/news/regions/626121/14-year-old-girl-dies-of-dengue-in-albay/story/",
-        "code": "[]",
+        "code": "[123.55, 13.216667]",
         "incident": 143902
     },
     {
@@ -194,7 +194,7 @@
         "date-end": "2017-09-17",
         "title": "14-year-old girl dies of dengue in Albay",
         "url": "http://www.gmanetwork.com/news/news/regions/626121/14-year-old-girl-dies-of-dengue-in-albay/story/",
-        "code": "[]",
+        "code": "[123.55, 13.216667]",
         "incident": 211000
     },
     {
@@ -572,7 +572,7 @@
         "date-end": "2014-01-07",
         "title": "Measles-free Philippines by 2017?",
         "url": "https://www.rappler.com/nation/47400-measles-free-philippines-2017",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "incident": 1
     },
     {
@@ -626,7 +626,7 @@
         "date-end": "2014-01-03",
         "title": "21 dead as DOH declares measles outbreak",
         "url": "http://newsinfo.inquirer.net/557253/21-dead-as-doh-declares-measles-outbreak",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "incident": 1724
     },
     {
@@ -671,7 +671,7 @@
         "date-end": "2014-04-30",
         "title": "Measles outbreak declared in Maguindanao – report",
         "url": "http://www.gmanetwork.com/news/news/regions/358926/measles-outbreak-declared-in-maguindanao-report/story/",
-        "code": "[]",
+        "code": "[124.26, 7.02]",
         "incident": 12
     },
     {
@@ -680,7 +680,7 @@
         "date-end": "2014-04-30",
         "title": "Measles outbreak declared in Maguindanao – report",
         "url": "http://www.gmanetwork.com/news/news/regions/358926/measles-outbreak-declared-in-maguindanao-report/story/",
-        "code": "[]",
+        "code": "[124.26, 7.02]",
         "incident": 49
     },
     {
@@ -689,7 +689,7 @@
         "date-end": "2014-08-31",
         "title": "7 measles deaths recorded in Davao City in August",
         "url": "http://www.gmanetwork.com/news/news/regions/377136/7-measles-deaths-recorded-in-davao-city-in-august/story/",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 1
     },
     {
@@ -698,7 +698,7 @@
         "date-end": "2014-08-31",
         "title": "7 measles deaths recorded in Davao City in August",
         "url": "http://www.gmanetwork.com/news/news/regions/377136/7-measles-deaths-recorded-in-davao-city-in-august/story/",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 1228
     },
     {
@@ -707,7 +707,7 @@
         "date-end": "2014-08-31",
         "title": "7 measles deaths recorded in Davao City in August",
         "url": "http://www.gmanetwork.com/news/news/regions/377136/7-measles-deaths-recorded-in-davao-city-in-august/story/",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 4
     },
     {
@@ -716,7 +716,7 @@
         "date-end": "2014-08-31",
         "title": "7 measles deaths recorded in Davao City in August",
         "url": "http://www.gmanetwork.com/news/news/regions/377136/7-measles-deaths-recorded-in-davao-city-in-august/story/",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 50
     },
     {
@@ -725,7 +725,7 @@
         "date-end": "2013-12-11",
         "title": "DOH issues measles alert in NCR as cases rise",
         "url": "http://www.gmanetwork.com/news/news/metro/339346/doh-issues-measles-alert-in-ncr-as-cases-rise/story/",
-        "code": "[]",
+        "code": "[-1.88499855996304, 52.5217268]",
         "incident": 25
     },
     {
@@ -734,7 +734,7 @@
         "date-end": "2013-12-11",
         "title": "DOH issues measles alert in NCR as cases rise",
         "url": "http://www.gmanetwork.com/news/news/metro/339346/doh-issues-measles-alert-in-ncr-as-cases-rise/story/",
-        "code": "[]",
+        "code": "[-1.88499855996304, 52.5217268]",
         "incident": 44
     },
     {
@@ -752,7 +752,7 @@
         "date-end": "2014-06-28",
         "title": "DOH investigates typhoid fever outbreak in Cebu town",
         "url": "http://www.gmanetwork.com/news/news/regions/367705/doh-investigates-typhoid-fever-outbreak-in-cebu-town/story/",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "incident": 86
     },
     {
@@ -779,7 +779,7 @@
         "date-end": "2008-11-24",
         "title": "DOH: 226 new cases of suspected typhoid fever reported in Quezon",
         "url": "http://www.gmanetwork.com/news/news/regions/135332/doh-226-new-cases-of-suspected-typhoid-fever-reported-in-quezon/story/",
-        "code": "[]",
+        "code": "[120.9799696, 14.5906216]",
         "incident": 144
     },
     {
@@ -806,7 +806,7 @@
         "date-end": "2008-07-02",
         "title": "Dengue, typhoid cases rising in Samar towns",
         "url": "http://www.gmanetwork.com/news/news/regions/104453/dengue-typhoid-cases-rising-in-samar-towns/story/",
-        "code": "[125.0081402, 11.2430274]",
+        "code": "[121.0469718, 14.6614269]",
         "incident": 43
     },
     {
@@ -824,7 +824,7 @@
         "date-end": "2006-11-10",
         "title": "Typhoid outbreak in Agusan town biggest ever recorded",
         "url": "http://www.gmanetwork.com/news/news/nation/20526/typhoid-outbreak-in-agusan-town-biggest-ever-recorded/story/",
-        "code": "[]",
+        "code": "[125.6487634, 7.1906345]",
         "incident": 501
     },
     {
@@ -833,7 +833,7 @@
         "date-end": "2009-08-30",
         "title": "1 dead, 36 sickened as typhoid fever hits Leyte",
         "url": "http://www.gmanetwork.com/news/news/regions/171051/1-dead-36-sickened-as-typhoid-fever-hits-leyte/story/",
-        "code": "[]",
+        "code": "[124.833333, 10.833333]",
         "incident": 36
     },
     {
@@ -842,7 +842,7 @@
         "date-end": "2017-09-10",
         "title": "Dengue cases drop in Cordillera",
         "url": "http://www.sunstar.com.ph/baguio/local-news/2017/09/11/dengue-cases-drop-cordillera-563335",
-        "code": "[]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "incident": 8311
     },
     {
@@ -851,7 +851,7 @@
         "date-end": "2017-09-10",
         "title": "Dengue cases drop in Cordillera",
         "url": "http://www.sunstar.com.ph/baguio/local-news/2017/09/11/dengue-cases-drop-cordillera-563335",
-        "code": "[]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "incident": 375
     },
     {
@@ -1049,7 +1049,7 @@
         "date-end": "2015-09-23",
         "title": "Cavite starts campaign to curb dengue outbreak",
         "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
-        "code": "[]",
+        "code": "[121.0329706, 14.5736108]",
         "incident": 3904
     },
     {
@@ -1058,7 +1058,7 @@
         "date-end": "2015-09-23",
         "title": "Cavite starts campaign to curb dengue outbreak",
         "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
-        "code": "[]",
+        "code": "[121.0329706, 14.5736108]",
         "incident": 1120
     },
     {
@@ -1067,7 +1067,7 @@
         "date-end": "2015-09-23",
         "title": "Cavite starts campaign to curb dengue outbreak",
         "url": "http://cnnphilippines.com/regional/2015/09/23/Cavite-anti-dengue-campaign.html",
-        "code": "[]",
+        "code": "[121.0329706, 14.5736108]",
         "incident": 398
     },
     {
@@ -1076,7 +1076,7 @@
         "date-end": "2015-09-17",
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "incident": 4525
     },
     {
@@ -1085,7 +1085,7 @@
         "date-end": "2015-09-17",
         "title": "Dengue outbreak declared in 9 towns in Cordillera",
         "url": "http://cnnphilippines.com/regional/2015/09/17/Cordillera-dengue-outbreak-9-towns.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[-66.4999969593201, 18.3245924]",
         "incident": 1611
     },
     {
@@ -1157,7 +1157,7 @@
         "date-end": "2015-08-21",
         "title": "Dengue outbreak declared in Sagbayan",
         "url": "http://cnnphilippines.com/regional/2015/08/21/dengue-outbreak-sagbayan.html",
-        "code": "[]",
+        "code": "[121.0478608, 14.6616744]",
         "incident": 98
     },
     {
@@ -1166,7 +1166,7 @@
         "date-end": "2015-08-21",
         "title": "Dengue outbreak declared in Sagbayan",
         "url": "http://cnnphilippines.com/regional/2015/08/21/dengue-outbreak-sagbayan.html",
-        "code": "[]",
+        "code": "[121.0478608, 14.6616744]",
         "incident": 70
     },
     {
@@ -1175,7 +1175,7 @@
         "date-end": "2015-08-21",
         "title": "Dengue outbreak declared in Sagbayan",
         "url": "http://cnnphilippines.com/regional/2015/08/21/dengue-outbreak-sagbayan.html",
-        "code": "[]",
+        "code": "[121.0478608, 14.6616744]",
         "incident": 800
     },
     {
@@ -1184,7 +1184,7 @@
         "date-end": "2015-08-10",
         "title": "Dengue cases in Pampanga rise by 80%",
         "url": "http://cnnphilippines.com/regional/2015/08/08/Dengue-cases-in-Pampanga-rise-by-80-percent.html",
-        "code": "[-97.981637638476, 24.87257315]",
+        "code": "[-93.2203812018791, 16.9134645]",
         "incident": 1175
     },
     {
@@ -1229,7 +1229,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 80
     },
     {
@@ -1238,7 +1238,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 47
     },
     {
@@ -1247,7 +1247,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 83
     },
     {
@@ -1256,7 +1256,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 22
     },
     {
@@ -1265,7 +1265,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 42
     },
     {
@@ -1274,7 +1274,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 83
     },
     {
@@ -1283,7 +1283,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 96
     },
     {
@@ -1292,7 +1292,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 722
     },
     {
@@ -1301,7 +1301,7 @@
         "date-end": "2015-07-01",
         "title": "Dengue cases rise in 3 Cordillera provinces, Baguio City",
         "url": "http://cnnphilippines.com/regional/2015/07/01/dengue-cases-cordillera-region-baguio-city.html",
-        "code": "[120.5933937, 16.412007]",
+        "code": "[121.0315073, 14.6481727]",
         "incident": 713
     },
     {
@@ -1310,7 +1310,7 @@
         "date-end": "2017-12-04",
         "title": "Dengue cases in Pangasinan up",
         "url": "http://www.sunstar.com.ph/pangasinan/local-news/2017/12/04/dengue-cases-pangasinan-578108",
-        "code": "[]",
+        "code": "[120.333333, 15.916667]",
         "incident": 4472
     },
     {
@@ -1319,7 +1319,7 @@
         "date-end": "2017-12-04",
         "title": "Dengue cases in Pangasinan up",
         "url": "http://www.sunstar.com.ph/pangasinan/local-news/2017/12/04/dengue-cases-pangasinan-578108",
-        "code": "[]",
+        "code": "[120.333333, 15.916667]",
         "incident": 3824
     },
     {
@@ -1346,7 +1346,7 @@
         "date-end": "2017-07-15",
         "title": "Dengue cases in Bacolod up by 84.5%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/07/14/dengue-cases-bacolod-845-552898",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 535
     },
     {
@@ -1355,7 +1355,7 @@
         "date-end": "2017-07-15",
         "title": "Dengue cases in Bacolod up by 84.5%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/07/14/dengue-cases-bacolod-845-552898",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 290
     },
     {
@@ -1364,7 +1364,7 @@
         "date-end": "2017-07-15",
         "title": "Dengue cases in Bacolod up by 84.5%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/07/14/dengue-cases-bacolod-845-552898",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 535
     },
     {
@@ -1373,7 +1373,7 @@
         "date-end": "2017-07-15",
         "title": "Dengue cases in Bacolod up by 84.5%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/07/14/dengue-cases-bacolod-845-552898",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 62
     },
     {
@@ -1382,7 +1382,7 @@
         "date-end": "2017-07-15",
         "title": "Dengue cases in Bacolod up by 84.5%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/07/14/dengue-cases-bacolod-845-552898",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 52
     },
     {
@@ -1391,7 +1391,7 @@
         "date-end": "2017-05-05",
         "title": "Davao City records 15 dengue deaths since January",
         "url": "http://www.sunstar.com.ph/davao/local-news/2017/05/05/davao-city-records-15-dengue-deaths-january-540267",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 552
     },
     {
@@ -1400,7 +1400,7 @@
         "date-end": "2017-05-05",
         "title": "Davao City records 15 dengue deaths since January",
         "url": "http://www.sunstar.com.ph/davao/local-news/2017/05/05/davao-city-records-15-dengue-deaths-january-540267",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 2000
     },
     {
@@ -1409,7 +1409,7 @@
         "date-end": "2017-08-10",
         "title": "Talisay tops in number of dengue cases",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/08/10/talisay-tops-number-dengue-cases-557829",
-        "code": "[123.86769866668, 10.25919675]",
+        "code": "[123.870115394243, 10.2611569]",
         "incident": 296
     },
     {
@@ -1418,7 +1418,7 @@
         "date-end": "2017-08-10",
         "title": "Talisay tops in number of dengue cases",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/08/10/talisay-tops-number-dengue-cases-557829",
-        "code": "[123.86769866668, 10.25919675]",
+        "code": "[123.870115394243, 10.2611569]",
         "incident": 260
     },
     {
@@ -1427,7 +1427,7 @@
         "date-end": "2017-08-10",
         "title": "Talisay tops in number of dengue cases",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/08/10/talisay-tops-number-dengue-cases-557829",
-        "code": "[123.86769866668, 10.25919675]",
+        "code": "[123.870115394243, 10.2611569]",
         "incident": 187
     },
     {
@@ -1508,7 +1508,7 @@
         "date-end": "2017-06-15",
         "title": "Philippines' dengue cases near 36,000",
         "url": "http://www.sunstar.com.ph/manila/local-news/2017/06/15/philippines-dengue-cases-near-36000-547588",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "incident": 35973
     },
     {
@@ -1517,7 +1517,7 @@
         "date-end": "2017-06-15",
         "title": "Philippines' dengue cases near 36,000",
         "url": "http://www.sunstar.com.ph/manila/local-news/2017/06/15/philippines-dengue-cases-near-36000-547588",
-        "code": "[]",
+        "code": "[122.7312101, 12.7503486]",
         "incident": 52780
     },
     {
@@ -1526,7 +1526,7 @@
         "date-end": "2017-06-22",
         "title": "Dengue cases in Zamboanga rise",
         "url": "http://www.sunstar.com.ph/zamboanga/local-news/2017/06/22/dengue-cases-zamboanga-rise-548914",
-        "code": "[]",
+        "code": "[122.0763695, 6.9046004]",
         "incident": 130
     },
     {
@@ -1535,7 +1535,7 @@
         "date-end": "2017-06-22",
         "title": "Dengue cases in Zamboanga rise",
         "url": "http://www.sunstar.com.ph/zamboanga/local-news/2017/06/22/dengue-cases-zamboanga-rise-548914",
-        "code": "[]",
+        "code": "[122.0763695, 6.9046004]",
         "incident": 188
     },
     {
@@ -1562,7 +1562,7 @@
         "date-end": "2017-06-15",
         "title": "Dengue cases in Davao City drop",
         "url": "http://www.sunstar.com.ph/davao/local-news/2017/06/15/dengue-cases-davao-city-drop-547595",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 1376
     },
     {
@@ -1571,7 +1571,7 @@
         "date-end": "2017-06-26",
         "title": "Baguio records 875% decrease in dengue cases",
         "url": "http://www.sunstar.com.ph/baguio/local-news/2017/06/26/baguio-records-875-decrease-dengue-cases-549583",
-        "code": "[]",
+        "code": "[120.5933937, 16.412007]",
         "incident": 64
     },
     {
@@ -1580,7 +1580,7 @@
         "date-end": "2017-06-26",
         "title": "Baguio records 875% decrease in dengue cases",
         "url": "http://www.sunstar.com.ph/baguio/local-news/2017/06/26/baguio-records-875-decrease-dengue-cases-549583",
-        "code": "[]",
+        "code": "[120.5933937, 16.412007]",
         "incident": 703
     },
     {
@@ -1589,7 +1589,7 @@
         "date-end": "2017-11-16",
         "title": "Bacolod dengue cases decrease by 17.6%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/11/16/bacolod-dengue-cases-decrease-176-575060",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 1621
     },
     {
@@ -1598,7 +1598,7 @@
         "date-end": "2017-11-16",
         "title": "Bacolod dengue cases decrease by 17.6%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/11/16/bacolod-dengue-cases-decrease-176-575060",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 1967
     },
     {
@@ -1607,7 +1607,7 @@
         "date-end": "2017-11-16",
         "title": "Bacolod dengue cases decrease by 17.6%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/11/16/bacolod-dengue-cases-decrease-176-575060",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 1621
     },
     {
@@ -1616,7 +1616,7 @@
         "date-end": "2017-11-16",
         "title": "Bacolod dengue cases decrease by 17.6%",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/11/16/bacolod-dengue-cases-decrease-176-575060",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 124
     },
     {
@@ -1625,7 +1625,7 @@
         "date-end": "2017-06-02",
         "title": "Iloilo City dengue cases drop 60%",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2017/06/02/iloilo-city-dengue-cases-drop-60-545303",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 87
     },
     {
@@ -1634,7 +1634,7 @@
         "date-end": "2017-06-02",
         "title": "Iloilo City dengue cases drop 60%",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2017/06/02/iloilo-city-dengue-cases-drop-60-545303",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 252
     },
     {
@@ -1643,7 +1643,7 @@
         "date-end": "2017-06-02",
         "title": "Iloilo City dengue cases drop 60%",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2017/06/02/iloilo-city-dengue-cases-drop-60-545303",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 18
     },
     {
@@ -1652,7 +1652,7 @@
         "date-end": "2017-06-02",
         "title": "Iloilo City dengue cases drop 60%",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2017/06/02/iloilo-city-dengue-cases-drop-60-545303",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 17
     },
     {
@@ -1661,7 +1661,7 @@
         "date-end": "2017-06-02",
         "title": "Iloilo City dengue cases drop 60%",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2017/06/02/iloilo-city-dengue-cases-drop-60-545303",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 16
     },
     {
@@ -1670,7 +1670,7 @@
         "date-end": "2017-06-02",
         "title": "Iloilo City dengue cases drop 60%",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2017/06/02/iloilo-city-dengue-cases-drop-60-545303",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 8
     },
     {
@@ -1679,7 +1679,7 @@
         "date-end": "2017-12-03",
         "title": "Fewer dengue cases reported in Zamboanga City",
         "url": "http://www.sunstar.com.ph/zamboanga/local-news/2017/12/03/fewer-dengue-cases-reported-zamboanga-city-577947",
-        "code": "[]",
+        "code": "[122.0763695, 6.9046004]",
         "incident": 600
     },
     {
@@ -1688,7 +1688,7 @@
         "date-end": "2018-01-16",
         "title": "Dengue cases in Bacolod drop on first week of January",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2018/01/16/dengue-cases-bacolod-drop-first-week-january-584169",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 14
     },
     {
@@ -1697,7 +1697,7 @@
         "date-end": "2018-01-16",
         "title": "Dengue cases in Bacolod drop on first week of January",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2018/01/16/dengue-cases-bacolod-drop-first-week-january-584169",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 43
     },
     {
@@ -1706,7 +1706,7 @@
         "date-end": "2018-01-16",
         "title": "Dengue cases in Bacolod drop on first week of January",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2018/01/16/dengue-cases-bacolod-drop-first-week-january-584169",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 3
     },
     {
@@ -1715,7 +1715,7 @@
         "date-end": "2017-08-17",
         "title": "9 barangays in Bacolod tag as dengue hot spots",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/08/17/9-barangays-bacolod-tag-dengue-hot-spots-558972",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 31
     },
     {
@@ -1724,7 +1724,7 @@
         "date-end": "2017-08-17",
         "title": "9 barangays in Bacolod tag as dengue hot spots",
         "url": "http://www.sunstar.com.ph/bacolod/local-news/2017/08/17/9-barangays-bacolod-tag-dengue-hot-spots-558972",
-        "code": "[]",
+        "code": "[122.9513786, 10.6762836]",
         "incident": 888
     },
     {
@@ -1733,7 +1733,7 @@
         "date-end": "2016-12-30",
         "title": "Dengue cases up by 6,500 in Cebu Province",
         "url": "http://www.sunstar.com.ph/cebu/local-news/2017/01/01/dengue-cases-6500-cebu-province-517689",
-        "code": "[]",
+        "code": "[123.890817982755, 10.3185647]",
         "incident": 8969
     },
     {
@@ -1751,7 +1751,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 2179
     },
     {
@@ -1760,7 +1760,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 737
     },
     {
@@ -1769,7 +1769,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 842
     },
     {
@@ -1778,7 +1778,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 883
     },
     {
@@ -1787,7 +1787,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 849
     },
     {
@@ -1796,7 +1796,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 223
     },
     {
@@ -1805,7 +1805,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 152
     },
     {
@@ -1814,7 +1814,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 131
     },
     {
@@ -1823,7 +1823,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 109
     },
     {
@@ -1832,7 +1832,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 101
     },
     {
@@ -1841,7 +1841,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 92
     },
     {
@@ -1850,7 +1850,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 92
     },
     {
@@ -1859,7 +1859,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 91
     },
     {
@@ -1868,7 +1868,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 84
     },
     {
@@ -1877,7 +1877,7 @@
         "date-end": "2016-08-03",
         "title": "Iloilo sounds alarm over rising dengue cases",
         "url": "http://www.sunstar.com.ph/iloilo/local-news/2016/08/03/iloilo-sounds-alarm-over-rising-dengue-cases-489198",
-        "code": "[]",
+        "code": "[122.5756326, 10.9534597]",
         "incident": 79
     },
     {
@@ -2003,7 +2003,7 @@
         "date-end": "2018-01-17",
         "title": "Measles cases in Davao City increase",
         "url": "http://www.sunstar.com.ph/davao/local-news/2018/01/17/measles-cases-davao-city-increase-584428",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 222
     },
     {
@@ -2012,7 +2012,7 @@
         "date-end": "2018-01-17",
         "title": "Measles cases in Davao City increase",
         "url": "http://www.sunstar.com.ph/davao/local-news/2018/01/17/measles-cases-davao-city-increase-584428",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 222
     },
     {
@@ -2021,7 +2021,7 @@
         "date-end": "2018-01-17",
         "title": "Measles cases in Davao City increase",
         "url": "http://www.sunstar.com.ph/davao/local-news/2018/01/17/measles-cases-davao-city-increase-584428",
-        "code": "[]",
+        "code": "[125.454887691355, 7.22650725]",
         "incident": 16
     },
     {
@@ -2120,7 +2120,7 @@
         "date-end": "2015-09-26",
         "title": "Dengue fever cases going up in Cavite",
         "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
-        "code": "[]",
+        "code": "[120.833333, 14.25]",
         "incident": 3904
     },
     {
@@ -2129,7 +2129,7 @@
         "date-end": "2015-09-26",
         "title": "Dengue fever cases going up in Cavite",
         "url": "http://newsinfo.inquirer.net/725480/dengue-fever-cases-going-up-in-cavite",
-        "code": "[]",
+        "code": "[120.833333, 14.25]",
         "incident": 700
     },
     {
@@ -2192,7 +2192,7 @@
         "date-end": "2015-04-19",
         "title": "Typhoid cases in Cebu contained",
         "url": "http://cebudailynews.inquirer.net/55025/typhoid-cases-in-cebu-contained",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "incident": 20
     },
     {
@@ -2201,7 +2201,7 @@
         "date-end": "2015-04-19",
         "title": "Typhoid cases in Cebu contained",
         "url": "http://cebudailynews.inquirer.net/55025/typhoid-cases-in-cebu-contained",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "incident": 219
     },
     {
@@ -2210,7 +2210,7 @@
         "date-end": "2012-03-14",
         "title": "Three suspected typhoid cases in Malabuyoc town",
         "url": "http://newsinfo.inquirer.net/161243/%E2%80%98three-suspected-typhoid-cases-in-malabuyoc-town%E2%80%99",
-        "code": "[]",
+        "code": "[123.3276659, 9.6516166]",
         "incident": 3
     },
     {
@@ -2219,7 +2219,7 @@
         "date-end": "2012-03-08",
         "title": "Manila team arrives to investigate biggest typhoid wave in C. Visayas",
         "url": "http://newsinfo.inquirer.net/157957/manila-team-arrives-to-investigate-biggest-typhoid-wave-in-c-visayas",
-        "code": "[]",
+        "code": "[121.0522116, 14.5081684]",
         "incident": 5
     },
     {
@@ -2228,7 +2228,7 @@
         "date-end": "2012-03-08",
         "title": "Manila team arrives to investigate biggest typhoid wave in C. Visayas",
         "url": "http://newsinfo.inquirer.net/157957/manila-team-arrives-to-investigate-biggest-typhoid-wave-in-c-visayas",
-        "code": "[]",
+        "code": "[121.0522116, 14.5081684]",
         "incident": 915
     },
     {
@@ -2237,7 +2237,7 @@
         "date-end": "2012-03-08",
         "title": "Manila team arrives to investigate biggest typhoid wave in C. Visayas",
         "url": "http://newsinfo.inquirer.net/157957/manila-team-arrives-to-investigate-biggest-typhoid-wave-in-c-visayas",
-        "code": "[]",
+        "code": "[121.0522116, 14.5081684]",
         "incident": 600
     },
     {
@@ -2246,7 +2246,7 @@
         "date-end": "2012-03-04",
         "title": "Typhoid kills 3, downs 24 in Tuburan",
         "url": "http://newsinfo.inquirer.net/155915/typhoid-kills-3-downs-24-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "incident": 3
     },
     {
@@ -2255,7 +2255,7 @@
         "date-end": "2012-03-11",
         "title": "Typhoid cases slow down in Tuburan",
         "url": "http://newsinfo.inquirer.net/159515/typhoid-cases-slow-down-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "incident": 1089
     },
     {
@@ -2264,7 +2264,7 @@
         "date-end": "2012-03-11",
         "title": "Typhoid cases slow down in Tuburan",
         "url": "http://newsinfo.inquirer.net/159515/typhoid-cases-slow-down-in-tuburan",
-        "code": "[]",
+        "code": "[122.234368825587, 6.57373235]",
         "incident": 213
     },
     {
@@ -2273,7 +2273,7 @@
         "date-end": "2012-03-05",
         "title": "Typhoid outbreak kills 4 in Cebu town",
         "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "incident": 600
     },
     {
@@ -2282,7 +2282,7 @@
         "date-end": "2012-03-05",
         "title": "Typhoid outbreak kills 4 in Cebu town",
         "url": "http://newsinfo.inquirer.net/156613/typhoid-outbreak-kills-4-in-cebu-town",
-        "code": "[]",
+        "code": "[123.84, 10.45]",
         "incident": 646
     },
     {
