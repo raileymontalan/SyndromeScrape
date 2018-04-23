@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 import numpy as np
 import pandas as pd
-import json, pprint, string
+import json, pprint, spacy
 from word2number import w2n
 from pymongo import MongoClient
+from dateutil.parser import parse
 from geopy.geocoders import Nominatim
 from spacy import *
 from spacy.pipeline import *
@@ -205,7 +206,7 @@ def extract_refs(article):
     print("Extracting keys from article...")
     
     dis = article['disease']
-    date = article['timestamp'] 
+    date = parse(str(article['timestamp'])).date()
     title = article['title']
     url = article['url']
     
@@ -227,7 +228,6 @@ def extract(df):
     for index, article in df.iterrows():
         doc = nlp(article['content'])
         refs = extract_refs(article)
-        deets = [article['title'], article['url']]
         incidents = []
         statuses = []
         changes = []
