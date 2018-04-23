@@ -9,48 +9,7 @@ function requestNewsData(d, y, viz, geogroup, keywords, keyword_logic, age_group
         year:y
     };
 
-    if (viz == 'all') {
-        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/incidents/" + d + "&" + y;
-        $.getJSON(getUrl)
-        .done(function (data) {
-            // clean up data format
-            var newsData = data;
-            formatIncidentData(data);
-            console.log(data);
-            renderIncidents(data);
-        })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-            console.log("Error: " + errorThrown);
-            // alert("ERROR: Cannot retrieve news data! News API may be down.");
-        });
-        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/statuses/" + d + "&" + y;
-        $.getJSON(getUrl)
-        .done(function (data) {
-            // clean up data format
-            var newsData = data;
-            formatStatusData(data);
-            console.log(data);
-            renderStatuses(data);
-        })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown);
-            // alert("ERROR: Cannot retrieve news data! News API may be down.");
-        });
-        var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/changes/" + d + "&" + y;
-        $.getJSON(getUrl)
-        .done(function (data) {
-            // clean up data format
-            var newsData = data;
-            formatChangeData(data);
-            console.log(data);
-            renderChanges(data);
-        })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown);
-            // alert("ERROR: Cannot retrieve news data! News API may be down.");
-        });
-    }
-    else if(viz == 'incident'){
+    if(viz == 'incident'){
         var getUrl = "https://firestore.googleapis.com/v1beta1/projects/fassster-news/databases/(default)/documents/incidents/" + d + "&" + y;
         $.getJSON(getUrl)
         .done(function(data){
